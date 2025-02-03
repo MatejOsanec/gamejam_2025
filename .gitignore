@@ -1,0 +1,50 @@
+# ---------------[ Unity generated ]------------------ #
+/Temp/
+/Obj/
+/UnityGenerated/
+/Library/
+/Builds/
+/UserSettings/
+*.json.backup
+
+# ----[ Visual Studio / MonoDevelop generated ]------- #
+
+.vs/
+/ExportedObj/
+/Logs/
+*.svd
+*.userprefs
+*.csproj
+*.pidb
+*.suo
+*.sln
+*.user
+*.unityproj
+*.booproj
+
+# -------------[ OS generated ]------------------------ #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# -------------[ Rider ]------------------------------- #
+**/.idea/**/contentModel.xml
+**/.idea/**/riderModule.iml
+**/.idea/**/.idea/modules.xml
+**/.idea/shelf/
+
+# -------------[ TeamCity ]---------------------------- #
+.teamcity/target
+
+# -------------[ Art Editors ]------------------------- #
+# Substance Designer
+.autosave/
+
+# -------------[ Our files ]--------------------------- #
+
+TestsScreenshots/**/diff/*
+TestsScreenshots/**/test/*
