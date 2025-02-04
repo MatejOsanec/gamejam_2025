@@ -1,0 +1,299 @@
+﻿#include <UnityShaderVariables.cginc>
+
+#pragma kernel Neutral
+#pragma kernel Texture
+#pragma kernel WaveU
+#pragma kernel WaveV
+#pragma kernel Ripple
+#pragma kernel TextureScroll
+#pragma kernel LinearRampShift
+#pragma kernel InvLinearRampShift
+#pragma kernel SmoothedRampShift
+#pragma kernel InvSmoothedRampShift
+#pragma kernel WaveRipple
+#pragma kernel EjectEffect_WaveRipple
+#pragma kernel EjectEffect_RectRipple
+#pragma kernel EjectEffect_TextureMaskRipple
+#pragma kernel EjectEffect_NoiseMaskRipple
+#pragma kernel EjectEffect_RotationMaskRipple
+#pragma kernel EjectEffect_SpiralMaskRipple
+#pragma kernel EjectEffect_MixedRipple
+
+uint _columnSize;
+uint _rowSize;
+float _amplitude;
+float _phase;
+float _param1;
+float _param2;
+float _textureGenZDisplacementWeight;
+float _speed;
+float _spatialScale;
+
+RWTexture2D<float4> _outputTexture;
+Texture2D<float4> _inputTexture;
+SamplerState bilinearClampSampler;
+SamplerState bilinearRepeatSampler;
+
+float CursorLightBlink()
+{
+    return 0.5 + 0.25 * (frac(-2.0 * _Time.y) - 0.5);
+}
+
+[numthreads(1,1,1)]
+void Neutral(uint3 id : SV_DispatchThreadID)
+{
+    uint2 uv = uint2(id.x, id.y);
+    _outputTexture[uv] = float4(0.5, 0.5, 0.5, 0.5);
+}
+
+[numthreads(1,1,1)]
+void Texture(uint3 id : SV_DispatchThreadID)
+{
+    uint2 uv = uint2(id.x, id.y);
+    float2 readUv = float2(id.x / (float)_rowSize + 0.5 / (float)_rowSize,
+                           id.y / (float)_columnSize + 0.5 / (float)_columnSize);
+    float texColor = _inputTexture.SampleLevel(bilinearRepeatSampler, readUv, 0).r;
+    float translate = 0.5 * _amplitude * texColor + 0.5;
+    _outputTexture[uv] = float4(translate, translate, translate, 1.0);
+}
+
+[numthreads(1,1,1)]
+void WaveU(uint3 id : SV_DispatchThreadID)
+{
+    uint2 uv = uint2(id.x, id.y);
+    float2 uvf = float2(id.x / (float)_rowSize + 0.5 / (float)_rowSize,
+                        id.y / (float)_columnSize + 0.5 / (float)_columnSize);
+    float translate = 0.5 * _amplitude * cos(
+        2.0 * 6.28 * (uvf.x + _phase) * _spatialScale + _Time.y * _speed) + 0.5;
+
+    _outputTexture[uv] = float4(translate, translate, translate, 1.0);
+}
+
+[numthreads(1,1,1)]
+void WaveV(uint3 id : SV_DispatchThreadID)
+{
+    uint2 uv = uint2(id.x, id.y);
+    float2 uvf = float2(id.x / (float)_rowSize + 0.5 / (float)_rowSize,
+                        id.y / (float)_columnSize + 0.5 / (float)_columnSize);
+    float translate = 0.5 * _amplitude * cos(
+        2.0 * 6.28 * (uvf.y + _phase) * _spatialScale + _Time.y * _speed) + 0.5;
+    _outputTexture[uv] = float4(translate, translate, translate, 1.0);
+}
+
+[numthreads(1,1,1)]
+void Ripple(uint3 id : SV_DispatchThreadID)
+{
+    uint2 uv = uint2(id.x, id.y);
+    float2 uvf = float2(id.x / (float)_rowSize + 0.5 / (float)_rowSize,
+                        id.y / (float)_columnSize + 0.5 / (float)_columnSize);
+    float radius = length(uvf.xy - float2(0.5, 0.5));
+    float translate = 0.5 * _amplitude * cos(
+        2.0 * 6.28 * (radius + _phase) * _spatialScale + _Time.y * _speed) + 0.5;
+    _outputTexture[uv] = float4(translate, translate, translate, 1.0);
+}
+
+[numthreads(1,1,1)]
+void TextureScroll(uint3 id : SV_DispatchThreadID)
+{
+    uint2 uv = uint2(id.x, id.y);
+    float2 readUv = float2(id.x / (float)_rowSize + 0.5 / (float)_rowSize,
+                           saturate(_param1 + id.y / (float)_columnSize + 0.5 / (float)_columnSize));
+    float4 texColor = _inputTexture.SampleLevel(bilinearClampSampler, readUv, 0);
+    float translate = 0.5 * _amplitude * texColor.r + 0.5;
+    _outputTexture[uv] = float4(translate, translate, translate, 1.0);
+}
+
+[numthreads(1,1,1)]
+void LinearRampShift(uint3 id : SV_DispatchThreadID)
+{
+    uint2 uv = uint2(id.x, id.y);
+    float2 readUv = float2(id.x / (float)_rowSize + 0.5 / (float)_rowSize,
+                           saturate(
+                               2.0 * _param1 - 1.0 + id.y / (float)_columnSize + 0.5 / (float)
+                               _columnSize));
+    float ramp = readUv.y;
+    float translate = 0.5 * _amplitude * ramp + 0.5;
+    _outputTexture[uv] = float4(translate, translate, translate, 1.0);
+}
+
+[numthreads(1,1,1)]
+void InvLinearRampShift(uint3 id : SV_DispatchThreadID)
+{
+    uint2 uv = uint2(id.x, id.y);
+    float2 readUv = float2(id.x / (float)_rowSize + 0.5 / (float)_rowSize,
+                           saturate(
+                               2.0 * _param1 - 1.0 + id.y / (float)_columnSize + 0.5 / (float)
+                               _columnSize));
+    float ramp = 1.0 - readUv.y;
+    float translate = 0.5 * _amplitude * ramp + 0.5;
+    _outputTexture[uv] = float4(translate, translate, translate, 1.0);
+}
+
+[numthreads(1,1,1)]
+void SmoothedRampShift(uint3 id : SV_DispatchThreadID)
+{
+    uint2 uv = uint2(id.x, id.y);
+    float2 readUv = float2(id.x / (float)_rowSize + 0.5 / (float)_rowSize,
+                           saturate(
+                               2.0 * _param1 - 1.0 + id.y / (float)_columnSize + 0.5 / (float)
+                               _columnSize));
+    float ramp = smoothstep(0, 1, readUv.y);
+    float translate = 0.5 * _amplitude * ramp + 0.5;
+    _outputTexture[uv] = float4(translate, translate, translate, 1.0);
+}
+
+[numthreads(1,1,1)]
+void InvSmoothedRampShift(uint3 id : SV_DispatchThreadID)
+{
+    uint2 uv = uint2(id.x, id.y);
+    float2 readUv = float2(id.x / (float)_rowSize + 0.5 / (float)_rowSize,
+                           saturate(
+                               2.0 * _param1 - 1.0 + id.y / (float)_columnSize + 0.5 / (float)
+                               _columnSize));
+    float ramp = smoothstep(1, 0, readUv.y);
+    float translate = 0.5 * _amplitude * ramp + 0.5;
+    _outputTexture[uv] = float4(translate, translate, translate, 1.0);
+}
+
+[numthreads(1,1,1)]
+void WaveRipple(uint3 id : SV_DispatchThreadID)
+{
+    uint2 uv = uint2(id.x, id.y);
+    float2 uvf = float2(id.x / (float)_rowSize + 0.5 / (float)_rowSize,
+                        id.y / (float)_columnSize + 0.5 / (float)_columnSize);
+    float radius = length(uvf.xy - float2(0.49, 0.49));
+    float cosine = cos(2.0 * 6.28 * radius * _spatialScale + _Time.y * _speed);
+    float wavefront = smoothstep(_phase * 0.7 - _param2 * 0.7,
+                                 _phase * 0.7, radius)
+        * (1.0 - smoothstep(_phase * 0.7,
+                            _phase * 0.7 + _param1 * 0.7, radius));
+    float translate = 0.5 * _amplitude * cosine * wavefront + 0.5;
+    _outputTexture[uv] = float4(translate, translate, translate, 1.0);
+}
+
+[numthreads(1,1,1)]
+void EjectEffect_WaveRipple(uint3 id : SV_DispatchThreadID)
+{
+    uint2 uv = uint2(id.x, id.y);
+    float2 uvf = float2(id.x / (float)_rowSize + 0.5 / (float)_rowSize,
+                        id.y / (float)_columnSize + 0.5 / (float)_columnSize);
+    float radius = length(uvf.xy - float2(0.49, 0.49));
+    float cosine = cos(2.0 * 6.28 * radius * _spatialScale + _Time.y * _speed);
+    float wavefront = smoothstep(_phase * 0.7 - _param2 * 0.7,
+                                 _phase * 0.7, radius)
+        * (1.0 - smoothstep(_phase * 0.7,
+                            _phase * 0.7 + _param1 * 0.7, radius));
+    float translate = 0.5 * _amplitude * cosine * wavefront + 0.5;
+    _outputTexture[uv] = float4(translate, translate, translate, 1.0);
+}
+
+[numthreads(1,1,1)]
+void EjectEffect_RectRipple(uint3 id : SV_DispatchThreadID)
+{
+    uint2 uv = uint2(id.x, id.y);
+    float2 uvf = float2(id.x / (float)_rowSize + 0.5 / (float)_rowSize,
+                        id.y / (float)_columnSize + 0.5 / (float)_columnSize);
+    int diagMask = 0;
+    if (uvf.x >= uvf.y)
+    {
+        diagMask = 1 - diagMask;
+    }
+    if (1 - uvf.x >= uvf.y)
+    {
+        diagMask = 1 - diagMask;
+    }
+    float radius = diagMask * abs(uvf.x - 0.49) + (1 - diagMask) * abs(uvf.y - 0.49);
+    float cosine = cos(2.0 * 6.28 * radius * _spatialScale + _Time.y * _speed);
+    float wavefront = smoothstep(_phase * 0.7 - _param2 * 0.7,
+                                 _phase * 0.7, radius)
+        * (1.0 - smoothstep(_phase * 0.7,
+                            _phase * 0.7 + _param1 * 0.7, radius));
+    float translate = 0.5 * _amplitude * cosine * wavefront + 0.5;
+    _outputTexture[uv] = float4(translate, translate, translate, 1.0);
+}
+
+[numthreads(1,1,1)]
+void EjectEffect_TextureMaskRipple(uint3 id : SV_DispatchThreadID)
+{
+    uint2 uv = uint2(id.x, id.y);
+    float2 uvf = float2(id.x / (float)_rowSize + 0.5 / (float)_rowSize,
+                        id.y / (float)_columnSize + 0.5 / (float)_columnSize);
+    float texValue = _inputTexture.SampleLevel(bilinearClampSampler, uvf, 0).r;
+    float radius = length(uvf.xy - float2(0.49, 0.49));
+    float cosine = abs(cos(2.0 * 6.28 * radius * _spatialScale + _Time.y * _speed));
+    float wavefront = smoothstep(_phase * 0.7 - _param2 * 0.7,
+                                 _phase * 0.7, radius)
+        * (1.0 - smoothstep(_phase * 0.7,
+                            _phase * 0.7 + _param1 * 0.7, radius));
+    float translate = texValue * 0.5 * _amplitude * cosine * wavefront + 0.5;
+    _outputTexture[uv] = float4(translate, translate, translate, 1.0);
+}
+
+[numthreads(1,1,1)]
+void EjectEffect_NoiseMaskRipple(uint3 id : SV_DispatchThreadID)
+{
+    uint2 uv = uint2(id.x, id.y);
+    float2 uvf = float2(id.x / (float)_rowSize + 0.5 / (float)_rowSize,
+                        id.y / (float)_columnSize + 0.5 / (float)_columnSize);
+    float texValue = _inputTexture.SampleLevel(bilinearClampSampler, uvf, 0).g;
+    float radius = length(uvf.xy - float2(0.49, 0.49));
+    float cosine = cos(2.0 * 6.28 * radius * _spatialScale + _Time.y * _speed);
+    float wavefront = smoothstep(_phase * 0.7 - _param2 * 0.7,
+                                 _phase * 0.7, radius)
+        * (1.0 - smoothstep(_phase * 0.7,
+                            _phase * 0.7 + _param1 * 0.7, radius));
+    float translate = texValue * 0.5 * _amplitude * cosine * wavefront + 0.5;
+
+    _outputTexture[uv] = float4(translate, translate, translate, 1.0);
+}
+
+[numthreads(1,1,1)]
+void EjectEffect_RotationMaskRipple(uint3 id : SV_DispatchThreadID)
+{
+    uint2 uv = uint2(id.x, id.y);
+    float2 uvf = float2(id.x / (float)_rowSize + 0.5 / (float)_rowSize,
+                        id.y / (float)_columnSize + 0.5 / (float)_columnSize);
+    float texValue = frac(_inputTexture.SampleLevel(bilinearClampSampler, uvf, 0).b - 3.0 * _Time.y);
+    float radius = length(uvf.xy - float2(0.49, 0.49));
+    float cosine = cos(2.0 * 6.28 * radius * _spatialScale + _Time.y * _speed);
+    float wavefront = smoothstep(_phase * 0.7 - _param2 * 0.7,
+                                 _phase * 0.7, radius)
+        * (1.0 - smoothstep(_phase * 0.7,
+                            _phase * 0.7 + _param1 * 0.7, radius));
+    float translate = texValue * 0.5 * _amplitude * cosine * wavefront + 0.5;
+    _outputTexture[uv] = float4(translate, translate, translate, 1.0);
+}
+
+[numthreads(1,1,1)]
+void EjectEffect_SpiralMaskRipple(uint3 id : SV_DispatchThreadID)
+{
+    uint2 uv = uint2(id.x, id.y);
+    float2 uvf = float2(id.x / (float)_rowSize + 0.5 / (float)_rowSize,
+                        id.y / (float)_columnSize + 0.5 / (float)_columnSize);
+    float texValue = frac(_inputTexture.SampleLevel(bilinearClampSampler, uvf, 0).a - 3.0 * _Time.y);
+    float radius = length(uvf.xy - float2(0.49, 0.49));
+    float wavefront = smoothstep(_phase * 0.7 - _param2 * 0.7,
+                                 _phase * 0.7, radius)
+        * (1.0 - smoothstep(_phase * 0.7,
+                            _phase * 0.7 + _param1 * 0.7, radius));
+    float translate = texValue * 0.5 * _amplitude * wavefront + 0.5;
+    _outputTexture[uv] = float4(translate, translate, translate, 1.0);
+}
+
+[numthreads(1,1,1)]
+void EjectEffect_MixedRipple(uint3 id : SV_DispatchThreadID)
+{
+    uint2 uv = uint2(id.x, id.y);
+    float2 uvf = float2(id.x / (float)_rowSize + 0.5 / (float)_rowSize,
+                        id.y / (float)_columnSize + 0.5 / (float)_columnSize);
+    float2 texValues = _inputTexture.SampleLevel(bilinearClampSampler, uvf, 0).bg;
+    float rotValue = frac(texValues.x - _Time.y);
+    float noiseValue = texValues.y;
+    float radius = length(uvf.xy - float2(0.49, 0.49));
+    float wavefront = smoothstep(_phase * 0.7 - _param2 * 0.7,
+                                 _phase * 0.7, radius)
+        * (1.0 - smoothstep(_phase * 0.7,
+                            _phase * 0.7 + _param1 * 0.7, radius));
+    float translate = rotValue * noiseValue * 0.5 * _amplitude * wavefront + 0.5;
+    _outputTexture[uv] = float4(translate, translate, translate, 1.0);
+}

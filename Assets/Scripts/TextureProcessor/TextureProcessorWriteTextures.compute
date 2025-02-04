@@ -1,0 +1,27 @@
+﻿#pragma kernel WriteTextures
+
+Texture2D<float4> _inputTextureA;
+Texture2D<float4> _inputTextureB;
+Texture2D<float4> _inputTextureC;
+SamplerState bilinearClampSampler;
+
+uint _columnSize;
+uint _rowSize;
+
+RWTexture2D<float4> _outputMask;
+
+[numthreads(1,1,1)]
+void WriteTextures (uint3 id : SV_DispatchThreadID)
+{
+    uint2 uv = uint2(id.x, id.y);
+    float2 ReadUv = float2(((float)id.x + 0.5) / (float)_rowSize, ((float)id.y + 0.5) / (float)_columnSize);
+    float4 texColorA = _inputTextureA.SampleLevel(bilinearClampSampler, ReadUv, 0);
+    float4 texColorB = _inputTextureB.SampleLevel(bilinearClampSampler, ReadUv, 0);
+    float4 texColorC = _inputTextureC.SampleLevel(bilinearClampSampler, ReadUv, 0);
+
+    float texMaskR = texColorA.r;
+    float texMaskG = texColorB.r;
+    float texMaskB = texColorC.r;
+
+    _outputMask[uv] = float4(texMaskR, texMaskG, texMaskB, 1.0);
+}
