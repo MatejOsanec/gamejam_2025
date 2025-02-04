@@ -1,0 +1,17 @@
+{
+    "name": "BGLib.Notepad",
+    "rootNamespace": "BGLib.Notepad",
+    "references": [
+        "BGLib.Attributes",
+        "BGLib.HierarchyIcons"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,11 @@
+{
+  "name": "com.beatgames.bglib.unity-extension",
+  "version": "1.0.0",
+  "displayName": "_Lib/UnityExtension",
+  "description": "Common Unity functions",
+  "hideInEditor": false,
+  "author": {
+    "name": "Beat Games",
+    "url": ""
+  }
+}

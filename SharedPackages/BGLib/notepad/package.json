@@ -1,0 +1,17 @@
+{
+  "name": "com.beatgames.bglib.notepad",
+  "version": "1.0.0",
+  "displayName": "_Lib/Notepad",
+  "description": "Simple library to sprinkle notes throughout the Unity editor\r",
+  "hideInEditor": false,
+  "samples": [
+  {
+    "displayName": "Sample note",
+    "description": "Example note file you can attach to a GameObject",
+    "path": "Samples~/SampleNote"
+  }],
+  "author": {
+    "name": "Beat Games",
+    "url": ""
+  }
+}

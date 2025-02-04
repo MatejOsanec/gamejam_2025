@@ -1,0 +1,29 @@
+.bg-uitoolkit__table__row {
+    flex-direction: row;
+    height: 25px;
+}
+
+.bg-uitoolkit__table__row-alt {
+    background-color: #3F3F3F;
+}
+
+.bg-uitoolkit__table__cell-header {
+    border-bottom-width: 2px;
+    border-bottom-color: white;
+    padding: 2px;
+    overflow: hidden;
+}
+
+.bg-uitoolkit__table__cell {
+    border-right-width: 1px;
+    border-right-color: grey;
+    flex: 1;
+    padding-top: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    justify-content: center;
+}
+
+.unity-base-field {
+    height: 100%;
+}

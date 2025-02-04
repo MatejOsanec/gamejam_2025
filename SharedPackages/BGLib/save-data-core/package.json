@@ -1,0 +1,11 @@
+{
+  "name": "com.beatgames.bglib.save-data-core",
+  "version": "1.0.0",
+  "displayName": "_Lib/SaveDataCore",
+  "description": "Core functionality for save data and settings; versioning, serialization and save location.",
+  "hideInEditor": false,
+  "author": {
+    "name": "Beat Games",
+    "url": ""
+  }
+}

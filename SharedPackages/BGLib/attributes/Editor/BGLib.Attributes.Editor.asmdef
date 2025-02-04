@@ -1,0 +1,24 @@
+{
+    "name": "BGLib.Attributes.Editor",
+    "rootNamespace": "BGLib.Attributes.Editor",
+    "references": [
+        "BGLib.Attributes"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.beatgames.beatsaber.tours.core",
+            "expression": "",
+            "define": "BS_TOURS"
+        }
+    ],
+    "noEngineReferences": false
+}

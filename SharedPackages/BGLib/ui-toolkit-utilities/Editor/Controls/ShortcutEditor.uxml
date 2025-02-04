@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="Root" style="flex-grow: 1;">
+        <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="ShortcutButton" style="flex-direction: row; flex-grow: 0; flex-shrink: 1; display: flex;">
+            <ui:Label tabindex="-1" text="ctrl + C" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Shortcut" style="-unity-font-style: bold-and-italic; font-size: 9px; -unity-text-align: middle-left; margin-right: 2px; margin-top: 2px;" />
+            <ui:VisualElement name="Icon" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Visuals/Textures/UI/Core/Icons/EditIcon.psd?fileID=2800000&amp;guid=2a1e703cb7ce533418170174db295e67&amp;type=3#EditIcon&quot;); flex-shrink: 0; background-color: rgba(0, 0, 0, 0); width: 10px; height: 10px; align-self: center; margin-left: 4px;" />
+        </ui:Button>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,24 @@
+{
+  "name": "BGLib.FileStorage",
+  "rootNamespace": "BGLib.FileStorage",
+  "references": [
+    "Zenject",
+    "BGLib.UnityExtension",
+    "HMLibAttributes",
+    "BGLib.AppFlow",
+    "BGLib.DotnetExtension",
+    "BGLib.JsonExtension"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": true,
+  "precompiledReferences": [
+    "Newtonsoft.Json.dll",
+    "Zenject-usage.dll"
+  ],
+  "autoReferenced": false,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

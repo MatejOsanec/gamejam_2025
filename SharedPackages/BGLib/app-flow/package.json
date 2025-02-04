@@ -1,0 +1,11 @@
+{
+  "name": "com.beatgames.bglib.app-flow",
+  "version": "1.0.0",
+  "displayName": "_Lib/AppFlow",
+  "description": "Manages game initialization and scene flow",
+  "hideInEditor": false,
+  "author": {
+    "name": "Beat Games",
+    "url": ""
+  }
+}

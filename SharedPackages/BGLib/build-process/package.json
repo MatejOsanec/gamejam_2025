@@ -1,0 +1,11 @@
+{
+  "name": "com.beatgames.bglib.build-process",
+  "version": "1.0.0",
+  "displayName": "_Lib/BuildProcess",
+  "description": "Build Process Library",
+  "hideInEditor": false,
+  "author": {
+    "name": "Beat Games",
+    "url": ""
+  }
+}

@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 8e356023ceda4e4e972dbd11f0af4168
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_ViewDataDictionary: {instanceID: 0}
+  - _UXMLTree: {fileID: 9197481963319205126, guid: 80ee01de301a4a1da5803744a6a99dd4,
+      type: 3}
+  - _toolVisualEntryTree: {fileID: 9197481963319205126, guid: f45de70c2f2ef5e4f995dc4c5e26c397,
+      type: 3}
+  - _toolVisualEntrySmallTree: {fileID: 9197481963319205126, guid: 72d0f56153812cc4fb714bc16f47dce4,
+      type: 3}
+  - _labelFilterTree: {fileID: 9197481963319205126, guid: 157645459b16ba145a70dc2755ea2d96,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

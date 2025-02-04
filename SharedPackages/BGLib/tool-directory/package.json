@@ -1,0 +1,11 @@
+{
+    "name": "com.beatgames.bglib.tool-directory",
+    "version": "1.0.0",
+    "displayName": "_Lib/ToolDirectory",
+    "description": "A tool to find and get information about tools in the project.",
+    "hideInEditor": false,
+    "author": {
+        "name": "Beat Games",
+        "url": ""
+    }
+}

@@ -1,0 +1,26 @@
+.bg-uitoolkit__string-list {
+}
+
+.bg-uitoolkit__string-list__item {
+    height: 20px;
+    padding-left: 21px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.bg-uitoolkit__string-list__item .unity-label {
+    -unity-text-align: middle-left;
+}
+
+.bg-uitoolkit__string-list__icon {
+    width: 16px;
+    height: 16px;
+    background-image: resource("d_Package Manager");
+}
+
+.bg-uitoolkit__string-list__header .unity-toggle {
+    -unity-font-style: bold;
+    background-color: var(--unity-colors-tab-background-hover);
+    margin: 0;
+    padding: 3px 3px 1px 3px;
+}

@@ -1,0 +1,19 @@
+{
+    "name": "BGLib.Notepad.Editor",
+    "rootNamespace": "BGLib.Notepad.Editor",
+    "references": [
+        "BGLib.Notepad",
+        "BGLib.UnityExtension.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

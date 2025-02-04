@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Template name="ToolDirectoryToolLabel" src="project://database/Packages/com.beatgames.bglib.tool-directory/Editor/ToolDirectoryToolLabel.uxml?fileID=9197481963319205126&amp;guid=f538750208e13e34ab0264c00169c718&amp;type=3#ToolDirectoryToolLabel" />
+    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" enable-rich-text="false" name="ToggleButton" focusable="true" style="width: 68px; height: 21px; margin-top: 3px; margin-right: 3px; margin-bottom: 3px; margin-left: 3px; padding-top: 2px; padding-right: 2px; padding-bottom: 2px; padding-left: 2px; flex-direction: row; justify-content: space-between; align-self: stretch; align-items: stretch;">
+        <ui:Instance template="ToolDirectoryToolLabel" name="Label" />
+        <ui:Label tabindex="-1" text="4" parse-escape-sequences="true" display-tooltip-when-elided="true" name="LabelCount" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; font-size: 10px; -unity-font-style: bold; -unity-text-align: middle-center; width: auto; align-self: stretch; flex-direction: row; flex-grow: 1; justify-content: space-around;" />
+    </ui:Button>
+</ui:UXML>

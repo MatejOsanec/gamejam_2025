@@ -1,0 +1,11 @@
+{
+  "name": "com.beatgames.bglib.inspections",
+  "version": "1.0.0",
+  "displayName": "_Lib/Inspections",
+  "description": "Inspections Core",
+  "hideInEditor": false,
+  "author": {
+    "name": "Beat Games",
+    "url": ""
+  }
+}

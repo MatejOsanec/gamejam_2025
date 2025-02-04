@@ -1,0 +1,18 @@
+{
+    "name": "BGLib.ToolDirectory.Editor",
+    "rootNamespace": "BGLib.ToolDirectory.Editor",
+    "references": [
+        "BGLib.UiToolkitUtilities.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

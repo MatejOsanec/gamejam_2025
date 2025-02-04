@@ -1,0 +1,11 @@
+{
+  "name": "com.beatgames.bglib.meta-remote-assets",
+  "version": "1.0.0",
+  "displayName": "_Lib/MetaRemoteAssets",
+  "description": "Core functionality for loading assets remotely using Meta infrastructure",
+  "hideInEditor": false,
+  "author": {
+    "name": "Beat Games",
+    "url": ""
+  }
+}

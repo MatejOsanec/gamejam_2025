@@ -1,0 +1,25 @@
+{
+    "name": "BGLib.UnityExtension.Editor",
+    "rootNamespace": "BGLib.UnityExtension.Editor",
+    "references": [
+        "BGLib.UnityExtension",
+        "Unity.Addressables",
+        "Unity.ResourceManager",
+        "Unity.Addressables.Editor",
+        "Unity.EditorCoroutines.Editor",
+        "BGLib.Attributes"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "Newtonsoft.Json.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

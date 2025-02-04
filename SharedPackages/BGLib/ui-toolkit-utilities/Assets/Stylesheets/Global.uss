@@ -1,0 +1,42 @@
+* {
+    font-size: 12px;
+    --negative-color: rgb(105, 5, 5);
+    --positive-color: rgb(4, 112, 4);
+    --warning-color: rgb(158, 119, 4);
+}
+
+.heading1 {
+    -unity-font-style: bold;
+    font-size: 20px;
+}
+
+.heading2 {
+    -unity-font-style: bold;
+    font-size: 16px;
+}
+
+.heading3 {
+    -unity-font-style: bold;
+}
+
+.bold {
+    -unity-font-style: bold;
+}
+
+.unity-button-with-icon {
+    padding: 2px;
+    flex-basis: 21px;
+}
+
+.unity-button-with-icon > * {
+    width: 100%;
+    height: 100%;
+}
+
+.warning-button {
+    background-color: var(--warning-color);
+}
+
+.warning-button > * {
+    background-image: url('project://database/Packages/com.beatgames.bglib.ui-toolkit-utilities/Assets/Textures/Warning.png?fileID=2800000&guid=f1a5bd7ef35507c47aaae594d7af05ce&type=3#Warning');
+}

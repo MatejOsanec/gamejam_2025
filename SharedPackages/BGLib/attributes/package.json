@@ -1,0 +1,11 @@
+{
+  "name": "com.beatgames.bglib.attributes",
+  "version": "1.0.0",
+  "displayName": "_Lib/Attributes",
+  "description": "Holds all the attributes used by the Beat Games Library and Beat Saber.",
+  "hideInEditor": false,
+  "author": {
+    "name": "Beat Games",
+    "url": ""
+  }
+}

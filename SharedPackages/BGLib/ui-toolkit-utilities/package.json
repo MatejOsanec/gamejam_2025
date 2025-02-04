@@ -1,0 +1,11 @@
+{
+  "name": "com.beatgames.bglib.ui-toolkit-utilities",
+  "version": "1.0.0",
+  "displayName": "_Lib/UiToolkitUtilities",
+  "description": "A collection of utilities that help extend Unity's UI Toolkit.",
+  "hideInEditor": false,
+  "author": {
+    "name": "Beat Games",
+    "url": ""
+  }
+}

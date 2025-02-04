@@ -1,0 +1,21 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="Container" style="flex-grow: 1; padding-top: 3px; padding-right: 3px; padding-bottom: 3px; padding-left: 3px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; flex-shrink: 0; flex-direction: column; align-items: stretch; align-self: auto; flex-basis: 50%; min-width: 350px;">
+        <ui:VisualElement name="BorderContainer" style="flex-grow: 0; border-left-color: rgba(0, 0, 0, 0.16); border-right-color: rgba(0, 0, 0, 0.16); border-top-color: rgba(0, 0, 0, 0.16); border-bottom-color: rgba(0, 0, 0, 0.16); border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 4px; padding-right: 4px; padding-bottom: 4px; padding-left: 4px; flex-shrink: 1; align-self: auto; align-items: stretch;">
+            <ui:VisualElement name="TitleAndLabels" style="flex-grow: 1; flex-direction: row; justify-content: space-between;">
+                <ui:VisualElement name="VisualElement" style="flex-grow: 1; flex-direction: row;">
+                    <ui:Label tabindex="-1" text="Tool title" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ToolName" binding-path="displayName" style="-unity-font-style: bold; font-size: 15px;" />
+                    <UIToolkitUtilities.Controls.Editor.ShortcutEditor name="ShortcutEditor" style="display: flex;" />
+                </ui:VisualElement>
+                <ToolDirectoryToolLabels name="LabelContainer" />
+            </ui:VisualElement>
+            <ui:VisualElement name="PackageAndAuthor" style="flex-grow: 1; flex-direction: row; justify-content: space-between;">
+                <ui:Label tabindex="-1" text="Core package" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PackageName" binding-path="packageName" style="-unity-font-style: italic;" />
+                <ui:Label tabindex="-1" text="Maintainer" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Maintainer" />
+            </ui:VisualElement>
+            <ui:Label tabindex="-1" text="This can be a very long description about what this tool is about." parse-escape-sequences="true" display-tooltip-when-elided="true" name="Description" binding-path="description" style="-unity-font-style: normal; white-space: normal; margin-top: 6px; margin-bottom: 6px; flex-shrink: 1; flex-wrap: wrap; text-overflow: clip;" />
+            <ui:VisualElement name="Buttons" style="flex-grow: 1; flex-direction: row;">
+                <ui:Button text="Open tool" parse-escape-sequences="true" display-tooltip-when-elided="true" name="OpenToolButton" style="display: flex; align-self: flex-start; width: 100px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

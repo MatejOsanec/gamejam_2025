@@ -1,0 +1,19 @@
+{
+  "name": "BGLib.SaveDataCore",
+  "rootNamespace": "BGLib.SaveDataCore",
+  "references": [
+    "BGLib.FileStorage",
+    "BGLib.JsonExtension"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": true,
+  "precompiledReferences": [
+    "Newtonsoft.Json.dll"
+  ],
+  "autoReferenced": false,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

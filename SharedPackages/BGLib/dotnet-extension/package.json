@@ -1,0 +1,11 @@
+{
+  "name": "com.beatgames.bglib.dotnet-extension",
+  "version": "1.0.0",
+  "displayName": "_Lib/DotnetExtension",
+  "description": "Utilities and extension classes for .Net Framework",
+  "hideInEditor": false,
+  "author": {
+    "name": "Beat Games",
+    "url": ""
+  }
+}

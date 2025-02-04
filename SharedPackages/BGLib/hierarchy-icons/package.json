@@ -1,0 +1,11 @@
+{
+    "name": "com.beatgames.bglib.hierarchy-icons",
+    "version": "1.0.0",
+    "displayName": "_Lib/HierarchyIcons",
+    "description": "Adds the ability to add icons to the hierarchy view in editor",
+    "hideInEditor": false,
+    "author": {
+        "name": "Beat Games",
+        "url": ""
+    }
+}

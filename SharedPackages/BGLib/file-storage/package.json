@@ -1,0 +1,11 @@
+{
+  "name": "com.beatgames.bglib.file-storage",
+  "version": "1.0.0",
+  "displayName": "_Lib/FileStorage",
+  "description": "Interacting with disk, file management for user data and game settings alike.",
+  "hideInEditor": false,
+  "author": {
+    "name": "Beat Games",
+    "url": ""
+  }
+}

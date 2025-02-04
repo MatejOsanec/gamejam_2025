@@ -1,0 +1,11 @@
+{
+  "name": "com.beatgames.bglib.file-storage.sony",
+  "version": "1.0.0",
+  "displayName": "_Lib/FileStorage/Sony",
+  "description": "Interacting with disk, file management for user data and game settings alike - Specific to PS4 & 5",
+  "hideInEditor": false,
+  "author": {
+    "name": "Beat Games",
+    "url": ""
+  }
+}

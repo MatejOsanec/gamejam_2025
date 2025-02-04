@@ -1,0 +1,21 @@
+{
+    "name": "BGLib.AppFlow.Editor",
+    "rootNamespace": "BGLib.AppFlow.Editor",
+    "references": [
+        "Zenject-Editor",
+        "BGLib.AppFlow",
+        "BGLib.JsonExtension",
+        "BGLib.DotnetExtension"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

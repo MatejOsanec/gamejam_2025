@@ -1,0 +1,11 @@
+{
+  "name": "com.beatgames.bglib.classic-static-batcher",
+  "version": "1.0.0",
+  "displayName": "_Lib/ClassicStaticBatcher",
+  "description": "This package will enable more primitive static batching for scenes as was present in older versions of Unity.",
+  "hideInEditor": false,
+  "author": {
+    "name": "Beat Games",
+    "url": ""
+  }
+}

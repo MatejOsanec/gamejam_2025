@@ -1,0 +1,24 @@
+{
+    "name": "BGLib.PackagesCore.Editor",
+    "rootNamespace": "BGLib.PackagesCore.Editor",
+    "references": [
+        "BGLib.UnityExtension",
+        "BGLib.Attributes",
+        "BGLib.JsonExtension"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "Newtonsoft.Json.dll",
+        "TestableIO.System.IO.Abstractions.dll",
+        "TestableIO.System.IO.Abstractions.Wrappers.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": true
+}

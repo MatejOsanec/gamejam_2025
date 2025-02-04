@@ -1,0 +1,30 @@
+{
+    "name": "BGLib.PackagesCore.Tests",
+    "rootNamespace": "",
+    "references": [
+        "UnityEditor.TestRunner",
+        "UnityEngine.TestRunner",
+        "BGLib.PackagesCore.Editor",
+        "BGLib.DotnetExtension.Tests",
+        "BGLib.JsonExtension"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll",
+        "TestableIO.System.IO.Abstractions.dll",
+        "TestableIO.System.IO.Abstractions.Wrappers.dll",
+        "TestableIO.System.IO.Abstractions.TestingHelpers.dll",
+        "Newtonsoft.Json.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": true
+}

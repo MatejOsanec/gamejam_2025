@@ -1,0 +1,26 @@
+{
+  "name": "BGLib.MetaRemoteAssets",
+  "rootNamespace": "BGLib.MetaRemoteAssets",
+  "references": [
+    "Zenject",
+    "Unity.Addressables",
+    "Unity.ResourceManager",
+    "BGLib.UnityExtension",
+    "BGLib.DotnetExtension",
+    "BGNetCore",
+    "BGLib.Attributes",
+    "PlatformUserModel",
+    "BGLib.AppFlow"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": true,
+  "precompiledReferences": [
+    "Zenject-usage.dll"
+  ],
+  "autoReferenced": false,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

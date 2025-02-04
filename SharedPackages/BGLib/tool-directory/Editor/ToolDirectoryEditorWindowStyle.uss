@@ -1,0 +1,3 @@
+.headerLabel {
+    -unity-font-style: bold;
+}

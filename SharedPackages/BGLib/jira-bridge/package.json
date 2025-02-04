@@ -1,0 +1,11 @@
+{
+    "name": "com.beatgames.bglib.jira-bridge",
+    "version": "1.0.0",
+    "displayName": "_Lib/JiraBridge",
+    "description": "Package to help create jira tickets from within game",
+    "hideInEditor": false,
+    "author": {
+        "name": "Danny de Bruijne",
+        "url": "https://ghe.oculus-rep.com/BeatGames/BGLib.JiraBridge"
+    }
+}

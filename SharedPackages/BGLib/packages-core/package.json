@@ -1,0 +1,11 @@
+{
+  "name": "com.beatgames.bglib.packages-core",
+  "version": "1.0.0",
+  "displayName": "_Lib/PackagesCore",
+  "description": "Define and manage Unity packages",
+  "hideInEditor": false,
+  "author": {
+    "name": "Beat Games",
+    "url": ""
+  }
+}

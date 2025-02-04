@@ -1,0 +1,11 @@
+{
+  "name": "com.beatgames.bglib.json-extension",
+  "version": "1.0.0",
+  "displayName": "_Lib/JsonExtension",
+  "description": "Provides wrapper and helper functions for json operations using Newtonsoft Json",
+  "hideInEditor": false,
+  "author": {
+    "name": "Beat Games",
+    "url": ""
+  }
+}

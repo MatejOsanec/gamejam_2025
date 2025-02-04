@@ -1,0 +1,29 @@
+{
+    "name": "BGLib.AppFlow",
+    "rootNamespace": "BGLib.AppFlow",
+    "references": [
+        "Zenject",
+        "Unity.Addressables",
+        "Unity.ResourceManager",
+        "BGLib.UnityExtension",
+        "BGLib.DotnetExtension",
+        "BGLib.Attributes"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "Zenject-usage.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.beatgames.beatsaber.terminal",
+            "expression": "",
+            "define": "BS_TERMINAL"
+        }
+    ],
+    "noEngineReferences": false
+}

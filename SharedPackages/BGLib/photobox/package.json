@@ -1,0 +1,11 @@
+{
+    "name": "com.beatgames.bglib.photobox",
+    "version": "1.0.0",
+    "displayName": "_Lib/Photobox",
+    "description": "Create screenshots of objects and scenes in editor.",
+    "hideInEditor": false,
+    "author": {
+        "name": "Beat Games",
+        "url": ""
+    }
+}
