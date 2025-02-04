@@ -1,0 +1,56 @@
+{
+    "name": "HMLib",
+    "rootNamespace": "",
+    "references": [
+        "Unity.TextMeshPro",
+        "Zenject",
+        "Zenject-TestFramework",
+        "Oculus.VR",
+        "BGLib.Attributes",
+        "Unity.EditorCoroutines.Editor",
+        "Unity.Timeline",
+        "UnityEngine.SpatialTracking",
+        "Unity.InputSystem",
+        "Unity.XR.PSVR2",
+        "Unity.XR.Management",
+        "BGLib.UnityExtension",
+        "BGLib.DotnetExtension",
+        "Unity.XR.OpenXR",
+        "BGLib.FileStorage",
+        "BGLib.SaveDataCore",
+        "Oculus.Haptics"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "Zenject-usage.dll",
+        "Newtonsoft.Json.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.beatgames.beatsaber.tours.core",
+            "expression": "",
+            "define": "BS_TOURS"
+        },
+        {
+            "name": "com.unity.xr.openxr",
+            "expression": "",
+            "define": "BS_OPENXR_VR"
+        },
+        {
+            "name": "com.meta.platform-sdk",
+            "expression": "",
+            "define": "BS_OCULUS_PLATFORM"
+        },
+        {
+            "name": "com.meta.oculus.sdk",
+            "expression": "",
+            "define": "BS_OCULUS_VR"
+        }
+    ],
+    "noEngineReferences": false
+}

@@ -1,0 +1,31 @@
+{
+    "name": "VRUI",
+    "rootNamespace": "",
+    "references": [
+        "HMUI",
+        "BGLib.Attributes",
+        "BGLib.UnityExtension",
+        "HMLib",
+        "HMRendering",
+        "Interactable",
+        "VRUI.Interfaces",
+        "BeatSaber.ViewSystem"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "Zenject-usage.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.beatgames.beatsaber.tours.core",
+            "expression": "",
+            "define": "BS_TOURS"
+        }
+    ],
+    "noEngineReferences": false
+}

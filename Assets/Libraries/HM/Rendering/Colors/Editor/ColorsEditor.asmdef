@@ -1,0 +1,24 @@
+{
+    "name": "ColorsEditor",
+    "rootNamespace": "",
+    "references": [
+        "Colors",
+        "HMLib",
+        "HMLibEditor",
+        "BGLib.UnityExtension.Editor",
+        "BGLib.UnityExtension",
+        "BeatSaber.Styles.Editor",
+        "BeatSaber.Styles"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

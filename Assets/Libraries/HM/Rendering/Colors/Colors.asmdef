@@ -1,0 +1,23 @@
+{
+    "name": "Colors",
+    "rootNamespace": "",
+    "references": [
+        "BGLib.UnityExtension",
+        "BGLib.Attributes"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.beatgames.beatsaber.tours.core",
+            "expression": "",
+            "define": "BS_TOURS"
+        }
+    ],
+    "noEngineReferences": false
+}

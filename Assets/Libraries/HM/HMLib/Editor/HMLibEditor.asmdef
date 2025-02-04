@@ -1,0 +1,34 @@
+{
+    "name": "HMLibEditor",
+    "rootNamespace": "",
+    "references": [
+        "HMUI",
+        "Unity.TextMeshPro",
+        "Unity.EditorCoroutines.Editor",
+        "HMLib",
+        "BGLib.Attributes",
+        "Unity.Addressables.Editor",
+        "BGLib.AppFlow",
+        "BGLib.UnityExtension",
+        "BGLib.UnityExtension.Editor",
+        "BGLib.AppFlow.Editor",
+        "BGLib.ToolDirectory.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.beatgames.beatsaber.tours.core",
+            "expression": "",
+            "define": "BS_TOURS"
+        }
+    ],
+    "noEngineReferences": false
+}

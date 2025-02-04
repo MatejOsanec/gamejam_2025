@@ -1,0 +1,34 @@
+{
+    "name": "HMUI",
+    "rootNamespace": "",
+    "references": [
+        "Unity.TextMeshPro",
+        "Unity.TextMeshPro.Editor",
+        "HMLib",
+        "Zenject",
+        "BGLib.Attributes",
+        "Colors",
+        "Tweening",
+        "Interactable",
+        "BGLib.AppFlow",
+        "BGLib.UnityExtension",
+        "BGLib.DotnetExtension"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "Zenject-usage.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.beatgames.beatsaber.tours.core",
+            "expression": "",
+            "define": "BS_TOURS"
+        }
+    ],
+    "noEngineReferences": false
+}

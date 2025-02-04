@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6f7876ca16174b14bbede31efc4fe88c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _bloomFog: {instanceID: 0}
+  - _fog0Params: {fileID: 11400000, guid: 3afe84aa92711884cbc3520b3efd2f68, type: 2}
+  - _fog1Params: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,26 @@
+﻿using System;
+using UnityEngine;
+using System.Collections.Generic;
+using System.Text;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+
+namespace VRUIControls {
+    
+	public class MouseButtonEventData {
+
+		public PointerEventData.FramePressState buttonState;
+		public PointerEventData buttonData;
+
+		public bool PressedThisFrame() {
+
+			return buttonState == PointerEventData.FramePressState.Pressed || buttonState == PointerEventData.FramePressState.PressedAndReleased;
+		}
+
+		public bool ReleasedThisFrame() {
+			
+			return buttonState == PointerEventData.FramePressState.Released || buttonState == PointerEventData.FramePressState.PressedAndReleased;
+		}
+	}
+
+}

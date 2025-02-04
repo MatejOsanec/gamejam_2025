@@ -1,0 +1,21 @@
+{
+    "name": "HMRendering.Editor",
+    "rootNamespace": "",
+    "references": [
+        "HMRendering",
+        "BGLib.UnityExtension.Editor",
+        "BGLib.UnityExtension",
+        "Main"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
