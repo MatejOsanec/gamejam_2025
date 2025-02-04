@@ -1,40 +1,86 @@
-using BeatmapData;
+using Beatmap;
+using Core;
 using UnityEngine;
-using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class Init : MonoBehaviour
 {
+    public AudioController audioController;
+    public GameObject notePrefab;
+    public float noteSpeed = 1;
+    public float placementMultiplier = 5;
+    public float preSpawnBeats = 4;
+
+    private float _currentBeat = 0;
+    private AllBeatmapData _beatmapData;
+    private BeatTracker _tracker;
+    private NoteControllerCollection _notes;
+    private PrefabSpawner _spawner;
+
     void Start()
     {
-        JsonLoader.LoadBeatmap("beatmap").Completed += OnJsonLoaded;
-    }
-    
-    private void OnJsonLoaded(AsyncOperationHandle<string> handle)
-    {
-        if (handle.Status != AsyncOperationStatus.Succeeded)
-        {
-            Debug.LogError("Failed to load JSON: " + handle.OperationException);
-            return;
-        }
+        Locator.Settings = new Settings(noteSpeed, placementMultiplier, preSpawnBeats);
         
-        Beatmap beatmap = JsonParser.ParseBeatmapData(handle.Result);
+        
+        var loader = new BeatmapDataLoader();
+        loader.LoadBeatmapData(OnBeatmapLoaded);
+    }
 
+    private void OnBeatmapLoaded(AllBeatmapData beatmapData)
+    {
+        LogBeatmapData(beatmapData.BeatmapData);
+        _beatmapData = beatmapData;
+        
+        audioController.PlayAudio();
+
+        _spawner = new PrefabSpawner(transform);
+        _notes = new NoteControllerCollection();
+        _tracker = new BeatTracker(_beatmapData.BeatmapData.colorNotes);
+        _tracker.OnColorNotePassed += OnColorNotePassed;
+    }
+
+    private void OnColorNotePassed(ColorNote note)
+    {
+        Debug.Log($"NOTE PASSED: {note.beat}, X: {note.x}, Y: {note.y}, Duration: {note.d}");
+        var noteController = _spawner.SpawnNote(notePrefab, note);
+        _notes.Add(noteController);
+    }
+
+    private void Update()
+    {
+        var newBeat = AudioUtils.SamplesToBeats(audioController.Samples, audioController.SampleRate, _beatmapData.AudioInfo.bpm);
+        _tracker.Update(newBeat + Locator.Settings.PreSpawnBeats);
+        _notes.UpdatePosition(newBeat);
+        
+        _currentBeat = newBeat;
+
+        // temporary fast iteration shit
+        Locator.Settings = new Settings(noteSpeed, placementMultiplier, preSpawnBeats);
+    }
+
+    private void LogAudioInfo(AudioInfo audioInfo)
+    {
+        Debug.Log("AUDIO INFO LOADED: " + audioInfo.bpm);
+        Debug.Log("AUDIO INFO LOADED: " + audioInfo.audioDataFilename);    
+    }
+
+    private void LogBeatmapData(BeatmapData beatmapData)
+    {
         Debug.Log("======================================= Color Notes =======================================");
-        foreach (var note in beatmap.colorNotes)
+        foreach (var note in beatmapData.colorNotes)
         {
-            Debug.Log($"Beat: {note.b}, X: {note.x}, Y: {note.y}, Duration: {note.d}");
+            Debug.Log($"Beat: {note.beat}, X: {note.x}, Y: {note.y}, Duration: {note.d}");
         }
 
         Debug.Log("======================================= Bomb Notes =======================================");
-        foreach (var note in beatmap.bombNotes)
+        foreach (var note in beatmapData.bombNotes)
         {
             Debug.Log($"Beat: {note.b}, X: {note.x}, Y: {note.y}");
         }
 
         Debug.Log("======================================= Obstacles =======================================");
-        foreach (var obstacle in beatmap.obstacles)
+        foreach (var obstacle in beatmapData.obstacles)
         {
             Debug.Log($"Beat: {obstacle.b}, X: {obstacle.x}, Y: {obstacle.y}, Depth: {obstacle.d}, Width: {obstacle.w}, Height: {obstacle.h}");
-        }
+        }    
     }
 }

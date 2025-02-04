@@ -1,12 +1,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace BeatmapData
+namespace Beatmap
 {
+    // ============================ INFO ====================================
+        
+    [System.Serializable]
+    public class SongInfo
+    {
+        public AudioInfo audio;
+    }
+    [System.Serializable]
+    public class AudioInfo
+    {
+        public string audioDataFilename;
+        public float bpm;
+    }
+    
+    
+    // ============================ BEATMAP DATA ====================================
     [System.Serializable]
     public class ColorNote
     {
-        public float b; // Beat
+        public float beat; // Beat
         public int x;
         public int y;
         public int d; // Direction
@@ -88,13 +104,13 @@ namespace BeatmapData
         public List<ObstacleDataJson> obstaclesData;
     }
 
-    public class Beatmap
+    public class BeatmapData
     {
         public List<ColorNote> colorNotes;
         public List<BombNote> bombNotes;
         public List<Obstacle> obstacles;
 
-        public Beatmap()
+        public BeatmapData()
         {
             colorNotes = new List<ColorNote>();
             bombNotes = new List<BombNote>();
@@ -104,10 +120,21 @@ namespace BeatmapData
 
     public class JsonParser
     {
-        public static Beatmap ParseBeatmapData(string jsonString)
+        public static AudioInfo ParseBeatmapInfo(string jsonString)
+        {
+            // Parse the JSON string
+            SongInfo songInfo = JsonUtility.FromJson<SongInfo>(jsonString);
+            // Access the desired fields
+            string audioDataFilename = songInfo.audio.audioDataFilename;
+            float bpm = songInfo.audio.bpm;
+            
+            return songInfo.audio;
+        }
+        
+        public static BeatmapData ParseBeatmapData(string jsonString)
         {
             RootObject data = JsonUtility.FromJson<RootObject>(jsonString);
-            Beatmap beatmap = new Beatmap();
+            BeatmapData beatmapData = new BeatmapData();
 
             // Parse color notes
             foreach (var note in data.colorNotes)
@@ -120,13 +147,13 @@ namespace BeatmapData
 
                 ColorNote combinedNote = new ColorNote
                 {
-                    b = note.b,
+                    beat = note.b,
                     x = noteData.x,
                     y = noteData.y,
                     d = noteData.d
                 };
 
-                beatmap.colorNotes.Add(combinedNote);
+                beatmapData.colorNotes.Add(combinedNote);
             }
 
             // Parse bomb notes
@@ -145,7 +172,7 @@ namespace BeatmapData
                     y = noteData.y
                 };
 
-                beatmap.bombNotes.Add(combinedNote);
+                beatmapData.bombNotes.Add(combinedNote);
             }
 
             // Parse obstacles
@@ -167,10 +194,10 @@ namespace BeatmapData
                     h = obstacleData.h
                 };
 
-                beatmap.obstacles.Add(combinedObstacle);
+                beatmapData.obstacles.Add(combinedObstacle);
             }
 
-            return beatmap;
+            return beatmapData;
         }
     }
 }
