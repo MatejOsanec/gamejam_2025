@@ -1,10 +1,10 @@
 using System;
 using UnityEngine;
-using Zenject;
+
 
 public class VRPlatformEventsDebugger : IInitializable, IDisposable, IVerboseLogger  {
 
-    [Inject] IVRPlatformHelper _vrPlatformHelper;
+   IVRPlatformHelper _vrPlatformHelper;
 
     public string loggerPrefix => "VRPlatformEventsDebugger";
 

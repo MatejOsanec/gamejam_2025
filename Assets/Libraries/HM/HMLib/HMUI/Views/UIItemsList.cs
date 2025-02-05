@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Zenject;
+
 
 namespace HMUI {
 
@@ -12,7 +12,7 @@ namespace HMUI {
         [SerializeField] bool _insertInTheBeginning = default;
         [SerializeField] List<T> _items = new List<T>();
 
-        [Inject] DiContainer _container = default;
+       DiContainer _container = default;
 
         public delegate void DataCallback(int idx, T item);
 

@@ -7,7 +7,6 @@ namespace Libraries.HM.HMLib.VR {
 
     public class HapticPresetSO : ScriptableObject {
 
-        [DrawIf("_continuous", value: false)]
         public float _duration = 0.05f;
         public float _strength = 1.0f;
         public float _frequency = 0.5f;
@@ -16,8 +15,6 @@ namespace Libraries.HM.HMLib.VR {
 
         [Space]
         [Header("PS5 Haptics")]
-        [DrawIf("_useAdvancedHapticsOnSupportedPlatforms", value: true)]
-        [NullAllowedIf(nameof(_useAdvancedHapticsOnSupportedPlatforms), equalsTo: false)]
         public AudioClip _ps5HapticsClip;
 
         public bool hasPS5HapticsClip {

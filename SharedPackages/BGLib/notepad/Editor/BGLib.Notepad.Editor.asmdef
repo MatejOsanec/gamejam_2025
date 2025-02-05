@@ -3,7 +3,8 @@
     "rootNamespace": "BGLib.Notepad.Editor",
     "references": [
         "BGLib.Notepad",
-        "BGLib.UnityExtension.Editor"
+        "BGLib.UnityExtension.Editor",
+        "UnityEngine.UI"
     ],
     "includePlatforms": [
         "Editor"

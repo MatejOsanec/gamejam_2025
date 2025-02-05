@@ -10,7 +10,8 @@
     "BGNetCore",
     "BGLib.Attributes",
     "PlatformUserModel",
-    "BGLib.AppFlow"
+    "BGLib.AppFlow",
+    "UnityEngine.UI"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],

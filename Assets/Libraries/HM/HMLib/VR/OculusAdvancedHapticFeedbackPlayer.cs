@@ -6,11 +6,11 @@ using Libraries.HM.HMLib.VR;
 using Oculus.Haptics;
 using UnityEngine;
 using UnityEngine.XR;
-using Zenject;
+
 
 public class OculusAdvancedHapticFeedbackPlayer: IHapticFeedbackPlayer, IInitializable, IDisposable, ITickable {
 
-    [Inject] readonly IVRPlatformHelper _vrPlatformHelper;
+   readonly IVRPlatformHelper _vrPlatformHelper;
     // This can theoretically be null on Oculus with OpenXR = Oculus PC
     // TODO: Change this if we want to support Touch controllers via Link after SDK v62 update
     [InjectOptional] readonly OculusVRHelper _oculusVRHelper;

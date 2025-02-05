@@ -2,7 +2,8 @@
     "name": "VRUIEditor",
     "rootNamespace": "",
     "references": [
-        "VRUI"
+        "VRUI",
+        "UnityEngine.UI"
     ],
     "includePlatforms": [
         "Editor"

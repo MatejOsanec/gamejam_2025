@@ -11,7 +11,8 @@
         "BGLib.UnityExtension.Editor",
         "BGLib.UnityExtension",
         "BGLib.AppFlow",
-        "Zenject"
+        "Zenject",
+        "UnityEngine.UI"
     ],
     "includePlatforms": [
         "Editor"

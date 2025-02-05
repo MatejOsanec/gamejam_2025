@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using HMUI;
-using Zenject;
+
 
 namespace VRUIControls {
 
@@ -13,7 +13,7 @@ namespace VRUIControls {
 
         [SerializeField] LayerMask _blockingMask = -1;
 
-        [Inject] readonly PhysicsRaycasterWithCache _physicsRaycaster = default;
+       readonly PhysicsRaycasterWithCache _physicsRaycaster = default;
 
         public override Camera eventCamera => null;
 

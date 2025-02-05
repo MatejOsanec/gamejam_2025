@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using Zenject;
+
 
 namespace HMUI {
 
@@ -11,7 +11,7 @@ namespace HMUI {
 
         [SerializeField] string _text = default;
 
-        [Inject] readonly HoverHintController _hoverHintController = default;
+       readonly HoverHintController _hoverHintController = default;
 
         public string text { get => _text; set => _text = value; }
 

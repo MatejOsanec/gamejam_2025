@@ -1,5 +1,5 @@
 using UnityEngine;
-using Zenject;
+
 
 public class DeactivateMenuControllersOnFocusCaptureOrTrackingLost : MonoBehaviour, IVerboseLogger {
 
@@ -22,7 +22,7 @@ public class DeactivateMenuControllersOnFocusCaptureOrTrackingLost : MonoBehavio
     private bool _forceEnabled = false;
     private IVRPlatformHelper _vrPlatformHelper;
 
-    [Inject]
+    
     private void Init(IVRPlatformHelper vrPlatformHelper) {
 
         _vrPlatformHelper = vrPlatformHelper;

@@ -7,7 +7,8 @@
         "BGLib.UnityExtension",
         "BGLib.UnityExtension.Editor",
         "BGLib.JsonExtension",
-        "BGLib.ToolDirectory.Editor"
+        "BGLib.ToolDirectory.Editor",
+        "UnityEngine.UI"
     ],
     "includePlatforms": [
         "Editor"

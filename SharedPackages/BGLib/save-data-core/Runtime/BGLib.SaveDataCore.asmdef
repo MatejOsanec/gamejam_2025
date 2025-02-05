@@ -3,7 +3,8 @@
   "rootNamespace": "BGLib.SaveDataCore",
   "references": [
     "BGLib.FileStorage",
-    "BGLib.JsonExtension"
+    "BGLib.JsonExtension",
+    "UnityEngine.UI"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],

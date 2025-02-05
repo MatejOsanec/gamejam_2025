@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using Zenject;
+
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -16,7 +16,7 @@ public class LightGroup : MonoBehaviour {
     public int sameIdElements => lightGroupSO ? lightGroupSO.sameIdElements : 0;
     public bool ignoreLightGroupEffectManager => lightGroupSO && lightGroupSO.ignoreLightGroupEffectManager;
 
-    [Inject] LightWithIdManager _lightWithIdManager = default;
+   LightWithIdManager _lightWithIdManager = default;
 
 #pragma warning disable CS0067
     public event System.Action<GameObject> respawnEvent;

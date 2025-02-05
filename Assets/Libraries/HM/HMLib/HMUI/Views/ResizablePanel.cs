@@ -1,13 +1,13 @@
 ﻿using System;
 using Tweening;
 using UnityEngine;
-using Zenject;
+
 
 public class ResizablePanel: MonoBehaviour {
     
     [SerializeField] RectTransform _rectTransform = default;
     
-    [Inject] readonly TimeTweeningManager _tweeningManager = default;
+   readonly TimeTweeningManager _tweeningManager = default;
 
     private Vector2Tween _resizeTween;
 

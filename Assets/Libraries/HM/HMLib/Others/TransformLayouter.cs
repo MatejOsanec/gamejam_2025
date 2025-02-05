@@ -18,7 +18,7 @@ public class TransformLayouter : MonoBehaviour {
     
     [Space(12)]
     [SerializeField] Vector3 _startPosition;
-    [SerializeField, NullAllowed] Transform _startFromTransform;
+    [SerializeField] Transform _startFromTransform;
     
     [Space(12)]
     [SerializeField] Transform[] _arrayTransforms;

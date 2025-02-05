@@ -6,7 +6,7 @@ namespace HMUI {
     public class UIKeyboardKey : MonoBehaviour {
 
         [SerializeField] KeyCode _keyCode;
-        [SerializeField, NullAllowed] TextMeshProUGUI _text;
+        [SerializeField] TextMeshProUGUI _text;
         [SerializeField] string _overrideText;
         [SerializeField] bool _canBeUppercase;
         [Tooltip(@"If this is true, text will not be set into the UI of this key, but the key will still exists

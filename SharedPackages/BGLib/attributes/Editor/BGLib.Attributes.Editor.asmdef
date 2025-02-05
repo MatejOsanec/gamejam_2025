@@ -2,7 +2,8 @@
     "name": "BGLib.Attributes.Editor",
     "rootNamespace": "BGLib.Attributes.Editor",
     "references": [
-        "BGLib.Attributes"
+        "BGLib.Attributes",
+        "UnityEngine.UI"
     ],
     "includePlatforms": [
         "Editor"

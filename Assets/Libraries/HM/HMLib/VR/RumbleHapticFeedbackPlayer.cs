@@ -2,11 +2,11 @@
 using Libraries.HM.HMLib.VR;
 using UnityEngine;
 using UnityEngine.XR;
-using Zenject;
+
 
 public class RumbleHapticFeedbackPlayer : MonoBehaviour, IHapticFeedbackPlayer {
 
-    [Inject] readonly IVRPlatformHelper _vrPlatformHelper = default;
+   readonly IVRPlatformHelper _vrPlatformHelper = default;
 
     private class RumbleData {
         public bool active;

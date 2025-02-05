@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.XR;
-using Zenject;
+
 
 public class VRController : MonoBehaviour {
 
@@ -48,7 +48,7 @@ public class VRController : MonoBehaviour {
     
     private static readonly Vector3 kRightControllerDefaultPosition = new Vector3(0.2f, 0.05f, 0.0f);
 
-    [Inject]
+    
     public void Init(IVRPlatformHelper vrPlatformHelper) {
 
         _vrPlatformHelper = vrPlatformHelper;

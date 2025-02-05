@@ -5,7 +5,8 @@
         "Zenject-Editor",
         "BGLib.AppFlow",
         "BGLib.JsonExtension",
-        "BGLib.DotnetExtension"
+        "BGLib.DotnetExtension",
+        "UnityEngine.UI"
     ],
     "includePlatforms": [
         "Editor"

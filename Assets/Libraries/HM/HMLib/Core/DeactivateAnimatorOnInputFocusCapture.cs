@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
-using Zenject;
+
 
 public class DeactivateAnimatorOnInputFocusCapture: MonoBehaviour {
 
     [SerializeField] Animator _animator = default;
 
 #if !UNITY_EDITOR || !BS_IGNORE_VR_FOCUS_LOST_EVENTS
-    [Inject] private readonly IVRPlatformHelper _vrPlatformHelper = default;
+   private readonly IVRPlatformHelper _vrPlatformHelper = default;
 #endif
 
     private bool _wasEnabled = false;

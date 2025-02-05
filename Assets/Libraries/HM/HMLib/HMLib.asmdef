@@ -18,7 +18,8 @@
         "Unity.XR.OpenXR",
         "BGLib.FileStorage",
         "BGLib.SaveDataCore",
-        "Oculus.Haptics"
+        "Oculus.Haptics",
+        "UnityEngine.UI"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

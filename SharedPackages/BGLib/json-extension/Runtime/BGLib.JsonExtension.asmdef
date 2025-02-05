@@ -2,7 +2,8 @@
     "name": "BGLib.JsonExtension",
     "rootNamespace": "BGLib.JsonExtension",
     "references": [
-        "BGLib.Attributes"
+        "BGLib.Attributes",
+        "UnityEngine.UI"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

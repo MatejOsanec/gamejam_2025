@@ -1,6 +1,6 @@
 ﻿using JetBrains.Annotations;
 using UnityEngine;
-using Zenject;
+
 
 [ExecuteAlways]
 public class MaterialPropertyBlockFloatCurve : MaterialPropertyBlockAnimator {

@@ -7,7 +7,8 @@
     "HMLibAttributes",
     "BGLib.AppFlow",
     "BGLib.DotnetExtension",
-    "BGLib.JsonExtension"
+    "BGLib.JsonExtension",
+    "UnityEngine.UI"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],

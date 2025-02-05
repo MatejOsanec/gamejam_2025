@@ -1,12 +1,12 @@
 ﻿using Libraries.HM.HMLib.VR;
 using UnityEngine;
 using UnityEngine.XR;
-using Zenject;
+
 
 public class HapticFeedbackManager : MonoBehaviour {
 
-    [Inject] RumbleHapticFeedbackPlayer _rumbleHapticFeedbackPlayer;
-    [Inject] IHapticFeedbackPlayer _advancedHapticFeedbackPlayer;
+   RumbleHapticFeedbackPlayer _rumbleHapticFeedbackPlayer;
+   IHapticFeedbackPlayer _advancedHapticFeedbackPlayer;
 
     public bool hapticFeedbackEnabled = false;
 

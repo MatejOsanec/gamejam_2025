@@ -7,7 +7,7 @@ public class ColorStyle : IReadOnlyColorStyle {
 
     [SerializeField] bool _useScriptableObjectColor;
     [SerializeField] Color _color = Color.white;
-    [SerializeField, NullAllowed] ColorSO _colorSo;
+    [SerializeField] ColorSO _colorSo;
 
     [SerializeField] float _globalLightTintIntensity;
 
@@ -15,8 +15,8 @@ public class ColorStyle : IReadOnlyColorStyle {
     [SerializeField] bool _useScriptableObjectGradientColors;
     [SerializeField] Color _color0 = Color.white;
     [SerializeField] Color _color1 = Color.white;
-    [SerializeField, NullAllowed] ColorSO _color0So;
-    [SerializeField, NullAllowed] ColorSO _color1So;
+    [SerializeField] ColorSO _color0So;
+    [SerializeField] ColorSO _color1So;
     [SerializeField] GradientDirection _gradientDirection = GradientDirection.Horizontal;
     [SerializeField] bool _flipGradientColors;
 

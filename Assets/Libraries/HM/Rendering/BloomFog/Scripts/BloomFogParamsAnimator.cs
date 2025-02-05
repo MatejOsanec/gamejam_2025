@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using UnityEngine;
-using Zenject;
+
 
 public class BloomFogParamsAnimator: MonoBehaviour {
 
-    [Inject] readonly BloomFogSO _bloomFog = default;
+   readonly BloomFogSO _bloomFog = default;
 
     public void AnimateBloomFogParamsChange(BloomFogEnvironmentParams envFogParams, float duration) {
 

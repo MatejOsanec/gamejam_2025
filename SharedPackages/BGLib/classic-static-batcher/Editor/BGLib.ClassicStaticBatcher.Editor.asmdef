@@ -3,7 +3,8 @@
     "rootNamespace": "BGLib.ClassicStaticBatcher.Editor",
     "references": [
         "BGLib.ClassicStaticBatcher",
-        "BGLib.ToolDirectory.Editor"
+        "BGLib.ToolDirectory.Editor",
+        "UnityEngine.UI"
     ],
     "includePlatforms": [
         "Editor"

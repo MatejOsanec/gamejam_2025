@@ -3,7 +3,7 @@ using System.Collections;
 using Libraries.HM.HMLib.VR;
 using UnityEngine;
 using UnityEngine.XR;
-using Zenject;
+
 
 public class HapticsAudioClipPlayer : MonoBehaviour {
 

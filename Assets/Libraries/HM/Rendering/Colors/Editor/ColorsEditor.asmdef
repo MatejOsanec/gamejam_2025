@@ -8,7 +8,8 @@
         "BGLib.UnityExtension.Editor",
         "BGLib.UnityExtension",
         "BeatSaber.Styles.Editor",
-        "BeatSaber.Styles"
+        "BeatSaber.Styles",
+        "UnityEngine.UI"
     ],
     "includePlatforms": [
         "Editor"

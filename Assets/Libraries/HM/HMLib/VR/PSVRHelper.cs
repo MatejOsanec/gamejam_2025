@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
-using Zenject;
+
 
 public class PSVRHelper : MonoBehaviour, IVRPlatformHelper {
 
@@ -34,7 +34,7 @@ public class PSVRHelper : MonoBehaviour, IVRPlatformHelper {
 #pragma warning restore
 
 #if UNITY_PS4
-    [Inject] PSVRDeviceManager _psvrDeviceManager;
+   PSVRDeviceManager _psvrDeviceManager;
 #endif
 
     private void Start() {

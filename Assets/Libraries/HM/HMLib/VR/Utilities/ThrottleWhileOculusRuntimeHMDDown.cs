@@ -3,15 +3,15 @@
 using System;
 using System.Linq;
 using UnityEngine;
-using Zenject;
+
 
 // Fix (workaround) of https://beatgames.atlassian.net/browse/USS-1601
 // The problem was, that while using Oculus OpenXR Runtime at PC, if HMD is Down, game tries to render as many frames
 // as it can, resulting in 100% GPU usage. So this piece of code aims to temp fix it
 public class ThrottleWhileOculusRuntimeHMDDown: IInitializable, ITickable, IDisposable {
 
-    [Inject] readonly IVRPlatformHelper _platformHelper;
-    [Inject] readonly TickableManager _tickableManager;
+   readonly IVRPlatformHelper _platformHelper;
+   readonly TickableManager _tickableManager;
 
     public int overrideThrottlingRefreshRate = -1;
 

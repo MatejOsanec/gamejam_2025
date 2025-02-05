@@ -10,7 +10,7 @@ using UnityEngine.PS4;
 using UnityEngine.Assertions;
 using UnityEngine.XR;
 using UnityEngine.XR.Management;
-using Zenject;
+
 
 public class PSVRDeviceManager : ITickable {
 
@@ -58,7 +58,7 @@ public class PSVRDeviceManager : ITickable {
 
     const float kVRSetupMaxDuration = 2.0f;
 
-    [Inject] readonly CommandLineParserResult _commandLineParserResult;
+   readonly CommandLineParserResult _commandLineParserResult;
 
     private class VRDeviceNames {
 

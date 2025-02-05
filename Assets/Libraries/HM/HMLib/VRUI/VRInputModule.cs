@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using Zenject;
+
 using HMUI;
 using Libraries.HM.HMLib.VR;
 
@@ -15,7 +15,7 @@ namespace VRUIControls {
         [SerializeField] VRPointer _vrPointer = default;
         [SerializeField] HapticPresetSO _rumblePreset = default;
 
-        [Inject] readonly HapticFeedbackManager _hapticFeedbackManager = default;
+       readonly HapticFeedbackManager _hapticFeedbackManager = default;
 
         public bool useMouseForPressInput { get; set; }
 

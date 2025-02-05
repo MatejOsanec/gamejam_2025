@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using Zenject;
+
 
 [ExecuteAlways]
 public abstract class LightWithIds : MonoBehaviour {
 
-    [Inject] LightWithIdManager _lightManager = default;
+   LightWithIdManager _lightManager = default;
 
     [Serializable]
     public abstract class LightWithId : ILightWithId {

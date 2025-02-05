@@ -9,7 +9,8 @@
         "HMLibAttributes",
         "BGLib.AppFlow",
         "BGLib.DotnetExtension",
-        "Unity.PS4.SaveData.Runtime"
+        "Unity.PS4.SaveData.Runtime",
+        "UnityEngine.UI"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

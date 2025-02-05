@@ -5,7 +5,8 @@
         "BGLib.Attributes",
         "Colors",
         "BGLib.UnityExtension",
-        "HMLib"
+        "HMLib",
+        "UnityEngine.UI"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

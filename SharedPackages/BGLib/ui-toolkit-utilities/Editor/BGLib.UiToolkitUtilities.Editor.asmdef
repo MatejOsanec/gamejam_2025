@@ -2,7 +2,8 @@
     "name": "BGLib.UiToolkitUtilities.Editor",
     "rootNamespace": "BGLib.UiToolkitUtilities.Editor",
     "references": [
-        "BGLib.UiToolkitUtilities"
+        "BGLib.UiToolkitUtilities",
+        "UnityEngine.UI"
     ],
     "includePlatforms": [
         "Editor"

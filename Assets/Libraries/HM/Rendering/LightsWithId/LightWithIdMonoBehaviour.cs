@@ -1,13 +1,13 @@
 ﻿using UnityEditor;
 using UnityEngine;
-using Zenject;
+
 
 [ExecuteAlways]
 public abstract class LightWithIdMonoBehaviour : MonoBehaviour, ILightWithId {
 
     [SerializeField] int _ID = -1;
 
-    [Inject] LightWithIdManager _lightManager = default;
+   LightWithIdManager _lightManager = default;
 
     public int lightId => _ID;
     public bool isRegistered => _isRegistered;

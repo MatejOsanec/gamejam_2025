@@ -3,7 +3,8 @@
     "rootNamespace": "BGLib.Notepad",
     "references": [
         "BGLib.Attributes",
-        "BGLib.HierarchyIcons"
+        "BGLib.HierarchyIcons",
+        "UnityEngine.UI"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

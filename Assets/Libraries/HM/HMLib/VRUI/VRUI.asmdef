@@ -9,7 +9,8 @@
         "HMRendering",
         "Interactable",
         "VRUI.Interfaces",
-        "BeatSaber.ViewSystem"
+        "BeatSaber.ViewSystem",
+        "UnityEngine.UI"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

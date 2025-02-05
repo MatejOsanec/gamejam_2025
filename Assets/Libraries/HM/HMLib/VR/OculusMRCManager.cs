@@ -5,13 +5,13 @@
 using UnityEngine;
 #if BS_OCULUS_VR
 using System;
-using Zenject;
+
 
 //TODO: MOVE_TO_OCULUS_SPECIFIC_ASSEMBLY
 // This will require a big refactor because there is a reference to the MonoBehaviour in the ExternalCameras prefab
 public class OculusMRCManager : MonoBehaviour, OVRMixedRealityCaptureConfiguration {
 
-    [Inject] readonly IVRPlatformHelper _vrPlatformHelper = default!;
+   readonly IVRPlatformHelper _vrPlatformHelper = default!;
 
     private Func<GameObject, GameObject> _instantiateMixedRealityBackgroundCameraGameObject;
     private Func<GameObject, GameObject> _instantiateMixedRealityForegroundCameraGameObject;

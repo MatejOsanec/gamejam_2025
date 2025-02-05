@@ -12,7 +12,8 @@
         "Interactable",
         "BGLib.AppFlow",
         "BGLib.UnityExtension",
-        "BGLib.DotnetExtension"
+        "BGLib.DotnetExtension",
+        "UnityEngine.UI"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

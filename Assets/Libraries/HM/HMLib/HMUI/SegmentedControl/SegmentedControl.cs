@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
-using Zenject;
+
 
 namespace HMUI {
 
@@ -10,7 +10,7 @@ namespace HMUI {
 
         [SerializeField] Transform _separatorPrefab = default;
 
-        [Inject] readonly DiContainer _container = default;
+       readonly DiContainer _container = default;
 
         public event System.Action<SegmentedControl, int> didSelectCellEvent;
         public event System.Action<SegmentedControl, int> didPressNonInteractableCellEvent;

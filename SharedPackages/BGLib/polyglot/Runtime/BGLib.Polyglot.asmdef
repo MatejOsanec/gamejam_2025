@@ -8,7 +8,8 @@
         "BGLib.AppFlow",
         "Zenject",
         "BGLib.UnityExtension",
-        "BGLib.Attributes"
+        "BGLib.Attributes",
+        "UnityEngine.UI"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

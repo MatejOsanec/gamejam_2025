@@ -5,7 +5,8 @@
         "HMRendering",
         "BGLib.UnityExtension.Editor",
         "BGLib.UnityExtension",
-        "Main"
+        "Main",
+        "UnityEngine.UI"
     ],
     "includePlatforms": [
         "Editor"

@@ -6,13 +6,13 @@ using Libraries.HM.HMLib.VR;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.XR;
-using Zenject;
+
 
 public class PS5AdvancedHapticsPlayerController : IHapticFeedbackPlayer, IInitializable {
 
     //Each source can play only one vibration at a time, so we have to reuse them from multiple sounds.
-    [Inject] readonly HapticsAudioClipPlayer.Pool _hapticsPlayerPool;
-    [Inject] readonly ICoroutineStarter _coroutineStarter;
+   readonly HapticsAudioClipPlayer.Pool _hapticsPlayerPool;
+   readonly ICoroutineStarter _coroutineStarter;
 
 #if (DEVELOPMENT_BUILD || UNITY_EDITOR) && UNITY_PS5
     private Dictionary<string, AudioClip> _hapticClips = new Dictionary<string, AudioClip>();

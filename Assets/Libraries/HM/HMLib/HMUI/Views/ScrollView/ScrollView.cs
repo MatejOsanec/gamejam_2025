@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 using UnityEngine.EventSystems;
-using Zenject;
+
 
 namespace HMUI {
 
@@ -57,7 +57,7 @@ namespace HMUI {
 
         private const float kThumbstickThreshold = 0.01f;
 
-        [Inject] readonly IVRPlatformHelper _platformHelper = default;
+       readonly IVRPlatformHelper _platformHelper = default;
 
         public enum ScrollType {
             PageSize,

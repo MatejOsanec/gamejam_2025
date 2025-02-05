@@ -3,7 +3,8 @@
     "rootNamespace": "BGLib.Inspections.Editor",
     "references": [
         "Unity.Addressables.Editor",
-        "BGLib.UnityExtension.Editor"
+        "BGLib.UnityExtension.Editor",
+        "UnityEngine.UI"
     ],
     "includePlatforms": [
         "Editor"
