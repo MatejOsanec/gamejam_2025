@@ -4,17 +4,17 @@ using UnityEngine;
 using System.Threading.Tasks;
 using BGLib.AppFlow.Initialization;
 using UnityEngine.Rendering;
-using Zenject;
+
 using static AppInitScenesTransitionSetupDataSO.AppInitOverrideStartType;
 
-public abstract class AppInit : MonoInstaller {
+public abstract class AppInit : MonoBehaviour {
 
     [SerializeField] GameObject _cameraGO = default;
     [SerializeField] AsyncSceneContext _asyncSceneContext;
-    [InjectOptional] protected readonly AppInitScenesTransitionSetupDataSO.AppInitSceneSetupData sceneSetupData =
+    protected readonly AppInitScenesTransitionSetupDataSO.AppInitSceneSetupData sceneSetupData =
         new AppInitScenesTransitionSetupDataSO.AppInitSceneSetupData(DoNotOverride);
-    [Inject] readonly AppInitSetupData _setupData = default;
-    [Inject] readonly GameScenesManager _gameScenesManager = default;
+    readonly AppInitSetupData _setupData = default;
+    readonly GameScenesManager _gameScenesManager = default;
 
 
 #if UNITY_EDITOR

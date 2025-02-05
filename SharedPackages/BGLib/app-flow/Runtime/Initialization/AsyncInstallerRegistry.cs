@@ -1,19 +1,21 @@
-﻿namespace BGLib.AppFlow.Initialization {
+﻿using UnityEngine;
+
+namespace BGLib.AppFlow.Initialization {
 
     using System.Collections.Generic;
-    using Zenject;
+    
 
     internal class AsyncInstallerRegistry : AsyncInstaller.IInstallerRegistry {
 
-        public readonly List<MonoInstaller> monoInstallers = new();
-        public readonly List<ScriptableObjectInstaller> scriptableObjectInstallers = new();
+        public readonly List<MonoBehaviour> monoInstallers = new();
+        public readonly List<MonoBehaviour> scriptableObjectInstallers = new();
 
-        public void AddMonoInstaller(MonoInstaller newMonoInstaller) {
+        public void AddMonoInstaller(MonoBehaviour newMonoInstaller) {
 
             monoInstallers.Add(newMonoInstaller);
         }
 
-        public void AddScriptableObjectInstaller(ScriptableObjectInstaller newScriptableObjectInstaller) {
+        public void AddScriptableObjectInstaller(MonoBehaviour newScriptableObjectInstaller) {
 
             scriptableObjectInstallers.Add(newScriptableObjectInstaller);
         }

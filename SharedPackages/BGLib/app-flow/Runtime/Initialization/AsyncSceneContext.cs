@@ -6,9 +6,9 @@ namespace BGLib.AppFlow.Initialization {
     using System.Threading.Tasks;
     using UnityEngine;
     using UnityEngine.Assertions;
-    using Zenject;
+    
 
-    public class AsyncSceneContext : SceneContext {
+    public class AsyncSceneContext : MonoBehaviour {
 
         private enum State {
             NotInitialized,
@@ -24,7 +24,7 @@ namespace BGLib.AppFlow.Initialization {
 
 
 
-        public override async void Run() {
+        public async void Run() {
 
             await RunAsync();
         }
@@ -44,7 +44,7 @@ namespace BGLib.AppFlow.Initialization {
                 _registry = await LoadInstallersAsync();
 #endif
 
-                base.Run();
+
             }
             catch (Exception e) {
                 Debug.LogException(e, gameObject);
@@ -57,9 +57,10 @@ namespace BGLib.AppFlow.Initialization {
         /// <summary>
         /// This creates container strictly for loading
         /// </summary>
-        private DiContainer CreateContainerForLoading() {
+        private MonoBehaviour CreateContainerForLoading()
+        {
 
-            return new DiContainer(GetParentContainers(), ProjectContext.Instance.Container.IsValidating);
+            return null;
         }
 
         private AsyncInstallerRegistry CreateRegistry() {
@@ -108,26 +109,8 @@ namespace BGLib.AppFlow.Initialization {
         }
 #endif
 
-        protected override void InstallInstallers() {
+        protected void InstallInstallers() {
 
-            base.InstallInstallers();
-
-            var registry = _registry;
-#if UNITY_EDITOR
-            if (IsValidating) {
-                registry = LoadInstallers();
-            }
-#endif
-
-            foreach (var installer in registry.scriptableObjectInstallers) {
-                Container.Inject(installer);
-                installer.InstallBindings();
-            }
-
-            foreach (var installer in registry.monoInstallers) {
-                Container.Inject(installer);
-                installer.InstallBindings();
-            }
         }
     }
 }

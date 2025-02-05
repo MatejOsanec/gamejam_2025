@@ -5,7 +5,7 @@
     using UnityEngine.AddressableAssets;
     using UnityEngine.Assertions;
     using UnityEngine.ResourceManagement.AsyncOperations;
-    using Zenject;
+    
 
     public abstract class ScriptableObjectReferenceAsyncInstaller<T> : AsyncInstaller where T : ScriptableObject {
 
@@ -13,7 +13,7 @@
 
         private AsyncOperationHandle<T> _operationHandle;
 
-        protected internal sealed override void LoadResourcesBeforeInstall(IInstallerRegistry registry, DiContainer _) {
+        protected internal sealed override void LoadResourcesBeforeInstall(IInstallerRegistry registry, MonoBehaviour _) {
 
             if (!_operationHandle.IsValid()) {
                 _operationHandle = LoadAsync(assetRuntimeKey);
@@ -23,7 +23,7 @@
 
         protected internal sealed override async Task LoadResourcesBeforeInstallAsync(
             IInstallerRegistry registry,
-            DiContainer _
+            MonoBehaviour _
         ) {
 
             if (!_operationHandle.IsValid()) {
@@ -37,11 +37,10 @@
             return Addressables.LoadAssetAsync<T>(runtimeKey);
         }
 
-        public override void InstallBindings() {
+        public void InstallBindings() {
 
             Assert.IsTrue(_operationHandle.IsValid());
             Assert.IsTrue(_operationHandle.IsDone);
-            Container.Bind<T>().FromScriptableObject(_operationHandle.Result).AsSingle();
         }
 
         protected void OnDestroy() {

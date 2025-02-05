@@ -1,17 +1,19 @@
+using UnityEngine;
+
 namespace BGLib.AppFlow.Initialization {
 
     using System.Threading.Tasks;
-    using Zenject;
+    
 
-    public abstract class AsyncInstaller : MonoInstaller {
+    public abstract class AsyncInstaller : MonoBehaviour {
 
         protected internal interface IInstallerRegistry {
 
-            void AddMonoInstaller(MonoInstaller newMonoInstaller);
-            void AddScriptableObjectInstaller(ScriptableObjectInstaller newScriptableObjectInstaller);
+            void AddMonoInstaller(MonoBehaviour newMonoInstaller);
+            void AddScriptableObjectInstaller(MonoBehaviour newScriptableObjectInstaller);
         }
 
-        protected internal abstract void LoadResourcesBeforeInstall(IInstallerRegistry registry, DiContainer container);
-        protected internal abstract Task LoadResourcesBeforeInstallAsync(IInstallerRegistry registry, DiContainer container);
+        protected internal abstract void LoadResourcesBeforeInstall(IInstallerRegistry registry, MonoBehaviour container);
+        protected internal abstract Task LoadResourcesBeforeInstallAsync(IInstallerRegistry registry, MonoBehaviour container);
     }
 }

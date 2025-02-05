@@ -13,7 +13,7 @@ public class OculusAdvancedHapticFeedbackPlayer: IHapticFeedbackPlayer, IInitial
    readonly IVRPlatformHelper _vrPlatformHelper;
     // This can theoretically be null on Oculus with OpenXR = Oculus PC
     // TODO: Change this if we want to support Touch controllers via Link after SDK v62 update
-    [InjectOptional] readonly OculusVRHelper _oculusVRHelper;
+    readonly OculusVRHelper _oculusVRHelper;
 
     private readonly Dictionary<(HapticPresetSO, XRNode), HapticPlayerState> _hapticPlayerStatesDictionary = new();
     // Optimization, so we don't loop through all _hapticPlayerStatesDictionary entries

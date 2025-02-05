@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceProviders;
-using Zenject;
+
 using UnityEngine.Scripting;
 using Debug = UnityEngine.Debug;
 using Random = UnityEngine.Random;
@@ -22,18 +22,18 @@ public class GameScenesManager : MonoBehaviour {
 
     [SerializeField] SceneInfo _emptyTransitionSceneInfo = default;
 
-    [Inject] readonly ZenjectSceneLoader _zenjectSceneLoader = default;
+    readonly MonoBehaviour _zenjectSceneLoader = default;
 
     public event System.Action<SceneTransitionType, float> transitionDidStartEvent;
     public event System.Action<List<string>> beforeDismissingScenesEvent;
-    public event System.Action<SceneTransitionType, ScenesTransitionSetupDataSO, DiContainer> transitionDidFinishEvent;
-    public event System.Action<ScenesTransitionSetupDataSO, DiContainer> installEarlyBindingsEvent;
+    public event System.Action<SceneTransitionType, ScenesTransitionSetupDataSO, MonoBehaviour> transitionDidFinishEvent;
+    public event System.Action<ScenesTransitionSetupDataSO, MonoBehaviour> installEarlyBindingsEvent;
 
     public const float kStandardTransitionLength = 0.7f;
     public const float kShortTransitionLength = 0.35f;
     public const float kLongTransitionLength = 1.3f;
 
-    public DiContainer currentScenesContainer => _scenesStack.Last().container;
+    public MonoBehaviour currentScenesContainer => _scenesStack.Last().container;
     public bool isInTransition => _currentSceneTransitionType != SceneTransitionType.None;
     public SceneTransitionType currentSceneTransitionType => _currentSceneTransitionType;
     public WaitUntil waitUntilSceneTransitionFinish => new WaitUntil(() => isInTransition == false);
@@ -54,14 +54,14 @@ public class GameScenesManager : MonoBehaviour {
     private class ScenesStackData {
 
         public List<string> sceneNames { get; private set; }
-        public DiContainer container { get; private set; }
+        public MonoBehaviour container { get; private set; }
 
         public ScenesStackData(List<string> sceneNames) {
             this.sceneNames = sceneNames;
         }
 
-        public void SetDiContainer(DiContainer container) {
-            Assert.IsNull(this.container, "DiContainer for ScenesStackData was set already.");
+        public void SetMonoBehaviour(MonoBehaviour container) {
+            Assert.IsNull(this.container, "MonoBehaviour for ScenesStackData was set already.");
             this.container = container;
         }
     }
@@ -144,7 +144,7 @@ public class GameScenesManager : MonoBehaviour {
         return IsSceneInStack(sceneInfo.sceneName);
     }
 
-    public void PushScenes(ScenesTransitionSetupDataSO scenesTransitionSetupData, float minDuration = 0.0f, System.Action afterMinDurationCallback = null, System.Action<DiContainer> finishCallback = null) {
+    public void PushScenes(ScenesTransitionSetupDataSO scenesTransitionSetupData, float minDuration = 0.0f, System.Action afterMinDurationCallback = null, System.Action<MonoBehaviour> finishCallback = null) {
 
         if (isInTransition) {
             return;
@@ -184,7 +184,7 @@ public class GameScenesManager : MonoBehaviour {
                 afterMinDurationCallback: afterMinDurationCallback,
                 canTriggerGarbageCollector: true,
                 extraBindingsCallback: (container) => {
-                    scenesStackData.SetDiContainer(container);
+                    scenesStackData.SetMonoBehaviour(container);
                     scenesTransitionSetupData.InstallBindings(container);
                     installEarlyBindingsEvent?.Invoke(scenesTransitionSetupData, container);
                 },
@@ -198,7 +198,7 @@ public class GameScenesManager : MonoBehaviour {
         );
     }
 
-    public void PopScenes(float minDuration = 0.0f, System.Action afterMinDurationCallback = null, System.Action<DiContainer> finishCallback = null) {
+    public void PopScenes(float minDuration = 0.0f, System.Action afterMinDurationCallback = null, System.Action<MonoBehaviour> finishCallback = null) {
 
         if (isInTransition) {
             return;
@@ -242,7 +242,7 @@ public class GameScenesManager : MonoBehaviour {
         IEnumerator[] beforeNewScenesActivateRoutines = null,
         float minDuration = 0.0f,
         System.Action afterMinDurationCallback = null,
-        System.Action<DiContainer> finishCallback = null
+        System.Action<MonoBehaviour> finishCallback = null
     ) {
 
         if (isInTransition) {
@@ -296,7 +296,7 @@ public class GameScenesManager : MonoBehaviour {
                             afterMinDurationCallback: null,
                             canTriggerGarbageCollector: true,
                             extraBindingsCallback: (container) => {
-                                scenesStackData.SetDiContainer(container);
+                                scenesStackData.SetMonoBehaviour(container);
                                 scenesTransitionSetupData.InstallBindings(container);
                                 installEarlyBindingsEvent?.Invoke(scenesTransitionSetupData, container);
                             },
@@ -313,7 +313,7 @@ public class GameScenesManager : MonoBehaviour {
         );
     }
 
-    public void ClearAndOpenScenes(ScenesTransitionSetupDataSO scenesTransitionSetupData, float minDuration = 0.0f, System.Action afterMinDurationCallback = null, System.Action<DiContainer> finishCallback = null, bool unloadAllScenes = true) {
+    public void ClearAndOpenScenes(ScenesTransitionSetupDataSO scenesTransitionSetupData, float minDuration = 0.0f, System.Action afterMinDurationCallback = null, System.Action<MonoBehaviour> finishCallback = null, bool unloadAllScenes = true) {
 
         if (isInTransition) {
             return;
@@ -378,7 +378,7 @@ public class GameScenesManager : MonoBehaviour {
                             afterMinDurationCallback: null,
                             canTriggerGarbageCollector: true,
                             extraBindingsCallback: (container) => {
-                                scenesStackData.SetDiContainer(container);
+                                scenesStackData.SetMonoBehaviour(container);
                                 scenesTransitionSetupData.InstallBindings(container);
                                 installEarlyBindingsEvent?.Invoke(scenesTransitionSetupData, container);
                             },
@@ -395,7 +395,7 @@ public class GameScenesManager : MonoBehaviour {
         );
     }
 
-    public void AppendScenes(ScenesTransitionSetupDataSO scenesTransitionSetupData, bool activateScenes = true, float minDuration = 0.0f, System.Action afterMinDurationCallback = null, System.Action<DiContainer> finishCallback = null) {
+    public void AppendScenes(ScenesTransitionSetupDataSO scenesTransitionSetupData, bool activateScenes = true, float minDuration = 0.0f, System.Action afterMinDurationCallback = null, System.Action<MonoBehaviour> finishCallback = null) {
 
         if (isInTransition) {
             return;
@@ -435,7 +435,7 @@ public class GameScenesManager : MonoBehaviour {
                 afterMinDurationCallback: null,
                 canTriggerGarbageCollector: false,
                 extraBindingsCallback: container => {
-                    scenesStackData.SetDiContainer(container);
+                    scenesStackData.SetMonoBehaviour(container);
                     scenesTransitionSetupData.InstallBindings(container);
                     installEarlyBindingsEvent?.Invoke(scenesTransitionSetupData, container);
                 },
@@ -449,7 +449,7 @@ public class GameScenesManager : MonoBehaviour {
         );
     }
 
-    public void RemoveScenes(ScenesTransitionSetupDataSO scenesTransitionSetupDataSo, float minDuration = 0.0f, System.Action afterMinDurationCallback = null, System.Action<DiContainer> finishCallback = null) {
+    public void RemoveScenes(ScenesTransitionSetupDataSO scenesTransitionSetupDataSo, float minDuration = 0.0f, System.Action afterMinDurationCallback = null, System.Action<MonoBehaviour> finishCallback = null) {
 
         if (isInTransition) {
             return;
@@ -496,7 +496,7 @@ public class GameScenesManager : MonoBehaviour {
         }
     }
 
-    public void ActivateScenes(ScenesTransitionSetupDataSO scenesTransitionSetupData, float minDuration = 0.0f, System.Action afterMinDurationCallback = null, System.Action<DiContainer> finishCallback = null) {
+    public void ActivateScenes(ScenesTransitionSetupDataSO scenesTransitionSetupData, float minDuration = 0.0f, System.Action afterMinDurationCallback = null, System.Action<MonoBehaviour> finishCallback = null) {
 
         if (isInTransition) {
             return;
@@ -531,7 +531,7 @@ public class GameScenesManager : MonoBehaviour {
         );
     }
 
-    public void DeactivateScenes(ScenesTransitionSetupDataSO scenesTransitionSetupData, float minDuration = 0.0f, System.Action afterMinDurationCallback = null, System.Action<DiContainer> finishCallback = null) {
+    public void DeactivateScenes(ScenesTransitionSetupDataSO scenesTransitionSetupData, float minDuration = 0.0f, System.Action afterMinDurationCallback = null, System.Action<MonoBehaviour> finishCallback = null) {
 
         if (isInTransition) {
             return;
@@ -581,20 +581,7 @@ public class GameScenesManager : MonoBehaviour {
 
     private IEnumerator LoadOneScene(string sceneName) {
 
-        var loadSceneOperation = _zenjectSceneLoader.LoadSceneFromAddressablesAsync(
-            sceneName,
-            LoadSceneMode.Additive,
-            activateOnLoad: true,
-            priority: int.MaxValue,
-            extraBindingsEarly: null,
-            extraBindings: null,
-            containerMode: LoadSceneRelationship.None,
-            extraBindingsLate: null
-        );
-
-        _sceneNameToSceneOperationHandlesDictionary[sceneName] = loadSceneOperation;
-        yield return loadSceneOperation;
-        Log("Scene loaded " + sceneName);
+       yield break;
     }
 
     private IEnumerator UnloadOneScene(string sceneName) {
@@ -615,8 +602,8 @@ public class GameScenesManager : MonoBehaviour {
         float minDuration,
         bool canTriggerGarbageCollector,
         System.Action afterMinDurationCallback,
-        System.Action<DiContainer> extraBindingsCallback,
-        System.Action<DiContainer> finishCallback
+        System.Action<MonoBehaviour> extraBindingsCallback,
+        System.Action<MonoBehaviour> finishCallback
     ) {
 
         // Remove persistent scenes from scenesToDismiss
@@ -651,110 +638,6 @@ public class GameScenesManager : MonoBehaviour {
         }
         // Load Scenes.
         else if (presentType == ScenePresentType.Load || presentType == ScenePresentType.LoadAndDoNotActivate) {
-
-            Task beforeLoadTask = null;
-            if (newScenesTransitionSetupData != null) {
-                beforeLoadTask = newScenesTransitionSetupData.BeforeScenesWillBeActivatedAsync();
-            }
-
-            // Loading one scene.
-            if (scenesToPresent.Count == 1) {
-
-                var sceneName = scenesToPresent[0];
-                Log("Loading scene " + sceneName);
-
-                AsyncOperationHandle<SceneInstance> loadSceneOperationHandle = _zenjectSceneLoader.LoadSceneFromAddressablesAsync(
-                    sceneName,
-                    LoadSceneMode.Additive,
-                    activateOnLoad: false,
-                    priority: int.MaxValue,
-                    extraBindingsEarly: extraBindingsCallback,
-                    extraBindings: null,
-                    extraBindingsLate: null,
-                    containerMode: LoadSceneRelationship.None
-                );
-                _sceneNameToSceneOperationHandlesDictionary[sceneName] = loadSceneOperationHandle;
-
-                if (beforeLoadTask != null) {
-                    yield return WaitUntilTaskCompleted(beforeLoadTask);
-                }
-
-                afterMinDurationCallback?.Invoke();
-
-                yield return loadSceneOperationHandle;
-                Assert.AreEqual(loadSceneOperationHandle.Status, AsyncOperationStatus.Succeeded);
-                yield return loadSceneOperationHandle.Result.ActivateAsync();
-
-                Log("Scene loaded " + sceneName);
-
-                SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneName));
-
-                ActivatePresentedSceneRootObjects(new List<string> { sceneName });
-
-                if (presentType == ScenePresentType.LoadAndDoNotActivate) {
-                    ReparentRootGameObjectsToDisabledGameObject(sceneName);
-                }
-                else {
-                    // We might have enabled a new event system and need to disable it
-                    BackupToListAndDisableCurrentEventSystem(ref allEventSystems);
-                }
-            }
-            // Loading multiple scenes.
-            else {
-
-                if (beforeLoadTask != null) {
-                    yield return WaitUntilTaskCompleted(beforeLoadTask);
-                }
-
-                int sceneNum = 0;
-
-                foreach (var sceneName in scenesToPresent) {
-
-                    var scene = SceneManager.GetSceneByName(sceneName);
-                    Assert.IsFalse(scene.isLoaded);
-                    AsyncOperationHandle<SceneInstance> loadSceneOperation;
-
-                    if (sceneNum == 0) {
-                        loadSceneOperation = _zenjectSceneLoader.LoadSceneFromAddressablesAsync(
-                            sceneName,
-                            LoadSceneMode.Additive,
-                            activateOnLoad: true,
-                            priority: int.MaxValue,
-                            extraBindingsEarly: extraBindingsCallback,
-                            extraBindings: null,
-                            extraBindingsLate: null,
-                            containerMode: LoadSceneRelationship.None
-                        );
-                    }
-                    else {
-                        loadSceneOperation = Addressables.LoadSceneAsync(
-                            sceneName,
-                            LoadSceneMode.Additive,
-                            activateOnLoad: true,
-                            priority: int.MaxValue
-                        );
-                    }
-                    _sceneNameToSceneOperationHandlesDictionary[sceneName] = loadSceneOperation;
-
-                    Log("Loading scene " + sceneName);
-                    yield return loadSceneOperation;
-
-                    Log("Scene loaded " + sceneName);
-                    sceneNum++;
-                }
-
-                afterMinDurationCallback?.Invoke();
-
-                // Last loaded scene should be active.
-                var activeScene = SceneManager.GetSceneByName(scenesToPresent[^1]);
-                SceneManager.SetActiveScene(activeScene);
-
-                if (presentType != ScenePresentType.LoadAndDoNotActivate) {
-                    ActivatePresentedSceneRootObjects(scenesToPresent);
-                    // We might have enabled a new event system
-                    BackupToListAndDisableCurrentEventSystem(ref allEventSystems);
-                }
-            }
         }
 
         beforeDismissingScenesEvent?.Invoke(scenesToDismiss);

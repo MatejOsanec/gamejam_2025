@@ -6,13 +6,13 @@
     using UnityEngine.AddressableAssets;
     using UnityEngine.ResourceManagement.AsyncOperations;
     using UnityEngine.ResourceManagement.ResourceLocations;
-    using Zenject;
+
 
     public abstract class AddressablesAsyncInstaller<T> : AsyncInstaller {
 
         private AsyncOperationHandle<IList<T>> _handle;
 
-        protected internal sealed override void LoadResourcesBeforeInstall(IInstallerRegistry registry, DiContainer _) {
+        protected internal void LoadResourcesBeforeInstall(IInstallerRegistry registry, object _) {
 
             Addressables.InitializeAsync().WaitForCompletion();
             var handle = LoadAsync(assetLabelRuntimeKey);
@@ -25,7 +25,7 @@
             LoadResourcesBeforeInstall(_handle.Result, registry);
         }
 
-        protected internal sealed override async Task LoadResourcesBeforeInstallAsync(IInstallerRegistry registry, DiContainer _) {
+        protected internal async Task LoadResourcesBeforeInstallAsync(IInstallerRegistry registry, object _) {
 
             await Addressables.InitializeAsync().Task;
             var handle = LoadAsync(assetLabelRuntimeKey);

@@ -1,6 +1,6 @@
-﻿using Zenject;
+﻿
 
-[ZenjectAllowDuringValidation]
+
 public class AppInitSetupData {
 
     public enum RunMode {

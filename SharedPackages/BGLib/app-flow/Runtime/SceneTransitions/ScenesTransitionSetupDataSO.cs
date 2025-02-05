@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
-using Zenject;
+using UnityEngine;
+
 
 public abstract class ScenesTransitionSetupDataSO : PersistentScriptableObject {
 
@@ -25,7 +26,7 @@ public abstract class ScenesTransitionSetupDataSO : PersistentScriptableObject {
         return Task.Run(() => beforeScenesWillBeActivatedEvent?.Invoke());
     }
 
-    public void InstallBindings(DiContainer container) {
+    public void InstallBindings(MonoBehaviour container) {
 
         if (_sceneSetupDataArray == null) {
             return;
@@ -36,7 +37,6 @@ public abstract class ScenesTransitionSetupDataSO : PersistentScriptableObject {
                 continue;
             }
             var type = sceneSetupData.GetType();
-            container.Bind(type).FromInstance(sceneSetupData).AsSingle();
         }
     }
 }
