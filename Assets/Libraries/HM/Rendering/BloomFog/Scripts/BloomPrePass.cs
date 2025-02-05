@@ -7,7 +7,7 @@ public class BloomPrePass : MonoBehaviour {
     [SerializeField] BloomPrePassRendererSO _bloomPrepassRenderer = default;
     [SerializeField] BloomPrePassEffectContainerSO _bloomPrePassEffectContainer = default;
     [Tooltip("This is used to share same render data with two BloomPrePass objects. We need this for efficient implementation of mixed reality background and foreground camera. Null is allowed.")]
-    [SerializeField] [NullAllowed] BloomPrePassRenderDataSO _bloomPrePassRenderData = default;
+    [SerializeField] BloomPrePassRenderDataSO _bloomPrePassRenderData = default;
     [SerializeField] Mode _mode = Mode.RenderAndSetData;
 
     public enum Mode {

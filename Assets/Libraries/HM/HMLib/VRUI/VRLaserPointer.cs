@@ -21,10 +21,10 @@ namespace VRUIControls {
             _laserController.length = length;
         }
 #else
-        [DoesNotRequireDomainReloadInit]
+        
         private static readonly int _fadeStartNormalizedDistanceId = Shader.PropertyToID("_FadeStartNormalizedDistance");
 
-        [DoesNotRequireDomainReloadInit]
+        
         private static MaterialPropertyBlock _materialPropertyBlock;
 
         public void SetLocalPosition(Vector3 position) {

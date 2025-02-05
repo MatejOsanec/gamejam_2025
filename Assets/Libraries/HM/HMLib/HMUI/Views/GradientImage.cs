@@ -26,9 +26,9 @@ namespace HMUI {
             }
         }
 
-        [DoesNotRequireDomainReloadInit] private static readonly Vector2 kVec2Zero = new Vector2(0.0f, 0.0f);
-        [DoesNotRequireDomainReloadInit] private static readonly Vector3 kVec3Zero = new Vector3(0.0f, 0.0f, 0.0f);
-        [DoesNotRequireDomainReloadInit] private static readonly Vector4 kVec4Zero = new Vector4(0.0f, 0.0f, 0.0f, 0.0f);
+         private static readonly Vector2 kVec2Zero = new Vector2(0.0f, 0.0f);
+         private static readonly Vector3 kVec3Zero = new Vector3(0.0f, 0.0f, 0.0f);
+         private static readonly Vector4 kVec4Zero = new Vector4(0.0f, 0.0f, 0.0f, 0.0f);
 
         private readonly CurvedCanvasSettingsHelper _curvedCanvasSettingsHelper = new CurvedCanvasSettingsHelper();
 
@@ -92,11 +92,11 @@ namespace HMUI {
 
         }
 
-        [DoesNotRequireDomainReloadInit] static readonly Vector2[] s_VertScratch = new Vector2[4];
+         static readonly Vector2[] s_VertScratch = new Vector2[4];
 
-        [DoesNotRequireDomainReloadInit] static readonly Vector2[] s_UVScratch = new Vector2[4];
+         static readonly Vector2[] s_UVScratch = new Vector2[4];
 
-        [DoesNotRequireDomainReloadInit] static readonly Color[] s_ColorScratch = new Color[4];
+         static readonly Color[] s_ColorScratch = new Color[4];
 
         private void GenerateSlicedSprite(VertexHelper vh, float curvedUIRadius) {
 
@@ -378,8 +378,8 @@ namespace HMUI {
             return border;
         }
 
-        [DoesNotRequireDomainReloadInit] static readonly Vector3[] s_Xy = new Vector3[4];
-        [DoesNotRequireDomainReloadInit] static readonly Vector3[] s_Uv = new Vector3[4];
+         static readonly Vector3[] s_Xy = new Vector3[4];
+         static readonly Vector3[] s_Uv = new Vector3[4];
 
         void GenerateFilledSprite(VertexHelper toFill, bool preserveAspect) {
             toFill.Clear();

@@ -20,7 +20,7 @@ public class MaterialLightWithId : LightWithIdMonoBehaviour {
 
     public Color color => _color;
 
-    [DoesNotRequireDomainReloadInit]
+    
     private static MaterialPropertyBlock _materialPropertyBlock = default;
 
     private Color _color;

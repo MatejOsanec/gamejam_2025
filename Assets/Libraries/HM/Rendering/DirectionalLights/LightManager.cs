@@ -7,13 +7,13 @@ using UnityEditor;
 [ExecuteInEditMode]
 public class LightManager : MonoBehaviour {
 
-    [DoesNotRequireDomainReloadInit] private static readonly int _directionalLightDirectionsID = Shader.PropertyToID("_DirectionalLightDirections");
-    [DoesNotRequireDomainReloadInit] private static readonly int _directionalLightPositionID = Shader.PropertyToID("_DirectionalLightPositions");
-    [DoesNotRequireDomainReloadInit] private static readonly int _directionalLightRadiiID = Shader.PropertyToID("_DirectionalLightRadii");
-    [DoesNotRequireDomainReloadInit] private static readonly int _directionalLightColorsID = Shader.PropertyToID("_DirectionalLightColors");
+     private static readonly int _directionalLightDirectionsID = Shader.PropertyToID("_DirectionalLightDirections");
+     private static readonly int _directionalLightPositionID = Shader.PropertyToID("_DirectionalLightPositions");
+     private static readonly int _directionalLightRadiiID = Shader.PropertyToID("_DirectionalLightRadii");
+     private static readonly int _directionalLightColorsID = Shader.PropertyToID("_DirectionalLightColors");
 
-    [DoesNotRequireDomainReloadInit] private static readonly int _pointLightPositionsID = Shader.PropertyToID("_PointLightPositions");
-    [DoesNotRequireDomainReloadInit] private static readonly int _pointLightColorsID = Shader.PropertyToID("_PointLightColors");
+     private static readonly int _pointLightPositionsID = Shader.PropertyToID("_PointLightPositions");
+     private static readonly int _pointLightColorsID = Shader.PropertyToID("_PointLightColors");
 
     private readonly Vector4[] _directionalLightDirections = new Vector4[DirectionalLight.kMaxLights];
     private readonly Vector4[] _directionalLightColors = new Vector4[DirectionalLight.kMaxLights];

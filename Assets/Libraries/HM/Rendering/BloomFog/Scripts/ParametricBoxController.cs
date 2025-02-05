@@ -36,19 +36,19 @@ public class ParametricBoxController : MonoBehaviour {
 
     private static MaterialPropertyBlock _materialPropertyBlock;
 
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _colorID = Shader.PropertyToID("_Color");
 
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _alphaStartID = Shader.PropertyToID("_AlphaStart");
 
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _alphaEndID = Shader.PropertyToID("_AlphaEnd");
 
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _widthStartID = Shader.PropertyToID("_StartWidth");
 
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _widthEndID = Shader.PropertyToID("_EndWidth");
 
 #if UNITY_EDITOR

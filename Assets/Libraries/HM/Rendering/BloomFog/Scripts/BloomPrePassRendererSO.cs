@@ -28,13 +28,13 @@ public class BloomPrePassRendererSO : PersistentScriptableObject {
     private readonly Dictionary<BloomPrePassLightTypeSO, LightsRenderingData> _lightsRenderingData = new Dictionary<BloomPrePassLightTypeSO, LightsRenderingData>();
     private CommandBuffer _commandBuffer;
 
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _vertexTransformMatrixID = Shader.PropertyToID("_VertexTransformMatrix");
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _bloomPrePassTextureID = Shader.PropertyToID("_BloomPrePassTexture");
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _stereoCameraEyeOffsetID = Shader.PropertyToID("_StereoCameraEyeOffset");
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _customFogTextureToScreenRatioID = Shader.PropertyToID("_CustomFogTextureToScreenRatio");
 
     private bool _initialized;

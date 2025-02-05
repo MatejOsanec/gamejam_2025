@@ -7,10 +7,10 @@ public class BlueNoiseDithering : PersistentScriptableObject {
 
     [SerializeField] Texture2D _noiseTexture = default;
 
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _noiseParamsID = Shader.PropertyToID("_GlobalBlueNoiseParams");
 
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _globalNoiseTextureID = Shader.PropertyToID("_GlobalBlueNoiseTex");
 
     public void SetBlueNoiseShaderParams(int cameraPixelWidth, int cameraPixelHeight) {

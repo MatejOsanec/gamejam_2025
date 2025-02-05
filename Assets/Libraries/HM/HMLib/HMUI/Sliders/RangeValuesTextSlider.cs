@@ -13,8 +13,8 @@ namespace HMUI {
 
         [SerializeField] float _minValue = 0.0f;
         [SerializeField] float _maxValue = 1.0f;
-        [SerializeField] [NullAllowed] Button _decButton = default;
-        [SerializeField] [NullAllowed] Button _incButton = default;
+        [SerializeField] Button _decButton = default;
+        [SerializeField] Button _incButton = default;
 
         public new bool interactable {
             set {

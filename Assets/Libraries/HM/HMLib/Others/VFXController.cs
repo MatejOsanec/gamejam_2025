@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class VFXController : MonoBehaviour {
 
-    [SerializeField] [NullAllowed] ParticleSystem[] _particleSystems = default;
-    [SerializeField] [NullAllowed] Animation _animation = default;
+    [SerializeField] ParticleSystem[] _particleSystems = default;
+    [SerializeField] Animation _animation = default;
     [SerializeField] bool _deactivateAfterAnimationDuration = default;
 
 #pragma warning disable 109

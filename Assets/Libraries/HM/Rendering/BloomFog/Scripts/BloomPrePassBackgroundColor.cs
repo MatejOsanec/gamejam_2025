@@ -31,13 +31,13 @@ public class BloomPrePassBackgroundColor : BloomPrePassNonLightPass {
 
     private Color _color;
 
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _colorID = Shader.PropertyToID("_Color");    
     
-    [DoesNotRequireDomainReloadInit]
+    
     private static Material _material;
     
-    [DoesNotRequireDomainReloadInit]
+    
     private static bool _initialized;
 
     private void InitIfNeeded() {

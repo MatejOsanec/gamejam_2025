@@ -23,7 +23,7 @@ namespace HMUI {
         [SerializeField] bool _spawnCellsThatAreNotVisible = false;
 
         [Space]
-        [SerializeField] [NullAllowed] CellsGroup[] _preallocatedCells = default;
+        [SerializeField] CellsGroup[] _preallocatedCells = default;
 
         public enum TableType {
 

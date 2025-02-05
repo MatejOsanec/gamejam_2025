@@ -10,7 +10,7 @@ namespace HMUI {
 
         [SerializeField] UnityEngine.UI.Image _icon = default;
         [SerializeField] HoverHint _hoverHint = default;
-        [SerializeField] [NullAllowed] GameObject _backgroundGameObject = default;
+        [SerializeField] GameObject _backgroundGameObject = default;
 
         public Sprite sprite {
             set => _icon.sprite = value;

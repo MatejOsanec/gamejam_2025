@@ -13,7 +13,7 @@ public class ScreenshotRecorder : MonoBehaviour {
     }
 
     [SerializeField] string _directory = "Screenshots";
-    [SerializeField] [NullAllowed] Camera _camera = default;
+    [SerializeField] Camera _camera = default;
     [SerializeField] int _frameRate = 60;
     [SerializeField] bool _forceFixedFramerate = default;
     [SerializeField] int _interval = 20;

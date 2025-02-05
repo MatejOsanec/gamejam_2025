@@ -52,7 +52,7 @@ public class UnityXRHelper : MonoBehaviour, IVRPlatformHelper, IVerboseLogger {
     /// Default offset applied to the Oculus controller on non-alternative mode.
     /// This value was defined by trial and error after Unity Upgrade from 2019 to 2021
     /// </summary>
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly Pose kOculusOffsetDefaultPose = new Pose(
         new Vector3(x: 0.01f, y: -0.045f, z: 0.1f),
         new Quaternion(x: 0.17364818f, y: 0, z: 0, w: 0.9848077f)
@@ -66,7 +66,7 @@ public class UnityXRHelper : MonoBehaviour, IVRPlatformHelper, IVerboseLogger {
     /// Finally it had the precision reduced to 6 decimals places in position and 2 in euler rotation axis
     /// Euler angles: x: 60, y: 0, z:0
     /// </summary>
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly Pose kOculusTouchOriginOffsetToLegacy = new Pose(
         new Vector3(0, -0.01964f, 0.04598f),
         new Quaternion(x: 0.5f, y: 0, z: 0, w: 0.866025388f));
@@ -74,20 +74,20 @@ public class UnityXRHelper : MonoBehaviour, IVRPlatformHelper, IVerboseLogger {
     /// <summary>
     /// Default position offset applied in Oculus Touch controllers before OpenXR
     /// </summary>
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly Vector3 kOculusTouchLegacyPositionOffset = new Vector3(0, 0, 0.055f);
 
     /// <summary>
     /// Default rotation offset applied in Oculus Touch controllers before OpenXR
     /// </summary>
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly Vector3 kOculusTouchLegacyRotationOffset = new Vector3(-40, 0, 0);
 
     /// <summary>
     /// Default offset applied to the Valve Index controller on non-alternative mode.
     /// This value was defined by trial and error after Unity Upgrade from 2019 to 2021
     /// </summary>
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly Pose kValveIndexOffsetDefaultPose = new Pose(
         new Vector3(x: 0, y: 0, z: 0.12f),
         new Quaternion(x: -0.0012371338f, y: 0, z: 0, w: 0.9999992f)
@@ -101,7 +101,7 @@ public class UnityXRHelper : MonoBehaviour, IVRPlatformHelper, IVerboseLogger {
     /// Finally it had the precision reduced to 6 decimals places in position and 2 in euler rotation axis
     /// Euler angles: x: 15.4f, y: 2.14f, z:0.86f
     /// </summary>
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly Pose kValveIndexOriginOffsetToLegacy = new Pose(
         new Vector3(x: 0.004575f, y: -0.01995f, z: 0.129387f),
         new Quaternion(x: 0.134097934f, y: 0.0174996667f, z:0.00493389927f, w:0.990801275f));
@@ -109,20 +109,20 @@ public class UnityXRHelper : MonoBehaviour, IVRPlatformHelper, IVerboseLogger {
     /// <summary>
     /// Default position offset applied in Valve Index controllers before OpenXR
     /// </summary>
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly Vector3 kValveIndexLegacyPositionOffset = new Vector3(0, 0.022f, -0.01f);
 
     /// <summary>
     /// Default rotation offset applied in Valve Index controllers before OpenXR
     /// </summary>
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly Vector3 kValveIndexLegacyRotationOffset = new Vector3(-16.3f, 0, 0);
 
     /// <summary>
     /// Default offset applied to the HTC Vive controller on non-alternative mode.
     /// This value was defined by trial and error after Unity Upgrade from 2019 to 2021
     /// </summary>
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly Pose kHTCViveOffsetDefaultPose = new Pose(
         new Vector3(x: 0, y: 0.008f, z: 0.095f),
         new Quaternion(x: -0.00032738686f, y: 0, z: 0, w: 0.99999994f)
@@ -136,7 +136,7 @@ public class UnityXRHelper : MonoBehaviour, IVRPlatformHelper, IVerboseLogger {
     /// Finally it had the precision reduced to 6 decimals places in position and 2 in euler rotation axis
     /// Euler angles: x: 5.0f, y: 0f, z:0f
     /// </summary>
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly Pose kHTCViveOriginOffsetToLegacy = new Pose(
         new Vector3(x: 0.000484f, y: 0.00692f, z: 0.09826f),
         new Quaternion(x: 0.0436193869f, y: 0, z:0, w: 0.999048233f));
@@ -144,13 +144,13 @@ public class UnityXRHelper : MonoBehaviour, IVRPlatformHelper, IVerboseLogger {
     /// <summary>
     /// Default position offset applied in HTC Vive controllers before OpenXR
     /// </summary>
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly Vector3 kHTCViveLegacyPositionOffset = new Vector3(0, -0.008f, 0f);
 
     /// <summary>
     /// Default rotation offset applied in HTC Vive controllers before OpenXR
     /// </summary>
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly Vector3 kHTCViveLegacyRotationOffset = new Vector3(-4.3f, 0, 0);
 
     private UnityXRController _leftController;

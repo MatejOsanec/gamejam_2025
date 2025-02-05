@@ -2,7 +2,7 @@
 
 public sealed class BloomPrePassLightsUpdateSystem : MonoBehaviour {
 
-    [DoesNotRequireDomainReloadInit]
+    
     public static bool disableUpdateAlways = false;
 
     private void LateUpdate() {

@@ -48,10 +48,10 @@ public class TextureProcessor : MonoBehaviour {
     [SerializeField] [Range(-10.0f, 10.0f)] float _spatialScaleC = 1.0f;
 
     [Header("Debugging")]
-    [SerializeField] [NullAllowed] Material _generatedTextureDebugMaterialA;
-    [SerializeField] [NullAllowed] Material _generatedTextureDebugMaterialB;
-    [SerializeField] [NullAllowed] Material _generatedTextureDebugMaterialC;
-    [SerializeField] [NullAllowed] Material _generatedTextureDebugMaterialOut;
+    [SerializeField] Material _generatedTextureDebugMaterialA;
+    [SerializeField] Material _generatedTextureDebugMaterialB;
+    [SerializeField] Material _generatedTextureDebugMaterialC;
+    [SerializeField] Material _generatedTextureDebugMaterialOut;
 
     public enum ComputeKernel {
         Neutral,
@@ -156,7 +156,7 @@ public class TextureProcessor : MonoBehaviour {
     private int _textureVariantRandomIndex = 0;
     private int _ejectEffectKernelRandomIndex = 0;
 
-    [DoesNotRequireDomainReloadInit]
+
     private static readonly string[] _kernelStrings = {
         "Neutral",
         "Texture",
@@ -173,7 +173,7 @@ public class TextureProcessor : MonoBehaviour {
         "EjectEffect_SpiralMaskRipple"
     };
 
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly string[] _ejectEffectKernelStrings = {
         "EjectEffect_WaveRipple",
         "EjectEffect_RectRipple",

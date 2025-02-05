@@ -29,7 +29,7 @@ namespace VRUIControls {
         private readonly List<Component> _componentList = new List<Component>(20);
         private readonly MouseState _mouseState = new MouseState();
 
-        [DoesNotRequireDomainReloadInit]
+        
         private static readonly Comparison<RaycastResult> _raycastComparer = RaycastComparer;
 
         protected override void OnDisable() {

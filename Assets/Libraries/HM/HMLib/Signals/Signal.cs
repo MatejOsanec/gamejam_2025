@@ -5,7 +5,7 @@ public class Signal : ScriptableObject {
 
 #if UNITY_EDITOR
 #pragma warning disable 414
-    [SerializeField] [Multiline] [NullAllowed] string _description = default;
+    [SerializeField] [Multiline] string _description = default;
 #pragma warning restore 414
 #endif
 

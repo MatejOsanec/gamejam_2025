@@ -12,7 +12,7 @@ namespace HMUI {
         private const float kBlinkingRate = 0.4f;
 
         [SerializeField] TextMeshProUGUI _textView = default;
-        [SerializeField] [NullAllowed] CanvasGroup _textViewCanvasGroup = default;
+        [SerializeField] CanvasGroup _textViewCanvasGroup = default;
         [SerializeField] ImageViewBase _blinkingCaret = default;
         [SerializeField] GameObject _placeholderText = default;
         [SerializeField] Button _clearSearchButton = default;

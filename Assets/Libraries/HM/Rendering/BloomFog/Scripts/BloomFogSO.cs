@@ -81,13 +81,13 @@ public class BloomFogSO : PersistentScriptableObject {
 
     private const string kBloomFogEnabledKeyword = "ENABLE_BLOOM_FOG";
 
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _customFogAttenuationID = Shader.PropertyToID("_CustomFogAttenuation");
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _customFogOffsetID = Shader.PropertyToID("_CustomFogOffset");
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _customFogHeightFogStartYID = Shader.PropertyToID("_CustomFogHeightFogStartY");
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _customFogHeightFogHeightID = Shader.PropertyToID("_CustomFogHeightFogHeight");
 
     private BloomFogEnvironmentParams _defaultFogParams;

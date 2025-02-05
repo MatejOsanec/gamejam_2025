@@ -17,7 +17,7 @@ namespace HMUI {
 
         public event System.Action<ColorGradientSlider, Color, ColorChangeUIEventType> colorDidChangeEvent;
 
-        [DoesNotRequireDomainReloadInit]
+        
         private static readonly StringBuilder _stringBuilder = new StringBuilder(16);
 
         protected override void Awake() {

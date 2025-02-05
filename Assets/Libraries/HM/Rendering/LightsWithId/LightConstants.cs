@@ -14,7 +14,7 @@ public static class LightConstants {
         F = 6
     }
 
-    [DoesNotRequireDomainReloadInit]
+    
     public static readonly IReadOnlyList<BakeId> allBakeIds = Enum.GetValues(typeof(BakeId)).Cast<BakeId>().ToList();
 
     /// <summary>

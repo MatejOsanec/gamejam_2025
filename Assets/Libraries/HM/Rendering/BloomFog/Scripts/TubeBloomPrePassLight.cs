@@ -52,8 +52,8 @@ public class TubeBloomPrePassLight : BloomPrePassLight {
     [SerializeField, Min(1.0f)] float _endWidth = 1.0f;
 
     [Space]
-    [SerializeField] [NullAllowed] ParametricBoxController _parametricBoxController = default;
-    [SerializeField] [NullAllowed] Parametric3SliceSpriteController _dynamic3SliceSprite = default;
+    [SerializeField] ParametricBoxController _parametricBoxController = default;
+    [SerializeField] Parametric3SliceSpriteController _dynamic3SliceSprite = default;
 
     private bool _initialized = false;
     private bool _enabledRenderers = false;

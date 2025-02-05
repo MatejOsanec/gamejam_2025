@@ -7,7 +7,7 @@ public class RandomValueToShader : PersistentScriptableObject {
     private System.Random _random = new();
     private int _lastFrameNum = -1;
 
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _randomValueID = Shader.PropertyToID("_GlobalRandomValue");
 
     public void SetRandomSeed(int seed) {

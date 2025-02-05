@@ -12,19 +12,19 @@ public class LineLightManager : MonoBehaviour {
     private readonly float[] _dirLengths = new float[kMaxNumberOfLights];
     private readonly Vector4[] _colors = new Vector4[kMaxNumberOfLights];
 
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _activeLineLightsCountID = Shader.PropertyToID("_ActiveLineLightsCount");
 
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _lineLightPointsID = Shader.PropertyToID("_LineLightPoints");
 
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _lineLightDirsID = Shader.PropertyToID("_LineLightDirs");
     
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _lineLightDirLengthsID = Shader.PropertyToID("_LineLightDirLengths");
 
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _lineLightColorsID = Shader.PropertyToID("_LineLightColors");
 
     protected void Update() {

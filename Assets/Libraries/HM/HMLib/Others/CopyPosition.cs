@@ -38,7 +38,7 @@ public sealed class CopyPosition : MonoBehaviour {
             _instance._copyPositions.Add(copyPosition);
         }
 
-        [DoesNotRequireDomainReloadInit]
+        
         private static CopyPositionUpdater _instance;
 
         private readonly List<CopyPosition> _copyPositions = new (32);

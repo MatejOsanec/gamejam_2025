@@ -34,19 +34,19 @@ public class PyramidBloomRendererSO : PersistentScriptableObject {
         internal RenderTexture up;
     }
 
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _bloomTexID = Shader.PropertyToID("_BloomTex");
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _globalIntensityTex = Shader.PropertyToID("_GlobalIntensityTex");
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _autoExposureLimitID = Shader.PropertyToID("_AutoExposureLimit");
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _sampleScaleID = Shader.PropertyToID("_SampleScale");
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _combineSrcID = Shader.PropertyToID("_CombineSrc");
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _combineDstID = Shader.PropertyToID("_CombineDst");
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _alphaWeightsID = Shader.PropertyToID("_AlphaWeights");
 
     private readonly string kIsScreenspaceEffectKeyword = "IS_SCREENSPACE_EFFECT";

@@ -80,7 +80,7 @@ public class KawaseBlurRendererSO : PersistentScriptableObject {
 
     private const int kMaxBloomIterations = 5;
 
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly float[][] kBloomIterationWeights = new float[][] {
         new float[] { 1.0f },
         new float[] { 0.3875f, 0.61125f },
@@ -99,28 +99,28 @@ public class KawaseBlurRendererSO : PersistentScriptableObject {
         BlurGammaAndAdd = 6
     }
     
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _offsetID = Shader.PropertyToID("_Offset");
     
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _boostID = Shader.PropertyToID("_Boost");
     
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _additiveAlphaID = Shader.PropertyToID("_AdditiveAlpha");
     
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _alphaID = Shader.PropertyToID("_Alpha");
     
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _tintColorID = Shader.PropertyToID("_TintColor");
     
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _alphaWeightsID = Shader.PropertyToID("_AlphaWeights");
     
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _tempTexture0ID = Shader.PropertyToID("_TempTexture0");
     
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _tempTexture1ID = Shader.PropertyToID("_TempTexture1");
 
     protected override void OnEnable() {

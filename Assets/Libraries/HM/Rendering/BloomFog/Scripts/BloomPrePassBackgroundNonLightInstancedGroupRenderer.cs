@@ -27,7 +27,7 @@ public class BloomPrePassBackgroundNonLightInstancedGroupRenderer: BloomPrePassN
         Matrix4x4
     }
 
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _worldSpaceCameraPosID = Shader.PropertyToID("_WorldSpaceCameraPos");
 
     private const string kInternalMatricesCachingId = "INTERNAL_MATRICES";

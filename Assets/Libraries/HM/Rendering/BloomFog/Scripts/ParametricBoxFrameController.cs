@@ -22,10 +22,10 @@ public class ParametricBoxFrameController : MonoBehaviour {
     [SerializeField] MeshRenderer _meshRenderer = default;
     [SerializeField] MaterialPropertyBlockController _materialPropertyBlockController = default;
 
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _colorID = Shader.PropertyToID("_Color");
 
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _sizeParamsID = Shader.PropertyToID("_SizeParams");
 
     protected void Awake() {

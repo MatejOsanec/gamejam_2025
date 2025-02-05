@@ -8,7 +8,7 @@ public class VRController : MonoBehaviour {
     [SerializeField] XRNode _node = default;
     [SerializeField] int _nodeIdx = default;
     [SerializeField] Transform _viewAnchorTransform;
-    [SerializeField] [NullAllowed] VRControllerTransformOffset _transformOffset = default;
+    [SerializeField] VRControllerTransformOffset _transformOffset = default;
 
     private IVRPlatformHelper _vrPlatformHelper = default;
 
@@ -43,9 +43,9 @@ public class VRController : MonoBehaviour {
     private Quaternion _lastTrackedRotation = Quaternion.identity;
     private bool _mouseMode;
 
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly Vector3 kLeftControllerDefaultPosition = new Vector3(-0.2f, 0.05f, 0.0f);
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly Vector3 kRightControllerDefaultPosition = new Vector3(0.2f, 0.05f, 0.0f);
 
     [Inject]

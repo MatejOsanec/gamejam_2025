@@ -8,7 +8,7 @@ namespace HMUI {
 
     public class SegmentedControl : MonoBehaviour {
 
-        [SerializeField] [NullAllowed] Transform _separatorPrefab = default;
+        [SerializeField] Transform _separatorPrefab = default;
 
         [Inject] readonly DiContainer _container = default;
 

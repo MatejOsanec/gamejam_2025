@@ -7,7 +7,7 @@ public enum ToneMapping {
 
 public static class ToneMappingExtensions {
 
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly string[] _shaderKeywordMap = new[] { "", "ACES_TONE_MAPPING" };
 
     public static void SetShaderKeyword(this ToneMapping toneMapping) {

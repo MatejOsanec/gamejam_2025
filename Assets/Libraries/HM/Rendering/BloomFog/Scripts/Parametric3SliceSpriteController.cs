@@ -37,22 +37,22 @@ public class Parametric3SliceSpriteController : MonoBehaviour {
     private const float kMaxWidth = 10.0f;
     private const float kMaxLength = 2500.0f;
 
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _colorID = Shader.PropertyToID("_Color");
 
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _sizeParamsID = Shader.PropertyToID("_SizeParams");
 
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _alphaStartID = Shader.PropertyToID("_AlphaStart");
 
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _alphaEndID = Shader.PropertyToID("_AlphaEnd");
 
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _widthStartID = Shader.PropertyToID("_StartWidth");
 
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _widthEndID = Shader.PropertyToID("_EndWidth");
 
     private static MaterialPropertyBlock _materialPropertyBlock;

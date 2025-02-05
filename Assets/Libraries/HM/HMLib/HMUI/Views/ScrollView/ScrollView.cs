@@ -17,10 +17,10 @@ namespace HMUI {
         [SerializeField] ScrollViewDirection _scrollViewDirection = default;
 
         [Space]
-        [SerializeField] [NullAllowed] Button _pageUpButton = default;
-        [SerializeField] [NullAllowed] Button _pageDownButton = default;
-        [SerializeField] [NullAllowed] VerticalScrollIndicator _verticalScrollIndicator = default;
-        [SerializeField] [NullAllowed] VerticalScrollController _verticalScrollController = default;
+        [SerializeField] Button _pageUpButton = default;
+        [SerializeField] Button _pageDownButton = default;
+        [SerializeField] VerticalScrollIndicator _verticalScrollIndicator = default;
+        [SerializeField] VerticalScrollController _verticalScrollController = default;
 
         [Space]
         [SerializeField] float _smooth = 8.0f;

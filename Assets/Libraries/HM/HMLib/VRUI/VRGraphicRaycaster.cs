@@ -120,7 +120,7 @@ namespace VRUIControls {
             }
         }
 
-        [DoesNotRequireDomainReloadInit]
+        
         private static readonly float[] _ray2DCircleIntersectionDistances = new float[2];
 
         private static void RaycastCanvas(Canvas canvas, Ray ray, float hitDistance, float curvedUIRadius, List<VRGraphicRaycastResult> results) {

@@ -7,15 +7,15 @@ public abstract class BloomPrePassBackgroundNonLightRendererCore : BloomPrePassN
 
     [SerializeField] protected bool _keepDefaultRendering = default;
     [SerializeField] bool _useCustomMaterial = false;
-    [SerializeField] [DrawIf("_useCustomMaterial", true)] [NullAllowed] Material _customMaterial = default;
+    [SerializeField] [DrawIf("_useCustomMaterial", true)] Material _customMaterial = default;
     [SerializeField] bool _useCustomPropertyBlock = false;
 
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _worldSpaceCameraPosID = Shader.PropertyToID("_WorldSpaceCameraPos");
 
     private CommandBuffer _commandBuffer = default;
 
-    [DoesNotRequireDomainReloadInit]
+    
     static MaterialPropertyBlock _materialPropertyBlock;
 
     private MaterialPropertyBlock _customPropertyBlock = default;

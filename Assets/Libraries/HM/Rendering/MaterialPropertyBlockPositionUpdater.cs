@@ -5,7 +5,7 @@ using UnityEngine;
 public class MaterialPropertyBlockPositionUpdater : MaterialPropertyBlockAnimator {
 
     [Space]
-    [SerializeField] [NullAllowed] Transform _targetTransform = default;
+    [SerializeField] Transform _targetTransform = default;
 
     protected override void SetProperty() {
 

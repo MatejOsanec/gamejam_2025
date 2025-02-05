@@ -5,7 +5,7 @@ using UnityEngine.Rendering;
 [ExecuteInEditMode]
 public class OnWillRenderObjectTrigger : MonoBehaviour {
 
-    [SerializeField] [NullAllowed] Shader _overrideShader = default;
+    [SerializeField] Shader _overrideShader = default;
     [SerializeField] int _renderQueue = 0;
 
     private Material _material = null;

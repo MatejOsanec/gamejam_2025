@@ -13,7 +13,7 @@ public class OculusVRHelper : MonoBehaviour, IVRPlatformHelper, IVerboseLogger {
     /// Default offset applied to the Oculus controller on non-alternative mode
     /// It was chosen by trial and error
     /// </summary>
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly Pose kOculusTouchControllerOffsetDefaultPose = new Pose(
         new Vector3(x: 0.005f, y: 0.03f, z: 0.055f),
         new Quaternion(x: -0.34202012f, y: 0, z: 0, w: 0.9396926f)
@@ -23,14 +23,14 @@ public class OculusVRHelper : MonoBehaviour, IVRPlatformHelper, IVerboseLogger {
     /// Default position offset applied in Oculus Touch controllers before OpenXR
     /// Used for the Alternative Handling
     /// </summary>
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly Vector3 kLegacyTouchPositionOffset = new Vector3(0, 0, 0.055f);
 
     /// <summary>
     /// Default rotation offset applied in Oculus Touch controllers before OpenXR
     /// Used for the Alternative Handling
     /// </summary>
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly Vector3 kLegacyTouchRotationOffset = new Vector3(-40, 0, 0);
 
 

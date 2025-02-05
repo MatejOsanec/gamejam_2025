@@ -11,7 +11,7 @@ public class GlobalShaderColorLightWithIds : LightWithIds {
     [SerializeField] Color _editorTestColor = Color.white;
 #endif
 
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _globalLightTintColorPropertyId = Shader.PropertyToID("_GlobalLightTintColor");
 
     [Serializable]

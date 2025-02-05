@@ -13,7 +13,7 @@ public class MaterialLightWithIds : RuntimeLightWithIds {
     [SerializeField] [DrawIf("_useTestColor", true)] [ColorUsage(showAlpha:true, hdr:true)] Color _testColor = Color.white;
 #endif
 
-    [DoesNotRequireDomainReloadInit]
+    
     private static MaterialPropertyBlock _materialPropertyBlock = default;
 
     private Color _color;

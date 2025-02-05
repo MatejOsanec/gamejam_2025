@@ -8,13 +8,13 @@ public abstract class BloomPrePassBackgroundTextureGradient : BloomPrePassNonLig
 
     public Color tintColor { get => _tintColor; set => _tintColor = value; }
 
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _gradientTexID = Shader.PropertyToID("_GradientTex");
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _inverseProjectionMatrixID = Shader.PropertyToID("_InverseProjectionMatrix");
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _cameraToWorldMatrixID = Shader.PropertyToID("_CameraToWorldMatrix");
-    [DoesNotRequireDomainReloadInit]
+    
     private static readonly int _colorID = Shader.PropertyToID("_Color");
 
     private const string kUseToneMappingKeyword = "USE_TONE_MAPPING";

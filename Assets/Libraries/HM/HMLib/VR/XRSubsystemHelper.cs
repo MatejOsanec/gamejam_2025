@@ -4,11 +4,11 @@ using UnityEngine.XR;
 
 public static class XRSubsystemHelper {
 
-    [DoesNotRequireDomainReloadInit]
+    
     private static List<XRDisplaySubsystem> s_displaySubsystems;
-    [DoesNotRequireDomainReloadInit]
+    
     private static List<XRDisplaySubsystemDescriptor> s_displaySubsystemDescriptors;
-    [DoesNotRequireDomainReloadInit]
+    
     private static List<XRInputSubsystem> s_inputSubsystems;
 
     public static XRDisplaySubsystem GetCurrentDisplaySubsystem() {
