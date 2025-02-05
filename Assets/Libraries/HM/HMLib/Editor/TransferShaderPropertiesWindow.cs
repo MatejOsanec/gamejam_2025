@@ -7,16 +7,6 @@ using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-[AddToToolDirectory(
-    displayName: "Transfer shader properties",
-    description: "Tool for finding and changing materials based on their properties, great for bulk changes and shader refactoring.",
-    packageName: "HMLib package",
-    maintainer: ToolMaintainer.TechArt,
-    openToolFunctionName: nameof(ShowWindow),
-    labelTypes: LabelType.Core | LabelType.TechArt,
-    links: new [] {
-        "Documentation=https://beatgames.atlassian.net/wiki/spaces/BS/pages/3574007/Shader+Tool"
-    })]
 public class TransferShaderPropertiesWindow : EditorWindow {
 
     private Object _shader = (Shader)default;

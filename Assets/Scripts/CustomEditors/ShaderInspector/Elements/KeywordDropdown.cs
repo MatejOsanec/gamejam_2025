@@ -199,7 +199,19 @@
 
             void ApplyNewSelectedFilteredIndex(IReadOnlyList<Option> displayFilteredOptions, int newFilteredIndex) {
 
-                ApplyNewSelectedIndex(_options.IndexOf(displayFilteredOptions[newFilteredIndex]));
+                ApplyNewSelectedIndex(IndexOf(_options,displayFilteredOptions[newFilteredIndex]));
+            }
+
+            static int IndexOf<T>(IReadOnlyList<T> self, T item) {
+
+                var i = 0;
+                foreach (T element in self) {
+                    if (Equals(element, item)) {
+                        return i;
+                    }
+                    i++;
+                }
+                return -1;
             }
 
             void ApplyNewSelectedIndex(int newIndex) {
@@ -427,7 +439,7 @@
             if (_propertyName != propertyName) {
                 return;
             }
-            var index = _options.FindIndex(option => option.keyword == keyword);
+            var index = FindIndex(_options, option => option.keyword == keyword);
             var hasKeyword = index > -1;
 
             if (!hasKeyword) {
@@ -442,6 +454,19 @@
             SetKeywords(property, index);
             RefreshTooltip(index);
         }
+
+        public static int FindIndex<T>(IReadOnlyList<T> list, Predicate<T> match) {
+
+            for (int index = 0; index < list.Count; index++) {
+                if (match(list[index])) {
+                    return index;
+                }
+            }
+            return -1;
+        }
+
+
+
 
         // Check if there is a mismatch between applied keyword and propertyIndex
         private void AlignKeywordAndProperty(int selectedIndex, MaterialProperty property, MaterialProperty[] properties) {

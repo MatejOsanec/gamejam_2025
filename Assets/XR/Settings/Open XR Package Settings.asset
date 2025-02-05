@@ -421,6 +421,7 @@ MonoBehaviour:
   m_Name: Standalone
   m_EditorClassIdentifier: 
   features:
+  - {fileID: 3270432796339112482}
   - {fileID: 4963040286616351577}
   - {fileID: 5883027821610069653}
   - {fileID: 4893829345954421791}
@@ -1392,6 +1393,26 @@ MonoBehaviour:
   m_depthSubmissionMode: 0
   m_optimizeBufferDiscards: 0
   m_symmetricProjection: 0
+--- !u!114 &792824742768805044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3017a44613ff4502abc16d14136188f2, type: 3}
+  m_Name: BeatSaberXRFeature Android
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: 
+  version: 
+  featureIdInternal: 
+  openxrExtensionStrings: 
+  company: 
+  priority: 0
+  required: 0
 --- !u!114 &879469862294039400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1686,6 +1707,26 @@ MonoBehaviour:
   featureIdInternal: com.unity.openxr.feature.input.handinteraction
   openxrExtensionStrings: XR_EXT_hand_interaction
   company: Unity
+  priority: 0
+  required: 0
+--- !u!114 &3270432796339112482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3017a44613ff4502abc16d14136188f2, type: 3}
+  m_Name: BeatSaberXRFeature Standalone
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: Beat Saber XR Feature
+  version: 1.0.0
+  featureIdInternal: com.beatgames.beatsaber.feature.beatsaberxr
+  openxrExtensionStrings: 
+  company: Beat Saber
   priority: 0
   required: 0
 --- !u!114 &3554264124859437666

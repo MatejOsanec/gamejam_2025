@@ -3,13 +3,6 @@ using UnityEditor;
 using System.IO;
 using System;
 
-[AddToToolDirectory(
-    displayName: "Texture baker",
-    description: "Bakes the result of a material into a texture.",
-    packageName: "HMLib package",
-    maintainer: ToolMaintainer.TechArt,
-    openToolFunctionName: nameof(ShowWindow),
-    labelTypes: LabelType.Tours | LabelType.TechArt)]
 public class BakeTextureWindow : EditorWindow {
 
     private Material _imageMaterial;

@@ -41,7 +41,7 @@ namespace ColorLibrary {
             _cachedAlphaObjects = new List<CacheDataWithSerializedProperty>();
             foreach (var serializedObject in alphaObjects) {
                 var alphaObjectName = serializedObject.FindProperty("m_Name").stringValue;
-                var alphaPath = $"{ColorLibraryEditor.kAlphaSOPath}{alphaObjectName}.asset";
+                var alphaPath = "";//TODO: $"{ColorLibraryEditor.kAlphaSOPath}{alphaObjectName}.asset";
                 var alphaVariationCacheData = new CacheDataWithSerializedProperty(serializedObject, alphaObjectName, serializedObject.FindProperty("alphaValue"), alphaPath);
                 _cachedAlphaObjects.Add(alphaVariationCacheData);
             }
@@ -70,9 +70,9 @@ namespace ColorLibrary {
             if (data.serializedObject.hasModifiedProperties) {
                 if (IsAlphaSoValueValid(data.serializedProperty.floatValue)) {
                     data.serializedObject.ApplyModifiedProperties();
-                    var assetName = $"alpha_{data.serializedProperty.floatValue * 100:0}";
+                    var assetName = "";//TODO:$"alpha_{data.serializedProperty.floatValue * 100:0}";
                     var currentPath = AssetDatabase.GetAssetPath(data.serializedObject.targetObject);
-                    var newPath = $"{ColorLibraryEditor.kAlphaSOPath}{assetName}.asset";
+                    var newPath = "";//TODO: $"{ColorLibraryEditor.kAlphaSOPath}{assetName}.asset";
                     var uniqueNewPath = AssetDatabase.GenerateUniqueAssetPath(newPath);
                     AssetDatabase.MoveAsset(currentPath, uniqueNewPath);
                     RefreshCache();
@@ -100,7 +100,7 @@ namespace ColorLibrary {
             int alphaNameValue = Mathf.RoundToInt(alphaValue * 100);
 
             AlphaSO asset = ScriptableObject.CreateInstance<AlphaSO>();
-            var assetName = $"{ColorLibraryEditor.kAlphaSOPath}alpha_{alphaNameValue}.asset";
+            var assetName = "";//TODO:$"{ColorLibraryEditor.kAlphaSOPath}alpha_{alphaNameValue}.asset";
             var uniqueAssetPath = AssetDatabase.GenerateUniqueAssetPath(assetName);
             asset.alphaValue = alphaValue;
             AssetDatabase.CreateAsset(asset, uniqueAssetPath);

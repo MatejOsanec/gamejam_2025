@@ -199,13 +199,6 @@ namespace VRUIControls {
                 var graphicRecTransform = (RectTransform)graphic.transform;
                 var localPosition = graphicRecTransform.InverseTransformPoint(onCanvasWorldPosition);
                 var graphicRect = graphicRecTransform.rect;
-#if !BS_TOURS
-                if (graphic is ImageView imageView) {
-                    localPosition.x -= imageView.skew * localPosition.y;
-                } else if (graphic is Touchable touchable) {
-                    localPosition.x -= touchable.skew * localPosition.y;
-                }
-#endif
 
                 if (!graphicRect.Contains(localPosition)) {
                     continue;

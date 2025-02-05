@@ -5,13 +5,6 @@ using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-[AddToToolDirectory(
-    displayName: "Show render queue",
-    description: "Allows close inspection of render queue bands, showing all materials within a range.",
-    packageName: "HMLib package",
-    maintainer: ToolMaintainer.TechArt,
-    openToolFunctionName: nameof(ShowWindow),
-    labelTypes: LabelType.Core | LabelType.TechArt)]
 public class RenderQueuesWindow : EditorWindow {
 
         private Object _shader = (Shader) default;

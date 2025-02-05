@@ -3,4 +3,4 @@ using UnityEngine;
 
 
 [CreateAssetMenu(fileName = "DIContainerSignal", menuName = "HMLib/Signals/DIContainerSignal")]
-public class DIContainerSignal : GenericSignal<DiContainer> {}
+public class DIContainerSignal : GenericSignal<MonoBehaviour> {}

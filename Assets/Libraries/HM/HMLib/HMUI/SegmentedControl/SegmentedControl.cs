@@ -10,7 +10,7 @@ namespace HMUI {
 
         [SerializeField] Transform _separatorPrefab = default;
 
-       readonly DiContainer _container = default;
+       readonly MonoBehaviour _container = default;
 
         public event System.Action<SegmentedControl, int> didSelectCellEvent;
         public event System.Action<SegmentedControl, int> didPressNonInteractableCellEvent;
@@ -157,7 +157,7 @@ namespace HMUI {
 
         public T GetReusableCell<T>(Object prefab) where T: SegmentedControlCell {
 
-            if (!_reusableCellPools.TryGetValue(prefab, out var pool)) {
+            /*if (!_reusableCellPools.TryGetValue(prefab, out var pool)) {
                 pool = new Queue<SegmentedControlCell>();
                 _reusableCellPools[prefab] = pool;
             }
@@ -168,7 +168,9 @@ namespace HMUI {
 
             cell.gameObject.SetActive(true);
             cell.transform.localScale = Vector3.one;
-            return (T)cell;
+           return (T)cell;*/
+
+            return null;
         }
     }
 }

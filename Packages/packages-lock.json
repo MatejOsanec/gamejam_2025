@@ -30,12 +30,6 @@
       "source": "local",
       "dependencies": {}
     },
-    "com.beatgames.bglib.file-storage": {
-      "version": "file:../SharedPackages/BGLib/file-storage",
-      "depth": 0,
-      "source": "local",
-      "dependencies": {}
-    },
     "com.beatgames.bglib.file-storage.sony": {
       "version": "file:../SharedPackages/BGLib/file-storage.sony",
       "depth": 0,
@@ -54,12 +48,6 @@
       "source": "local",
       "dependencies": {}
     },
-    "com.beatgames.bglib.meta-remote-assets": {
-      "version": "file:../SharedPackages/BGLib/meta-remote-assets",
-      "depth": 0,
-      "source": "local",
-      "dependencies": {}
-    },
     "com.beatgames.bglib.notepad": {
       "version": "file:../SharedPackages/BGLib/notepad",
       "depth": 0,
@@ -68,24 +56,6 @@
     },
     "com.beatgames.bglib.packages-core": {
       "version": "file:../SharedPackages/BGLib/packages-core",
-      "depth": 0,
-      "source": "local",
-      "dependencies": {}
-    },
-    "com.beatgames.bglib.photobox": {
-      "version": "file:../SharedPackages/BGLib/photobox",
-      "depth": 0,
-      "source": "local",
-      "dependencies": {}
-    },
-    "com.beatgames.bglib.polyglot": {
-      "version": "file:../SharedPackages/BGLib/polyglot",
-      "depth": 0,
-      "source": "local",
-      "dependencies": {}
-    },
-    "com.beatgames.bglib.save-data-core": {
-      "version": "file:../SharedPackages/BGLib/save-data-core",
       "depth": 0,
       "source": "local",
       "dependencies": {}

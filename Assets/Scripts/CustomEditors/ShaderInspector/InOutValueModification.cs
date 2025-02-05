@@ -9,7 +9,19 @@
 
         public static Vector4 Round(Vector4 value, int digits) {
 
-            return value.Round(digits);
+            return value._Round(digits);
+        }
+
+        public static Vector4 _Round(this Vector4 value, int digits) {
+
+            float multiplication = Mathf.Pow(10.0f, digits);
+            float division = 1.0f / multiplication;
+
+            value.x = Mathf.Round(value.x * multiplication) * division;
+            value.y = Mathf.Round(value.y * multiplication) * division;
+            value.z = Mathf.Round(value.z * multiplication) * division;
+            value.w = Mathf.Round(value.w * multiplication) * division;
+            return value;
         }
 
         [UIToMaterialOnlyAllowed]

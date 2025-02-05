@@ -1,5 +1,4 @@
-﻿using ModestTree;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace HMUI {
@@ -43,7 +42,6 @@ public class CurvedCanvasSettings : Graphic {
 
         base.Start();
 
-        Assert.IsNotNull(GetComponent<CanvasRenderer>());
         raycastTarget = false;
         canvas.additionalShaderChannels |= AdditionalCanvasShaderChannels.TexCoord2;
     }
