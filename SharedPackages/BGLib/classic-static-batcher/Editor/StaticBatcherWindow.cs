@@ -8,16 +8,6 @@ using System.Collections.Generic;
 /// Window that can combine meshes defined with StaticBatchableMesh Component into one for performance optimizations.
 /// When a scene is selected, it will automatically add a GameObject to your scene with the StaticBatchComponentContainer. When batching, that will hold all StaticBatchComponents
 ///</summary>
-[AddToToolDirectory(
-    displayName: "Static batcher",
-    description: "Custom Implementation of Static Batching",
-    packageName: "ClassicStaticBatcher package",
-    maintainer: ToolMaintainer.DannyDeBruijne,
-    openToolFunctionName: nameof(ShowWindow),
-    labelTypes: LabelType.Core | LabelType.TechArt,
-    links: new [] {
-        "Documentation=https://beatgames.atlassian.net/wiki/spaces/BS/pages/13565953/Custom+Static+Batching"
-    })]
 public class StaticBatcherWindow : EditorWindow {
 
     StaticMeshBatchingUtility batchingUtility = null;

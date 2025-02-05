@@ -19,7 +19,8 @@ public class Init : MonoBehaviour
     void Start()
     {
         Locator.Settings = new Settings(noteSpeed, placementMultiplier, preSpawnBeats);
-        
+
+        Debug.Log("sdfsdf");
         
         var loader = new BeatmapDataLoader();
         loader.LoadBeatmapData(OnBeatmapLoaded);

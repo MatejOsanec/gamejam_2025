@@ -1,0 +1,11 @@
+{
+  "name": "com.testable-io.io-abstractions",
+  "version": "1.0.0",
+  "displayName": "TestableIO/IO Abstractions",
+  "description": "Provides a wrapper to FileSystem, so we can test file operations.",
+  "hideInEditor": false,
+  "author": {
+    "name": "TestableIO",
+    "url": ""
+  }
+}
