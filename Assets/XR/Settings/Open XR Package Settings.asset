@@ -427,7 +427,6 @@ MonoBehaviour:
   - {fileID: 4893829345954421791}
   - {fileID: -6041192433602774156}
   - {fileID: 3257090942008302873}
-  - {fileID: -9079316085892945041}
   - {fileID: -7895442964100881395}
   - {fileID: 2497339995422133549}
   - {fileID: -5941725581135416239}
@@ -445,6 +444,7 @@ MonoBehaviour:
   - {fileID: 2316775424616146661}
   - {fileID: -5611916350011621528}
   - {fileID: 2358698239005030123}
+  - {fileID: -9079316085892945041}
   m_renderMode: 1
   m_depthSubmissionMode: 0
   m_optimizeBufferDiscards: 0
@@ -1112,6 +1112,26 @@ MonoBehaviour:
   company: Unity
   priority: -100
   required: 0
+--- !u!114 &-380274822779866118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3017a44613ff4502abc16d14136188f2, type: 3}
+  m_Name: BeatSaberXRFeature Android
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: Beat Saber XR Feature
+  version: 1.0.0
+  featureIdInternal: com.beatgames.beatsaber.feature.beatsaberxr
+  openxrExtensionStrings: 
+  company: Beat Saber
+  priority: 0
+  required: 0
 --- !u!114 &-329847314279545157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1190,6 +1210,7 @@ MonoBehaviour:
   - {fileID: -7949856907330547398}
   - {fileID: -2869731202771628586}
   - {fileID: 8594420097343157094}
+  - {fileID: -380274822779866118}
   - {fileID: 7558681416710770871}
   - {fileID: -329847314279545157}
   - {fileID: 1439519674761587512}

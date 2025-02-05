@@ -463,7 +463,7 @@ Material:
     - _Vertex_WhiteBoostType: 0
     - _WhiteOffset: 2
     - _WorkflowMode: 1
-    - _ZTest: 4
+    - _ZTest: 2
     - _ZWrite: 1
     m_Colors:
     - _AdditiveUVOffset: {r: 0, g: 0, b: 0, a: 0}
