@@ -25,13 +25,45 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - BOTH_SIDES_DIFFUSE
+  - DIFFUSE
+  - FOG
+  - MULTIPLY_REFLECTIONS
   - NOISE_DITHERING
+  - PRIVATE_POINT_LIGHT
+  - REFLECTION_PROBE_BOX_PROJECTION
+  - SPECULAR
   m_InvalidKeywords:
+  - CUTOUT_TYPE_NONE
+  - DISTORTION_NONE
+  - NOTE_PLANE_CUT_NONE
   - _ACES_APPROACH_AFTER_EMISSIVE
   - _CURVE_VERTICES_NONE
   - _CUSTOM_TIME_STANDARD
+  - _DIFFUSE_TEXTURE_SOURCE_TEXTURE
+  - _DISSOLVEALPHA_CLIP
+  - _DISSOLVE_GRID_NONE
+  - _DISSOLVE_SPACE_LOCAL
+  - _DISTORTION_TARGET_MPM
+  - _EMISSIONCOLORTYPE_FLAT
+  - _EMISSION_ALPHA_SOURCE_EMISSION_G
+  - _EMISSION_STEP_NONE
+  - _EMISSION_TEXTURE_SOURCE_TEXTURE
+  - _HOLOGRAM_NONE
+  - _MASKBLEND_MULTIPLY
   - _METALLIC_TEXTURE_NONE
+  - _OCCLUSION_SOURCE_TEXTURE
+  - _PARALLAX_MASKING_NONE
+  - _PARALLAX_NONE
+  - _PARALLAX_PROJECTION_PLANAR
+  - _PROBE_CALCULATION_FAST
+  - _RIM_WHITEBOOSTTYPE_NONE
+  - _SECONDARY_MASK_BLEND_MULTIPLY
   - _SMOOTHNESS_TEXTURE_NONE
+  - _SPECTROGRAM_NONE
+  - _VERTEXDISPLACEMENTMASKMODE_MULTIPLY
+  - _VERTEXDISPLACEMENT_MASK_SOURCE_TEXTURE
+  - _VERTEX_WHITEBOOSTTYPE_NONE
   - _ZWRITE_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -39,7 +71,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: 
+  m_LockedProperties: _AmbientMultiplier
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -244,7 +276,7 @@ Material:
     - _Emission_Alpha_Source: 0
     - _Emission_Step: 0
     - _Emission_Texture_Source: 0
-    - _EnableBothSidesDiffuse: 0
+    - _EnableBothSidesDiffuse: 1
     - _EnableBoxProjectionOffset: 0
     - _EnableCloseToCameraCutout: 0
     - _EnableCustomMPMMip: 0
@@ -326,7 +358,7 @@ Material:
     - _MaskBlend: 0
     - _MeshPacking: 0
     - _MeshPackingId: 1
-    - _Metallic: 0
+    - _Metallic: 0.048
     - _Metallic_Texture: 0
     - _MpmMipBias: 0
     - _MultiplyReflections: 1
@@ -348,7 +380,7 @@ Material:
     - _Parallax_Projection: 0
     - _PointLightPositionLocal: 0
     - _PreciseNormal: 0
-    - _PrivatePointLight: 0
+    - _PrivatePointLight: 1
     - _PrivatePointLightIntensity: 1
     - _Probe_Calculation: 0
     - _PulseMultiplyByTexture: 0
@@ -448,12 +480,12 @@ Material:
     - _HologramColor: {r: 1, g: 1, b: 1, a: 1}
     - _InputUvMultiplier: {r: 1, g: 1, b: 0, a: 0}
     - _IridescenceAxesMultiplier: {r: 1, g: 2, b: 3, a: 0}
-    - _NominalDiffuseLevel: {r: 0, g: 0, b: 0, a: 0}
+    - _NominalDiffuseLevel: {r: 0.16352195, g: 0.16352195, b: 0.16352195, a: 0}
     - _ParallaxColor: {r: 1, g: 1, b: 1, a: 1}
     - _ParallaxMaskSpeed: {r: 0, g: 0, b: 0, a: 0}
     - _ParallaxTexSpeed: {r: 0, g: 0, b: 0, a: 0}
     - _PrivatePointLightColor: {r: 1, g: 0, b: 0, a: 0}
-    - _PrivatePointLightPosition: {r: 0, g: 0, b: 0, a: 1}
+    - _PrivatePointLightPosition: {r: 0, g: 0, b: 0, a: 0}
     - _ReflectionProbeBoxProjectionPositionOffset: {r: 0, g: 0, b: 0, a: 0}
     - _ReflectionProbeBoxProjectionSizeOffset: {r: 0, g: 0, b: 0, a: 0}
     - _RimLightColor: {r: 1, g: 1, b: 1, a: 0}
