@@ -48,10 +48,7 @@ public class TextureProcessor : MonoBehaviour {
     [SerializeField] [Range(-10.0f, 10.0f)] float _spatialScaleC = 1.0f;
 
     [Header("Debugging")]
-    [SerializeField] Material _generatedTextureDebugMaterialA;
-    [SerializeField] Material _generatedTextureDebugMaterialB;
-    [SerializeField] Material _generatedTextureDebugMaterialC;
-    [SerializeField] Material _generatedTextureDebugMaterialOut;
+    [SerializeField] Material[] _generatedTextureDebugMaterials;
 
     public enum ComputeKernel {
         Neutral,
@@ -106,7 +103,7 @@ public class TextureProcessor : MonoBehaviour {
     public float param2C { get => _param2C; set => _param2C = value; }
 
     public float param1A { get => _param1A; set => _param1A = value; }
-    
+
     public float param1B { get => _param1B; set => _param1B = value; }
 
     public float param1C { get => _param1C; set => _param1C = value; }
@@ -173,7 +170,7 @@ public class TextureProcessor : MonoBehaviour {
         "EjectEffect_SpiralMaskRipple"
     };
 
-    
+
     private static readonly string[] _ejectEffectKernelStrings = {
         "EjectEffect_WaveRipple",
         "EjectEffect_RectRipple",
@@ -282,17 +279,11 @@ public class TextureProcessor : MonoBehaviour {
         _animationTextureC = CreateTexture(_rowSize, _columnSize);
         _animationTextureOut = CreateTexture(_rowSize, _columnSize);
 
-        _generatedTextureDebugMaterialA.SetTexture("_VertexDisplacementMask", _animationTextureA);
-        _generatedTextureDebugMaterialA.SetTexture("_SecondaryEmissionMask", _animationTextureA);
-
-        _generatedTextureDebugMaterialB.SetTexture("_VertexDisplacementMask", _animationTextureB);
-        _generatedTextureDebugMaterialB.SetTexture("_SecondaryEmissionMask", _animationTextureB);
-
-        _generatedTextureDebugMaterialC.SetTexture("_VertexDisplacementMask", _animationTextureC);
-        _generatedTextureDebugMaterialC.SetTexture("_SecondaryEmissionMask", _animationTextureC);
-
-        _generatedTextureDebugMaterialOut.SetTexture("_VertexDisplacementMask", _animationTextureOut);
-        _generatedTextureDebugMaterialOut.SetTexture("_SecondaryEmissionMask", _animationTextureOut);
+        foreach (var mat in _generatedTextureDebugMaterials)
+        {
+            mat.SetTexture("_VertexDisplacementMask", _animationTextureOut);
+            mat.SetTexture("_SecondaryEmissionMask", _animationTextureOut);
+        }
 
         _cachedInstanceCount = _numInstances;
     }

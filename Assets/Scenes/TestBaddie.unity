@@ -431,10 +431,8 @@ MonoBehaviour:
   _param1C: 0
   _speedC: 1
   _spatialScaleC: 1
-  _generatedTextureDebugMaterialA: {fileID: 2100000, guid: 5bf3f97ca208dff49ad52f877f67c4ef, type: 2}
-  _generatedTextureDebugMaterialB: {fileID: 2100000, guid: e48dd2c8315241141bd932c423433580, type: 2}
-  _generatedTextureDebugMaterialC: {fileID: 2100000, guid: e91cb8115a65fab44a010885b29c5def, type: 2}
-  _generatedTextureDebugMaterialOut: {fileID: 2100000, guid: 6221cd36ba5a34f42b075dabfc3a6e92, type: 2}
+  _generatedTextureDebugMaterials:
+  - {fileID: 2100000, guid: 6221cd36ba5a34f42b075dabfc3a6e92, type: 2}
 --- !u!4 &1295331788
 Transform:
   m_ObjectHideFlags: 0
