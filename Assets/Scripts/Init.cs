@@ -7,21 +7,27 @@ public class Init : MonoBehaviour
 {
     public AudioController audioController;
     public GameObject notePrefab;
+    
+    // ======== SETTINGS ========
+    
     public float noteSpeed = 1;
     public float placementMultiplier = 5;
     public float preSpawnBeats = 4;
+
+    // ======== SETTINGS ========
 
     private AllBeatmapData _beatmapData;
     private BeatTracker _tracker;
     private NoteControllerCollection _notes;
     private PrefabSpawner _spawner;
+    private bool _initialized;
 
     void Start()
     {
         Locator.Settings = new Settings(noteSpeed, placementMultiplier, preSpawnBeats);
-        Locator.BeatModel = new BeatModel(new List<int> { 1, 2, 4, 8, 16 });
+        Locator.BeatModel = new BeatModel();
         
-        Locator.BeatModel.AddBeatListener(4,BeatListener);
+        Locator.BeatModel.AddBeatListener(BeatDivision.Quarter, BeatListener);
 
         Debug.Log("sdfsdf");
         
@@ -45,6 +51,9 @@ public class Init : MonoBehaviour
         _notes = new NoteControllerCollection();
         _tracker = new BeatTracker(_beatmapData.BeatmapData.colorNotes);
         _tracker.OnColorNotePassed += OnColorNotePassed;
+
+        _initialized = true;
+        Locator.GameplayInitSignal.Dispatch();
     }
 
     private void OnColorNotePassed(ColorNote note)
@@ -56,6 +65,11 @@ public class Init : MonoBehaviour
 
     private void Update()
     {
+        if (!_initialized)
+        {
+            return;
+        }
+        
         var newBeat = AudioUtils.SamplesToBeats(audioController.Samples, audioController.SampleRate, _beatmapData.AudioInfo.bpm);
         Locator.BeatModel.UpdateBeat(newBeat);
         
