@@ -7,17 +7,21 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SEIZURE_LAYER2
+  m_Name: WAVE_1
   m_Shader: {fileID: 4800000, guid: 85c5ac66be35adb40ad6a76d6f1a5b15, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - DIFFUSE
+  - DIFFUSE_TEXTURE
+  - DISPLACEMENT_BIDIRECTIONAL
+  - DISPLACEMENT_SPATIAL
   - FOG
   - MULTIPLY_REFLECTIONS
   - NOISE_DITHERING
   - REFLECTION_PROBE_BOX_PROJECTION
-  - SPECULAR
+  - VERTEXDISPLACEMENT_MASK
+  - _EMISSIONTEXTURE_SIMPLE
+  - _VERTEXMODE_DISPLACEMENT
   m_InvalidKeywords:
   - CUTOUT_TYPE_NONE
   - DISTORTION_NONE
@@ -31,9 +35,7 @@ Material:
   - _DISSOLVE_SPACE_LOCAL
   - _DISTORTION_TARGET_MPM
   - _EMISSIONCOLORTYPE_FLAT
-  - _EMISSIONTEXTURE_NONE
   - _EMISSION_ALPHA_SOURCE_EMISSION_G
-  - _EMISSION_STEP_NONE
   - _EMISSION_TEXTURE_SOURCE_TEXTURE
   - _HOLOGRAM_NONE
   - _MASKBLEND_MULTIPLY
@@ -43,21 +45,17 @@ Material:
   - _PARALLAX_NONE
   - _PARALLAX_PROJECTION_PLANAR
   - _PROBE_CALCULATION_FAST
-  - _RIMLIGHT_NONE
   - _RIM_WHITEBOOSTTYPE_NONE
   - _SECONDARY_MASK_BLEND_MULTIPLY
   - _SECONDARY_UVS_NONE
   - _SMOOTHNESS_TEXTURE_NONE
-  - _SPECTROGRAM_NONE
   - _VERTEXDISPLACEMENTMASKMODE_MULTIPLY
   - _VERTEXDISPLACEMENT_MASK_SOURCE_TEXTURE
-  - _VERTEXMODE_NONE
   - _VERTEX_WHITEBOOSTTYPE_NONE
-  - _ZWRITE_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3000
   stringTagMap: {}
   disabledShaderPasses: []
   m_LockedProperties: 
@@ -113,9 +111,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Texture: {fileID: 2800000, guid: ce1fff0b1325ace4bb35002b75e29f35, type: 3}
+        m_Scale: {x: -1, y: 1}
+        m_Offset: {x: 0, y: 0.72}
     - _EnvironmentReflectionCube:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -175,8 +173,8 @@ Material:
     - _AntiflickerDistanceScale: 0.1
     - _AntiflickerStrength: 0.7
     - _AvatarComputeSkinning: 0
-    - _BlendDstFactor: 0
-    - _BlendDstFactorA: 0
+    - _BlendDstFactor: 1
+    - _BlendDstFactorA: 1
     - _BlendSrcAlphaPreset: 0
     - _BlendSrcFactor: 1
     - _BlendSrcFactorA: 0
@@ -206,9 +204,9 @@ Material:
     - _DarkeningScale: 0.35
     - _DetailNormalMapScale: 1
     - _Diffuse_Texture_Source: 0
-    - _DisplacementBidirectional: 0
-    - _DisplacementSpatial: 0
-    - _DisplacementStrength: 0.1
+    - _DisplacementBidirectional: 1
+    - _DisplacementSpatial: 1
+    - _DisplacementStrength: 0.2
     - _DissolveAlpha: 0
     - _DissolveColorIntensity: 1
     - _DissolveEndValue: 10
@@ -232,7 +230,7 @@ Material:
     - _EmissionStrength: 1
     - _EmissionTexBloomIntensity: 1
     - _EmissionTexWhiteboostMultiplier: 1
-    - _EmissionTexture: 0
+    - _EmissionTexture: 1
     - _EmissionThreshold: 0
     - _Emission_Alpha_Source: 0
     - _Emission_Step: 0
@@ -241,8 +239,8 @@ Material:
     - _EnableBoxProjectionOffset: 0
     - _EnableCloseToCameraCutout: 0
     - _EnableCustomMPMMip: 0
-    - _EnableDiffuse: 1
-    - _EnableDiffuseTexture: 0
+    - _EnableDiffuse: 0
+    - _EnableDiffuseTexture: 1
     - _EnableDirectionalRim: 0
     - _EnableDissolve: 0
     - _EnableDistanceDarkening: 0
@@ -264,8 +262,8 @@ Material:
     - _EnableRimDim: 0
     - _EnableRotateUV: 0
     - _EnableSecondaryEmissionMask: 0
-    - _EnableSpecular: 1
-    - _EnableVertexDisplacementMask: 0
+    - _EnableSpecular: 0
+    - _EnableVertexDisplacementMask: 1
     - _FadeEndY: 1
     - _FadeStartY: 1.25
     - _FadeZoneInterceptX: 0.2
@@ -411,14 +409,14 @@ Material:
     - _VertexDisplacementMaskMultiplier: 1
     - _VertexDisplacementMaskOffset: 0
     - _VertexDisplacement_Mask_Source: 0
-    - _VertexMode: 0
+    - _VertexMode: 5
     - _Vertex_WhiteBoostType: 0
     - _WhiteOffset: 2
-    - _ZTest: 4
-    - _ZWrite: 1
+    - _ZTest: 0
+    - _ZWrite: 0
     m_Colors:
     - _AdditiveUVOffset: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 0}
     - _CutPlane: {r: 1, g: 0, b: 0, a: 0}
     - _DarkeningCenter: {r: 0, g: 0, b: 0, a: 0}
     - _DarkeningDirection: {r: 1, g: 1, b: 1, a: 1}
@@ -441,7 +439,7 @@ Material:
     - _ParallaxMaskSpeed: {r: 0, g: 0, b: 0, a: 0}
     - _ParallaxTexSpeed: {r: 0, g: 0, b: 0, a: 0}
     - _PrivatePointLightColor: {r: 1, g: 0, b: 0, a: 0}
-    - _PrivatePointLightPosition: {r: 0, g: 0, b: 0, a: 0}
+    - _PrivatePointLightPosition: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectionProbeBoxProjectionPositionOffset: {r: 0, g: 0, b: 0, a: 0}
     - _ReflectionProbeBoxProjectionSizeOffset: {r: 0, g: 0, b: 0, a: 0}
     - _RimLightColor: {r: 1, g: 1, b: 1, a: 0}
@@ -449,6 +447,6 @@ Material:
     - _SecondaryEmissionMaskSpeed: {r: 0, g: 1, b: 0, a: 0}
     - _SphericalNormalOffsetCenter: {r: 0, g: 0, b: 0, a: 1}
     - _UVScale: {r: 1, g: 1, b: 1, a: 1}
-    - _VertexDisplacementMaskMixer: {r: 1, g: 1, b: 1, a: 1}
-    - _VertexDisplacementMaskSpeed: {r: 0, g: 1, b: 0, a: 0}
+    - _VertexDisplacementMaskMixer: {r: 0, g: 0, b: 1, a: 1}
+    - _VertexDisplacementMaskSpeed: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
