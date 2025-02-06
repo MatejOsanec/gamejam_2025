@@ -1,4 +1,3 @@
-using Beatmap.Lightshow;
 using Core;
 using UnityEngine;
 
@@ -9,12 +8,12 @@ namespace Gameplay
     {
         protected override void OnGameInit()
         {
-            Locator.Callbacks.EventTriggeredSignal.AddListener(EventTriggeredHandler);    
+            Locator.Callbacks.AddEventListener(20, EventTriggeredHandler);    
         }
 
-        private void EventTriggeredHandler(BeatmapEventData beatmapEventData)
+        private void EventTriggeredHandler(float value)
         {   
-            Debug.Log(beatmapEventData);
+            Debug.Log($"EVENT ID 20 value:{value}");
         }
     }
 }

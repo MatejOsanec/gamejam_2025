@@ -1,7 +1,7 @@
 using System;
-using Beatmap;
 using Beatmap.Lightshow;
 using strange.extensions.signal.impl;
+using UnityEngine;
 
 namespace Core
 {
@@ -26,7 +26,16 @@ namespace Core
 
         public void AddEventListener(int eventId, Action<float> callback)
         {
-            spawnSignals[eventId].AddListener(callback);    
+            if (spawnSignals.ContainsKey(eventId))
+            {
+                spawnSignals[eventId].AddListener(callback);
+            }
+            else
+            {
+                // Log an error with the list of available keys
+                string availableKeys = string.Join(", ", spawnSignals.Keys);
+                Debug.LogError($"Event ID {eventId} not found. Available event IDs: {availableKeys}");
+            }
         }
 
         private void HandleEventPassed(BeatmapEventData eventData)
