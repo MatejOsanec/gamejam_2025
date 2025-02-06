@@ -187,6 +187,12 @@
         [EnumShowIf(3, None, MainEffect, Always, _RIMLIGHT_LERP, _RIMLIGHT_ADDITIVE)] _Rim_WhiteBoostType ("Rimlight Color Treatment", Int) = 0
         [ShowIfAny(_RIMLIGHT_LERP, _RIMLIGHT_ADDITIVE)] _RimLightWhiteboostMultiplier ("Rim Light Whiteboost Multiplier", Float) = 1.0
 
+
+
+        // to test
+
+
+
         // not implemented
 
         [BigHeader(LIGHTNING)]
@@ -520,15 +526,18 @@
             "RenderType"="Opaque"
             "Queue"="Geometry"
         }
-        LOD 100
 
+        Stencil {
+            Ref [_StencilRefValue]
+            Comp [_StencilComp]
+            Pass [_StencilPass]
+        }
 
         Pass {
             Cull [_Cull]
-            ZWrite On
+            ZWrite [_ZWrite]
             ZTest [_ZTest]
-            Blend One Zero
-            //Blend [_BlendSrcFactor] [_BlendDstFactor], [_BlendSrcFactorA] [_BlendDstFactorA]
+            Blend [_BlendSrcFactor] [_BlendDstFactor], [_BlendSrcFactorA] [_BlendDstFactorA]
 
             CGPROGRAM
             #pragma vertex vert
@@ -2766,7 +2775,8 @@
                 #endif
 
                 APPLY_FAKE_MIRROR_TRANSPARENCY_SQUARED(color)
-                color.a = 1.0f;
+
+                color.a = _Color.a;
                 return color;
             }
             ENDCG
