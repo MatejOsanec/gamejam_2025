@@ -33,14 +33,16 @@ namespace Core
         
         public void UpdateNotes(float currentBeat)
         {
-            foreach (var noteController in noteControllers)
+            for (int i = noteControllers.Count - 1; i >= 0; i--)
             {
+                var noteController = noteControllers[i];
                 noteController.UpdatePosition(currentBeat);
+    
                 if (noteController.ZPosition <= 0)
                 {
                     NoteMissSignal.Dispatch(noteController.noteData);
                     var toRemove = noteController.gameObject;
-                    noteControllers.Remove(noteController);
+                    noteControllers.RemoveAt(i);
                     Object.Destroy(toRemove);
                 }
             }

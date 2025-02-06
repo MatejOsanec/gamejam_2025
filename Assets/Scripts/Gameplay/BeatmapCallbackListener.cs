@@ -14,6 +14,7 @@ namespace Gameplay
 
         private void OnInit()
         {
+            Locator.Callbacks.GameplayInitSignal.RemoveListener(OnInit);
             _initialized = true;
             OnGameInit();
         }

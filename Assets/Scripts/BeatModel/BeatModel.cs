@@ -62,6 +62,17 @@ namespace Core
             _onBeatSignals[division].AddListener(callback);
         }
         
+        public void RemoveAllListeners()
+        {
+            foreach (var signal in _onBeatSignals.Values)
+            {
+                signal.RemoveAllListeners();
+            }
+            _onBeatSignals.Clear();
+            
+            AnyBeatSignal.RemoveAllListeners();
+        }
+        
         public void UpdateBeat(float beat)
         {
             CurrentBeat = beat;

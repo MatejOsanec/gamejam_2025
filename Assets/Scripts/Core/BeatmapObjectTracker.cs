@@ -3,37 +3,28 @@ using strange.extensions.signal.impl;
 
 namespace Core
 {
-    using System;
     using System.Collections.Generic;
-    using UnityEngine;
     
     public class BeatmapObjectTracker<T> where T : IBeatmapObject
     {
         public readonly Signal<T> ObjectPassedSignal = new Signal<T>();
-
-        private List<T> ColorNotes;
+        
+        private readonly List<T> _colorNotes;
         private int _lastIndex = 0;
         private float _lastBeat = 0f;
-        
-        public event Action<ColorNote> OnColorNotePassed;
-        
-        public BeatmapObjectTracker(List<T> colorNotes)
+        private readonly float _spawnPredelay = 0f;
+
+        public BeatmapObjectTracker(List<T> colorNotes, float spawnPredelay = 0)
         {
-            ColorNotes = colorNotes;
+            _colorNotes = colorNotes;
+            _spawnPredelay = spawnPredelay;
         }
         
         public void Update(float newBeat)
-        {
-            if (newBeat < _lastBeat)
+        { 
+            while (_lastIndex < _colorNotes.Count && _colorNotes[_lastIndex].Beat <= newBeat + _spawnPredelay)
             {
-                Debug.LogWarning("New beat is less than the last beat. Ignoring update.");
-                return;
-            }
-            _lastBeat = newBeat;
-            
-            while (_lastIndex < ColorNotes.Count && ColorNotes[_lastIndex].Beat <= newBeat)
-            {
-                ObjectPassedSignal.Dispatch(ColorNotes[_lastIndex]);
+                ObjectPassedSignal.Dispatch(_colorNotes[_lastIndex]);
                 _lastIndex++;
             }
         }

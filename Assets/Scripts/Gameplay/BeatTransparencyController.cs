@@ -1,3 +1,4 @@
+using System;
 using Core;
 using UnityEngine;
 
@@ -32,7 +33,7 @@ namespace Gameplay
                         transparency = Mathf.Abs(Locator.BeatModel.GetBeatProgress(beatMultiplier));
                         break;
                     case Waveform.Sinusoidal:
-                        transparency = Mathf.Sin(Locator.BeatModel.GetBeatProgress(beatMultiplier)) / 2f;
+                        transparency = (Mathf.Sin(Locator.BeatModel.GetBeatProgress(beatMultiplier) * Mathf.PI * 2) + 1) / 2f;
                         break;
                     case Waveform.Square:
                         transparency = Mathf.Floor(Locator.BeatModel.GetBeatProgress(beatMultiplier)) < 0.5 ? 1f : 0f;

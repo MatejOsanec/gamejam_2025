@@ -42,5 +42,13 @@ namespace Core
         
         public void AddEventListener(int eventId, Action<float> callback) => Locator.EventTracker.AddEventListener(eventId, callback);
 
+        public void RemoveAllListeners()
+        {
+            Locator.EventTracker.ObjectPassedSignal.RemoveAllListeners();    
+            Locator.NoteTracker.ObjectPassedSignal.RemoveAllListeners(); 
+            Locator.NoteControllerCollection.NoteMissSignal.RemoveAllListeners();
+            Locator.BeatModel.RemoveAllListeners();
+        }
+
     }
 }

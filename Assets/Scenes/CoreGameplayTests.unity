@@ -1311,6 +1311,7 @@ GameObject:
   - component: {fileID: 61638392}
   - component: {fileID: 61638391}
   - component: {fileID: 61638390}
+  - component: {fileID: 61638395}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -1330,8 +1331,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f369064f8f4e759a94f80b852cc269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshRenderer: {fileID: 0}
-  beatDivision: 4
 --- !u!65 &61638391
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1373,7 +1372,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a5a4d4573a9314349a41801b7894f913, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1411,13 +1410,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 61638389}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.69, y: 2.63, z: 7.944107}
+  m_LocalRotation: {x: -0, y: -0, z: -0.55820215, w: 0.82970506}
+  m_LocalPosition: {x: -5.0835857, y: 1.4194728, z: 6.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -67.863}
+--- !u!114 &61638395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61638389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 456a90fddae64d54954f35d17a1e3e47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beatMultiplier: 4
+  waveform: 1
 --- !u!1 &62059496
 GameObject:
   m_ObjectHideFlags: 0
@@ -3527,6 +3540,7 @@ GameObject:
   - component: {fileID: 222022255}
   - component: {fileID: 222022254}
   - component: {fileID: 222022253}
+  - component: {fileID: 222022258}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -3546,8 +3560,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f369064f8f4e759a94f80b852cc269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshRenderer: {fileID: 0}
-  beatDivision: 2
 --- !u!65 &222022254
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3589,7 +3601,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ecbde91f78edc4e4ab5ea89eb579552c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3627,13 +3639,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 222022252}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.47, y: 2.63, z: 7.944107}
+  m_LocalRotation: {x: -0, y: -0, z: -0.55820215, w: 0.82970506}
+  m_LocalPosition: {x: -5.7543287, y: 3.0682616, z: 6.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -67.863}
+--- !u!114 &222022258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222022252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 456a90fddae64d54954f35d17a1e3e47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beatMultiplier: 2
+  waveform: 1
 --- !u!1 &224879365
 GameObject:
   m_ObjectHideFlags: 0
@@ -8092,14 +8118,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 480330359}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 5.15, y: 5.14, z: 7.944107}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1108031428}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &480330365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8112,8 +8138,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad90c306c0d432aa2eab1f4ea3fef11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetObject: {fileID: 1108031424}
-  visibilityDuration: 0.5
+  targetPosition: {x: 0, y: 0, z: 0}
+  smoothSpeed: 2
+  projectile: {fileID: 1108031424}
 --- !u!1 &487180312
 GameObject:
   m_ObjectHideFlags: 0
@@ -12280,6 +12307,7 @@ GameObject:
   - component: {fileID: 779357612}
   - component: {fileID: 779357611}
   - component: {fileID: 779357610}
+  - component: {fileID: 779357615}
   m_Layer: 0
   m_Name: Cube (6)
   m_TagString: Untagged
@@ -12299,8 +12327,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f369064f8f4e759a94f80b852cc269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshRenderer: {fileID: 0}
-  beatDivision: 6
 --- !u!65 &779357611
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12342,7 +12368,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ecbde91f78edc4e4ab5ea89eb579552c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12380,13 +12406,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 779357609}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.22, y: 2.63, z: 7.944107}
+  m_LocalRotation: {x: -0, y: -0, z: -0.85122687, w: 0.524798}
+  m_LocalPosition: {x: 5.7106843, y: 1.3202387, z: 6.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -116.691}
+--- !u!114 &779357615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779357609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 456a90fddae64d54954f35d17a1e3e47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beatMultiplier: 6
+  waveform: 1
 --- !u!1 &782804595
 GameObject:
   m_ObjectHideFlags: 0
@@ -17461,7 +17501,7 @@ Transform:
   m_GameObject: {fileID: 1108031424}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalPosition: {x: 0, y: 0, z: 5}
   m_LocalScale: {x: 0.1, y: 0.1, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -26227,14 +26267,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1701424095}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -4.17, y: 5.14, z: 7.944107}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1969625338}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &1701424101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26247,8 +26287,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad90c306c0d432aa2eab1f4ea3fef11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetObject: {fileID: 1969625333}
-  visibilityDuration: 0.5
+  targetPosition: {x: 0, y: 0, z: 0}
+  smoothSpeed: 2
+  projectile: {fileID: 1969625333}
 --- !u!1 &1707229628
 GameObject:
   m_ObjectHideFlags: 0
@@ -26330,6 +26371,7 @@ GameObject:
   - component: {fileID: 1717991612}
   - component: {fileID: 1717991611}
   - component: {fileID: 1717991610}
+  - component: {fileID: 1717991615}
   m_Layer: 0
   m_Name: Cube (4)
   m_TagString: Untagged
@@ -26349,8 +26391,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f369064f8f4e759a94f80b852cc269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshRenderer: {fileID: 0}
-  beatDivision: 3
 --- !u!65 &1717991611
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26392,7 +26432,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a5a4d4573a9314349a41801b7894f913, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -26430,13 +26470,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1717991609}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.37, y: 2.63, z: 7.944107}
+  m_LocalRotation: {x: -0, y: -0, z: -0.85122687, w: 0.524798}
+  m_LocalPosition: {x: 7.44, y: 4.76, z: 6.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -116.691}
+--- !u!114 &1717991615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717991609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 456a90fddae64d54954f35d17a1e3e47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beatMultiplier: 1.5
+  waveform: 1
 --- !u!1 &1718695472
 GameObject:
   m_ObjectHideFlags: 0
@@ -27908,6 +27962,7 @@ GameObject:
   - component: {fileID: 1825685259}
   - component: {fileID: 1825685258}
   - component: {fileID: 1825685257}
+  - component: {fileID: 1825685262}
   m_Layer: 0
   m_Name: Cube (5)
   m_TagString: Untagged
@@ -27927,8 +27982,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f369064f8f4e759a94f80b852cc269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshRenderer: {fileID: 0}
-  beatDivision: 6
 --- !u!65 &1825685258
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27970,7 +28023,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7c2b17b17e0c6624d97faaca1ced5199, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -28008,13 +28061,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1825685256}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.26, y: 2.63, z: 7.944107}
+  m_LocalRotation: {x: -0, y: -0, z: -0.85122687, w: 0.524798}
+  m_LocalPosition: {x: 6.5910654, y: 3.0713902, z: 6.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -116.691}
+--- !u!114 &1825685262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825685256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 456a90fddae64d54954f35d17a1e3e47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beatMultiplier: 3
+  waveform: 1
 --- !u!1 &1827766143
 GameObject:
   m_ObjectHideFlags: 0
@@ -28066,6 +28133,7 @@ GameObject:
   - component: {fileID: 1827872063}
   - component: {fileID: 1827872062}
   - component: {fileID: 1827872061}
+  - component: {fileID: 1827872066}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -28085,8 +28153,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f369064f8f4e759a94f80b852cc269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshRenderer: {fileID: 0}
-  beatDivision: 1
 --- !u!65 &1827872062
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28128,7 +28194,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7c2b17b17e0c6624d97faaca1ced5199, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -28166,13 +28232,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1827872060}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.21, y: 2.63, z: 7.944107}
+  m_LocalRotation: {x: -0, y: -0, z: -0.55820215, w: 0.82970506}
+  m_LocalPosition: {x: -6.41, y: 4.68, z: 6.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -67.863}
+--- !u!114 &1827872066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827872060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 456a90fddae64d54954f35d17a1e3e47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beatMultiplier: 1
+  waveform: 1
 --- !u!1 &1829592525
 GameObject:
   m_ObjectHideFlags: 0
@@ -30194,7 +30274,7 @@ Transform:
   m_GameObject: {fileID: 1969625333}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalPosition: {x: 0, y: 0, z: 5}
   m_LocalScale: {x: 0.1, y: 0.1, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -32843,6 +32923,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4975841626371755213, guid: 1503655d493c8574399f391795ca4694, type: 3}
+      propertyPath: noteSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4975841626371755213, guid: 1503655d493c8574399f391795ca4694, type: 3}
+      propertyPath: preSpawnBeats
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4975841626371755213, guid: 1503655d493c8574399f391795ca4694, type: 3}
+      propertyPath: placementMultiplier
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4975841626371755213, guid: 1503655d493c8574399f391795ca4694, type: 3}
       propertyPath: beatDivisions.Array.size
       value: 6
       objectReference: {fileID: 0}
@@ -32911,11 +33003,11 @@ SceneRoots:
   - {fileID: 6489661075701673572}
   - {fileID: 1393280798617298172}
   - {fileID: 1925918408056237325}
+  - {fileID: 1701424100}
+  - {fileID: 480330364}
   - {fileID: 1827872065}
   - {fileID: 222022257}
   - {fileID: 61638394}
-  - {fileID: 1701424100}
-  - {fileID: 480330364}
   - {fileID: 1717991614}
   - {fileID: 1825685261}
   - {fileID: 779357614}
