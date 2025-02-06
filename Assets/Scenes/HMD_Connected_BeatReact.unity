@@ -10650,6 +10650,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HMD_Mobile
       objectReference: {fileID: 0}
+    - target: {fileID: 8079780769214640669, guid: 6d05fffcb71f51f47aa8fd65afb521ca, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.81
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -8,9 +8,9 @@ public class Init : MonoBehaviour
 {
     public AudioController audioController;
     public GameObject notePrefab;
-    
+
     // ======== SETTINGS ========
-    
+
     public float CURRENT_BEAT = 0;
     public float noteSpeed = 1;
     public float placementMultiplier = 5;
@@ -19,24 +19,24 @@ public class Init : MonoBehaviour
     // ======== SETTINGS ========
 
     private AllBeatmapData _beatmapData;
-    private bool _initialized;
+    public bool _initialized;
 
     void Start()
     {
         Locator.Settings = new Settings(noteSpeed, placementMultiplier, preSpawnBeats);
         Locator.BeatModel = new BeatModel();
-        
+
         Locator.Callbacks.AddBeatListener(BeatDivision.Quarter, BeatListener);
 
         Debug.Log("sdfsdf");
-        
+
         var loader = new BeatmapDataLoader();
         loader.LoadBeatmapData(OnBeatmapLoaded);
     }
 
     private void BeatListener(int beat)
     {
-        Debug.Log($"BEAT: {beat}");    
+        Debug.Log($"BEAT: {beat}");
     }
 
     private void OnBeatmapLoaded(AllBeatmapData beatmapData)
@@ -53,7 +53,7 @@ public class Init : MonoBehaviour
         Locator.Callbacks.GameplayInitSignal.Dispatch();
 
         audioController.PlayAudio();
-        
+
         _initialized = true;
     }
 
@@ -75,13 +75,13 @@ public class Init : MonoBehaviour
         {
             return;
         }
-        
+
         var newBeat = AudioUtils.SamplesToBeats(audioController.Samples, audioController.SampleRate, _beatmapData.AudioInfo.bpm);
         Locator.BeatModel.UpdateBeat(newBeat);
-        
+
         Locator.NoteTracker.Update(newBeat);
         Locator.NoteControllerCollection.UpdateNotes(newBeat);
-        
+
         Locator.EventTracker.Update(newBeat);
 
         // temporary fast iteration shit
@@ -91,13 +91,13 @@ public class Init : MonoBehaviour
 
     private void OnDestroy()
     {
-        Locator.Callbacks.RemoveAllListeners();    
+        Locator.Callbacks.RemoveAllListeners();
     }
 
     private void LogAudioInfo(AudioInfo audioInfo)
     {
         Debug.Log("AUDIO INFO LOADED: " + audioInfo.bpm);
-        Debug.Log("AUDIO INFO LOADED: " + audioInfo.audioDataFilename);    
+        Debug.Log("AUDIO INFO LOADED: " + audioInfo.audioDataFilename);
     }
 
     private void LogBeatmapData(BeatmapData beatmapData)
@@ -118,6 +118,6 @@ public class Init : MonoBehaviour
         foreach (var obstacle in beatmapData.obstacles)
         {
             Debug.Log($"Beat: {obstacle.b}, X: {obstacle.x}, Y: {obstacle.y}, Depth: {obstacle.d}, Width: {obstacle.w}, Height: {obstacle.h}");
-        }    
+        }
     }
 }

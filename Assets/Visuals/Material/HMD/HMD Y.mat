@@ -209,7 +209,7 @@ Material:
     - _Diffuse_Texture_Source: 0
     - _DisplacementBidirectional: 1
     - _DisplacementSpatial: 1
-    - _DisplacementStrength: 0.005
+    - _DisplacementStrength: 0.03
     - _DissolveAlpha: 0
     - _DissolveColorIntensity: 1
     - _DissolveEndValue: 10
@@ -431,7 +431,7 @@ Material:
     - _DistortionPanning: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionMaskSpeed: {r: 0, g: 1, b: 0, a: 0}
-    - _EmissionTexColor: {r: 0, g: 1, b: 0, a: 1}
+    - _EmissionTexColor: {r: 1, g: 0, b: 0, a: 1}
     - _EmissionTexSpeed: {r: 0, g: 0, b: 0, a: 0}
     - _GlowCutoutColor: {r: 1, g: 1, b: 1, a: 1}
     - _HologramColor: {r: 1, g: 1, b: 1, a: 1}
@@ -450,6 +450,6 @@ Material:
     - _SecondaryEmissionMaskSpeed: {r: 0, g: 1, b: 0, a: 0}
     - _SphericalNormalOffsetCenter: {r: 0, g: 0, b: 0, a: 1}
     - _UVScale: {r: 1, g: 1, b: 1, a: 1}
-    - _VertexDisplacementMaskMixer: {r: 1, g: 0, b: 0, a: 1}
+    - _VertexDisplacementMaskMixer: {r: 0, g: 1, b: 0, a: 1}
     - _VertexDisplacementMaskSpeed: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
