@@ -218,8 +218,8 @@ Material:
     - _BlendDstFactorA: 0
     - _BlendModePreserveSpecular: 1
     - _BlendSrcAlphaPreset: 0
-    - _BlendSrcFactor: 1
-    - _BlendSrcFactorA: 0
+    - _BlendSrcFactor: 0
+    - _BlendSrcFactorA: 1
     - _BlendingPreset: 0
     - _BloomPreset: 0
     - _BodyFadeGamma: 2
@@ -442,7 +442,7 @@ Material:
     - _StartOffset: 1
     - _StencilComp: 8
     - _StencilPass: 0
-    - _StencilPreset: 1
+    - _StencilPreset: 0
     - _StencilRefValue: 0
     - _Surface: 0
     - _ThresholdAngle: 0

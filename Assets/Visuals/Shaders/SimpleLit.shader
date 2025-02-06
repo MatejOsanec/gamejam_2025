@@ -187,12 +187,6 @@
         [EnumShowIf(3, None, MainEffect, Always, _RIMLIGHT_LERP, _RIMLIGHT_ADDITIVE)] _Rim_WhiteBoostType ("Rimlight Color Treatment", Int) = 0
         [ShowIfAny(_RIMLIGHT_LERP, _RIMLIGHT_ADDITIVE)] _RimLightWhiteboostMultiplier ("Rim Light Whiteboost Multiplier", Float) = 1.0
 
-
-
-        // to test
-
-
-
         // not implemented
 
         [BigHeader(LIGHTNING)]
@@ -526,18 +520,15 @@
             "RenderType"="Opaque"
             "Queue"="Geometry"
         }
+        LOD 100
 
-        Stencil {
-            Ref [_StencilRefValue]
-            Comp [_StencilComp]
-            Pass [_StencilPass]
-        }
 
         Pass {
             Cull [_Cull]
-            ZWrite [_ZWrite]
+            ZWrite On
             ZTest [_ZTest]
-            Blend [_BlendSrcFactor] [_BlendDstFactor], [_BlendSrcFactorA] [_BlendDstFactorA]
+            Blend One Zero
+            //Blend [_BlendSrcFactor] [_BlendDstFactor], [_BlendSrcFactorA] [_BlendDstFactorA]
 
             CGPROGRAM
             #pragma vertex vert
@@ -2775,224 +2766,9 @@
                 #endif
 
                 APPLY_FAKE_MIRROR_TRANSPARENCY_SQUARED(color)
-
+                color.a = 1.0f;
                 return color;
             }
-            ENDCG
-        }
-
-        // This pass is used for Depth Texture mostly used for Soft particle fading
-        // Anything that moves vertex positions should be copied to this pass
-        Pass {
-
-            Tags {
-                "LightMode"="ShadowCaster"
-            }
-
-            CGPROGRAM
-            #pragma vertex vert
-            #pragma fragment fragShadow
-            #pragma multi_compile_instancing
-            #pragma shader_feature _ CUTOUT_TYPE_HD_DISSOLVE CUTOUT_TYPE_LW_SCALE
-            #pragma shader_feature MESH_PACKING
-            #pragma shader_feature_local _ _SPECTROGRAM_FLAT _SPECTROGRAM_FULL
-            #pragma shader_feature_local DISPLACEMENT_SPATIAL
-            #pragma shader_feature_local DISPLACEMENT_BIDIRECTIONAL
-            #pragma shader_feature_local _ _VERTEXMODE_COLOR _VERTEXMODE_EMISSION _VERTEXMODE_METALSMOOTHNESS _VERTEXMODE_DISPLACEMENT _VERTEXMODE_SPECIAL
-
-            #include "UnityCG.cginc"
-            #if CUTOUT_TYPE_HD_DISSOLVE
-                #include "Assets/Visuals/Shaders/Rendering/Cutout3D.cginc"
-                half _CutoutTexScale;
-            #endif
-
-            #if _SPECTROGRAM_FULL
-                #define SPECTROGRAM_SIZE 64
-                float _SpectrogramData[SPECTROGRAM_SIZE];
-            #endif
-
-            UNITY_INSTANCING_BUFFER_START(Props)
-                #if CUTOUT_TYPE_HD_DISSOLVE || CUTOUT_TYPE_LW_SCALE
-                    UNITY_DEFINE_INSTANCED_PROP(half4, _CutoutTexOffset)
-                    UNITY_DEFINE_INSTANCED_PROP(half, _Cutout)
-                #endif
-                #if MESH_PACKING
-                    UNITY_DEFINE_INSTANCED_PROP(half, _MeshPackingId)
-                #endif
-                #if _VERTEXMODE_DISPLACEMENT
-                    UNITY_DEFINE_INSTANCED_PROP(half4, _DisplacementAxisMultiplier)
-                #endif
-                #if _SPECTROGRAM_FLAT
-                    UNITY_DEFINE_INSTANCED_PROP(half, _SpectrogramData)
-                #endif
-                #if _VERTEXMODE_DISPLACEMENT
-                    UNITY_DEFINE_INSTANCED_PROP(half, _DisplacementStrength)
-                #endif
-            UNITY_INSTANCING_BUFFER_END(Props)
-
-            struct appdata {
-
-                float4 vertex : POSITION;
-
-                #if _VERTEXMODE_DISPLACEMENT && !DISPLACEMENT_SPATIAL
-                    half3 normal : NORMAL;
-                #endif
-
-                #if MESH_PACKING
-                    float2 uv2 : TEXCOORD1;
-                #endif
-                #if _VERTEXMODE_DISPLACEMENT
-                    fixed4 color : COLOR;
-                #endif
-                #if _SPECTROGRAM_FULL
-                    float2 uv3 : TEXCOORD2;
-                #endif
-
-                UNITY_VERTEX_INPUT_INSTANCE_ID
-            };
-
-            struct v2f {
-
-                float4 vertex : SV_POSITION;
-                float3 worldPos : TEXCOORD1;
-
-                #if ENABLE_PLANE_CUT
-                    float4 localVertex : TEXCOORD2;
-                #endif
-
-                UNITY_VERTEX_INPUT_INSTANCE_ID
-                UNITY_VERTEX_OUTPUT_STEREO
-            };
-
-            v2f vert(appdata v) {
-
-                v2f o;
-
-                UNITY_SETUP_INSTANCE_ID(v);
-                UNITY_INITIALIZE_OUTPUT(v2f, o);
-                UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
-                UNITY_TRANSFER_INSTANCE_ID(v, o);
-
-                #if _VERTEXMODE_DISPLACEMENT
-                    float4 displacementVector = UNITY_ACCESS_INSTANCED_PROP(Props, _DisplacementAxisMultiplier);
-                    float displacementStrength = UNITY_ACCESS_INSTANCED_PROP(Props, _DisplacementStrength);
-                    #if _SPECTROGRAM_FLAT
-                        displacementStrength *= UNITY_ACCESS_INSTANCED_PROP(Props, _SpectrogramData);
-                    #elif _SPECTROGRAM_FULL
-                        displacementStrength *= _SpectrogramData[v.uv3.x * (SPECTROGRAM_SIZE - 1)];
-                    #endif
-
-                    #if DISPLACEMENT_SPATIAL
-                        #if DISPLACEMENT_BIDIRECTIONAL
-                            v.vertex.xyz += displacementStrength.xxx * (2.0 * v.color.rgb - float3 (1.0, 1.0, 1.0)) * displacementVector.rgb;
-                        #else
-                            v.vertex.xyz += displacementStrength.xxx * v.color.rgb * displacementVector.rgb;
-                        #endif
-                    #else
-                        v.vertex.xyz += displacementStrength.xxx * v.color.b * displacementVector.rgb * v.normal;
-                    #endif
-                #endif
-
-                #if CUTOUT_TYPE_LW_SCALE
-                    half cutout = UNITY_ACCESS_INSTANCED_PROP(Props, _Cutout);
-                #endif
-
-                #if NOTE_PLANE_CUT_LW_SNAP
-                    // p' = p - (n ⋅ p + d) * n
-                    half4 cutPlane = UNITY_ACCESS_INSTANCED_PROP(Props, _CutPlane);
-                    half d = dot(cutPlane.xyz, v.vertex.xyz) + cutPlane.w;
-                    #if CUTOUT_TYPE_LW_SCALE
-                        d -= cutout * (_NoteSize + cutPlane.w);
-                    #endif
-                    v.vertex.xyz = v.vertex.xyz - min(0, d) * cutPlane.xyz;
-                #endif
-
-                o.worldPos = mul(unity_ObjectToWorld, v.vertex);
-
-                #if CUTOUT_TYPE_LW_SCALE
-                    #if CLOSE_TO_CAMERA_CUTOUT
-                        float camDistance = length(o.worldPos - _WorldSpaceCameraPos);
-                        cutout += saturate(1 + _CloseToCameraCutoutOffset - camDistance * _CloseToCameraCutoutScale);
-                    #endif
-                    #if NOTE_PLANE_CUT_LW_SNAP
-                        half t = smoothstep(0.5, 1, cutout);
-                        v.vertex.xyz *= 1.0 - t;
-                        v.vertex.xyz += cutPlane.xyz * t * _NoteSize;
-                    #else
-                        v.vertex.xyz *= 1.0 - cutout;
-                    #endif
-                #endif
-
-                #if NOTE_VERTEX_DISTORTION && MIRROR_VERTEX_DISTORTION && FAKE_MIRROR_TRANSPARENCY
-                    float3 vertexOffset = GetFakeMirrorDistortionVertexOffset(o.worldPos);
-                    v.vertex.xyz += vertexOffset;
-                #endif
-
-                #if MESH_PACKING
-                    if (abs(v.uv2.y - UNITY_ACCESS_INSTANCED_PROP(Props, _MeshPackingId)) > 0.1) {
-                        v.vertex = float4(0.0, 0.0, 0.0, 0.0);
-                    }
-                #endif
-
-                o.vertex = UnityObjectToClipPos(v.vertex);
-                o.worldPos = mul(unity_ObjectToWorld, v.vertex);
-                return o;
-            }
-
-            fixed4 fragShadow(v2f i) : SV_Target {
-
-                UNITY_SETUP_INSTANCE_ID(i);
-
-                #if NOTE_PLANE_CUT_HD_DISSOLVE
-                    half4 cutPlane = UNITY_ACCESS_INSTANCED_PROP(Props, _CutPlane);
-                    half d = dot(i.localVertex.xyz, cutPlane.xyz) + cutPlane.w; // Signed distance from plane.
-                    clip(d);
-                #endif
-
-                #if CUTOUT_TYPE_HD_DISSOLVE
-                    float3 objectPos = float3(unity_ObjectToWorld[0][3], unity_ObjectToWorld[1][3], unity_ObjectToWorld[2][3]); // World pos of object
-                    half cutout = UNITY_ACCESS_INSTANCED_PROP(Props, _Cutout);
-                    half cutoutSample = tex3D(_CutoutTex, (i.worldPos.xyz - objectPos + UNITY_ACCESS_INSTANCED_PROP(Props, _CutoutTexOffset)) * _CutoutTexScale).a;
-                    clip(cutoutSample - cutout * 1.1 + 0.1);
-                #endif
-
-                return fixed4(0.0, 0.0, 0.0, 1.0);
-            }
-            ENDCG
-        }
-
-        // Extracts information for lightmapping, GI (emission, albedo, ...)
-        // This pass is not used during regular rendering.
-        Pass
-        {
-            Name "META"
-            Tags {"LightMode"="Meta"}
-            Cull Off
-
-            CGPROGRAM
-
-                #include"UnityStandardMeta.cginc"
-
-                float4 frag_meta2 (v2f_meta i): SV_Target {
-
-                    // We're interested in diffuse & specular colors
-                    // and surface roughness to produce final albedo.
-
-                    FragmentCommonData data = UNITY_SETUP_BRDF_INPUT (i.uv);
-                    UnityMetaInput o;
-
-                    UNITY_INITIALIZE_OUTPUT(UnityMetaInput, o);
-
-                    o.Albedo = _Color;
-                    o.Emission = 0;
-
-                    return UnityMetaFragment(o);
-                }
-
-                #pragma vertex vert_meta
-                #pragma fragment frag_meta2
-                #pragma shader_feature ___ _DETAIL_MULX2
-
             ENDCG
         }
     }
