@@ -45,6 +45,8 @@ namespace Core
         
         private readonly Dictionary<int, Signal<int>> _onBeatSignals = new();
         private readonly Dictionary<int, int> _lastProcessedBeats = new();
+        
+        public float GetBeatProgress(float beatMultiplier) => (CurrentBeat % beatMultiplier - 1) / beatMultiplier;
 
         private void InitializeDivision(int division)
         {

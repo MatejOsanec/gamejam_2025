@@ -1,3 +1,4 @@
+using Beatmap;
 using strange.extensions.signal.impl;
 
 namespace Core
@@ -7,7 +8,7 @@ namespace Core
     
     public class NoteControllerCollection
     {
-        public Signal<NoteController> NoteMissSignal = new();
+        public Signal<ColorNote> NoteMissSignal = new();
         private List<NoteController> noteControllers = new List<NoteController>();
         
         public void Add(NoteController noteController)
@@ -37,9 +38,11 @@ namespace Core
                 noteController.UpdatePosition(currentBeat);
                 if (noteController.ZPosition <= 0)
                 {
-                    NoteMissSignal.Dispatch(noteController);    
+                    NoteMissSignal.Dispatch(noteController.noteData);
+                    var toRemove = noteController.gameObject;
+                    noteControllers.Remove(noteController);
+                    Object.Destroy(toRemove);
                 }
-                
             }
         }
     }

@@ -23,22 +23,22 @@ namespace Gameplay
             if (material != null)
             {
                 // Get the current beat
-                float currentBeat = Locator.BeatModel.CurrentBeat;
                 float transparency = 0f;
+                
                 // Calculate transparency based on the selected waveform
                 switch (waveform)
                 {
                     case Waveform.Linear:
-                        transparency = Mathf.Abs((currentBeat % beatMultiplier) - 1) / beatMultiplier;
+                        transparency = Mathf.Abs(Locator.BeatModel.GetBeatProgress(beatMultiplier));
                         break;
                     case Waveform.Sinusoidal:
-                        transparency = (Mathf.Sin(currentBeat * Mathf.PI / beatMultiplier) + 1) / 2;
+                        transparency = Mathf.Sin(Locator.BeatModel.GetBeatProgress(beatMultiplier)) / 2f;
                         break;
                     case Waveform.Square:
-                        transparency = (Mathf.Floor(currentBeat % beatMultiplier) < beatMultiplier / 2) ? 1f : 0f;
+                        transparency = Mathf.Floor(Locator.BeatModel.GetBeatProgress(beatMultiplier)) < 0.5 ? 1f : 0f;
                         break;
                     case Waveform.Sawtooth:
-                        transparency = (currentBeat % beatMultiplier) / beatMultiplier;
+                        transparency = Locator.BeatModel.GetBeatProgress(beatMultiplier);
                         break;
                 }
                 // Set the material's alpha value

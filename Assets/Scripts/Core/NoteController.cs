@@ -6,15 +6,15 @@ namespace Core
 
     public class NoteController : MonoBehaviour
     {
-        private ColorNote noteData;
-        private float speed;
+        public ColorNote noteData;
+        private float _speed;
 
         public float ZPosition => transform.position.z;
 
         public void Setup(ColorNote noteData, float speed)
         {
             this.noteData = noteData;
-            this.speed = speed;
+            this._speed = speed;
         }
 
         public void UpdatePosition(float currentBeat)
@@ -26,7 +26,7 @@ namespace Core
             }
 
             // Calculate the new Y position
-            float newZ = (noteData.beat - currentBeat) * speed;
+            float newZ = (noteData.beat - currentBeat) * _speed;
 
             // Update the position of the note
             var noteTransform = transform;

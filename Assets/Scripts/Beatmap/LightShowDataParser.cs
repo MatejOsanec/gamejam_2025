@@ -38,7 +38,7 @@ namespace Beatmap
     {
         public int EventId;
         public float Value;
-        public float Beat { get; }
+        public float Beat => beat;
 
         
         private float beat;

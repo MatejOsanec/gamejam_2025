@@ -34,7 +34,7 @@ namespace Core
     {
         public readonly Signal GameplayInitSignal = new Signal();
         public Signal<ColorNote> NoteSpawnedSignal => Locator.NoteTracker.ObjectPassedSignal;
-        public Signal<NoteController> NoteMissSignal => Locator.NoteControllerCollection.NoteMissSignal;
+        public Signal<ColorNote> NoteMissSignal => Locator.NoteControllerCollection.NoteMissSignal;
         public Signal<BeatmapEventData> EventTriggeredSignal => Locator.EventTracker.ObjectPassedSignal;
         
         public void AddBeatListener(BeatDivision division, Action<int> callback) => Locator.BeatModel.AddBeatListener((int)division, callback);

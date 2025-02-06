@@ -10,6 +10,7 @@ public class Init : MonoBehaviour
     
     // ======== SETTINGS ========
     
+    public float CURRENT_BEAT = 0;
     public float noteSpeed = 1;
     public float placementMultiplier = 5;
     public float preSpawnBeats = 4;
@@ -73,9 +74,12 @@ public class Init : MonoBehaviour
         
         Locator.NoteTracker.Update(newBeat + Locator.Settings.PreSpawnBeats);
         Locator.NoteControllerCollection.UpdateNotes(newBeat);
+        
+        Locator.EventTracker.Update(newBeat);
 
         // temporary fast iteration shit
         Locator.Settings = new Settings(noteSpeed, placementMultiplier, preSpawnBeats);
+        CURRENT_BEAT = Locator.BeatModel.CurrentBeat;
     }
 
     private void LogAudioInfo(AudioInfo audioInfo)
