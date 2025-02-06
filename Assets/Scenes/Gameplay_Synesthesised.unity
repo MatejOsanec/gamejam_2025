@@ -30647,8 +30647,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5620692574834371863, guid: 203373f9f3c977b4ca2849bdfdfd6dd5, type: 3}
+      propertyPath: _speedC
+      value: 8.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 5620692574834371863, guid: 203373f9f3c977b4ca2849bdfdfd6dd5, type: 3}
       propertyPath: _amplitudeC
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5620692574834371863, guid: 203373f9f3c977b4ca2849bdfdfd6dd5, type: 3}
+      propertyPath: _spatialScaleC
+      value: 2.59
       objectReference: {fileID: 0}
     - target: {fileID: 5620692574834371863, guid: 203373f9f3c977b4ca2849bdfdfd6dd5, type: 3}
       propertyPath: _computeKernelC

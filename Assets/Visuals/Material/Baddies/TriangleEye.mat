@@ -456,8 +456,8 @@ Material:
     - _UseSphericalNormalOffset: 0
     - _UvSegmentsIgnoreRim: 0
     - _VertexDisplacementMaskMode: 0
-    - _VertexDisplacementMaskMultiplier: 1.3
-    - _VertexDisplacementMaskOffset: -0.6
+    - _VertexDisplacementMaskMultiplier: -0.78
+    - _VertexDisplacementMaskOffset: -1.11
     - _VertexDisplacement_Mask_Source: 0
     - _VertexMode: 5
     - _Vertex_WhiteBoostType: 0
