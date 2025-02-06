@@ -44,15 +44,12 @@ Material:
   - _PARALLAX_NONE
   - _PARALLAX_PROJECTION_PLANAR
   - _PROBE_CALCULATION_FAST
-  - _RIM_WHITEBOOSTTYPE_NONE
   - _SECONDARY_MASK_BLEND_MULTIPLY
   - _SECONDARY_UVS_NONE
   - _SMOOTHNESS_TEXTURE_NONE
   - _SPECTROGRAM_NONE
   - _VERTEXDISPLACEMENTMASKMODE_MULTIPLY
   - _VERTEXDISPLACEMENT_MASK_SOURCE_TEXTURE
-  - _VERTEX_WHITEBOOSTTYPE_NONE
-  - _ZWRITE_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -174,8 +171,8 @@ Material:
     - _AntiflickerDistanceScale: 0.1
     - _AntiflickerStrength: 0.7
     - _AvatarComputeSkinning: 0
-    - _BlendDstFactor: 0
-    - _BlendDstFactorA: 0
+    - _BlendDstFactor: 1
+    - _BlendDstFactorA: 1
     - _BlendSrcAlphaPreset: 0
     - _BlendSrcFactor: 1
     - _BlendSrcFactorA: 0
@@ -413,11 +410,11 @@ Material:
     - _VertexMode: 5
     - _Vertex_WhiteBoostType: 0
     - _WhiteOffset: 2
-    - _ZTest: 4
-    - _ZWrite: 1
+    - _ZTest: 2
+    - _ZWrite: 0
     m_Colors:
     - _AdditiveUVOffset: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 0}
     - _CutPlane: {r: 1, g: 0, b: 0, a: 0}
     - _DarkeningCenter: {r: 0, g: 0, b: 0, a: 0}
     - _DarkeningDirection: {r: 1, g: 1, b: 1, a: 1}
