@@ -1,12 +1,19 @@
+using System;
+using Beatmap;
+using Beatmap.Lightshow;
 using strange.extensions.signal.impl;
 
 namespace Core
 {
     public static class Locator
     {
-        public static Signal GameplayInitSignal = new Signal();
         public static Settings Settings;
         public static BeatModel BeatModel;
+        public static Callbacks Callbacks = new();
+        public static BeatmapObjectTracker<ColorNote> NoteTracker;
+        public static BeatmapEventTracker EventTracker;
+        public static NoteControllerCollection NoteControllerCollection;
+        public static PrefabSpawner PrefabSpawner;
     }
 
     public class Settings
@@ -21,5 +28,19 @@ namespace Core
             PlacementMultiplier = placementMultiplier;
             PreSpawnBeats = preSpawnBeats;
         }
+    }
+
+    public class Callbacks
+    {
+        public readonly Signal GameplayInitSignal = new Signal();
+        public Signal<ColorNote> NoteSpawnedSignal => Locator.NoteTracker.ObjectPassedSignal;
+        public Signal<NoteController> NoteMissSignal => Locator.NoteControllerCollection.NoteMissSignal;
+        public Signal<BeatmapEventData> EventTriggeredSignal => Locator.EventTracker.ObjectPassedSignal;
+        
+        public void AddBeatListener(BeatDivision division, Action<int> callback) => Locator.BeatModel.AddBeatListener((int)division, callback);
+        public void AddBeatListener(int division, Action<int> callback) => Locator.BeatModel.AddBeatListener(division, callback);
+        
+        public void AddEventListener(int eventId, Action<float> callback) => Locator.EventTracker.AddEventListener(eventId, callback);
+
     }
 }

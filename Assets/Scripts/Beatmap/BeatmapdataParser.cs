@@ -20,12 +20,19 @@ namespace Beatmap
     
     // ============================ BEATMAP DATA ====================================
     [System.Serializable]
-    public class ColorNote
+    public class ColorNote : IBeatmapObject
     {
         public float beat; // Beat
         public int x;
         public int y;
         public int d; // Direction
+
+        public float Beat => beat;
+    }
+
+    public interface IBeatmapObject
+    {
+        public float Beat { get; }
     }
 
     [System.Serializable]
@@ -118,7 +125,7 @@ namespace Beatmap
         }
     }
 
-    public class JsonParser
+    public class BeatmapdataParser
     {
         public static AudioInfo ParseBeatmapInfo(string jsonString)
         {

@@ -1,5 +1,5 @@
-using System.Collections.Generic;
 using Beatmap;
+using Beatmap.Lightshow;
 using Core;
 using UnityEngine;
 
@@ -17,9 +17,6 @@ public class Init : MonoBehaviour
     // ======== SETTINGS ========
 
     private AllBeatmapData _beatmapData;
-    private BeatTracker _tracker;
-    private NoteControllerCollection _notes;
-    private PrefabSpawner _spawner;
     private bool _initialized;
 
     void Start()
@@ -27,7 +24,7 @@ public class Init : MonoBehaviour
         Locator.Settings = new Settings(noteSpeed, placementMultiplier, preSpawnBeats);
         Locator.BeatModel = new BeatModel();
         
-        Locator.BeatModel.AddBeatListener(BeatDivision.Quarter, BeatListener);
+        Locator.Callbacks.AddBeatListener(BeatDivision.Quarter, BeatListener);
 
         Debug.Log("sdfsdf");
         
@@ -42,25 +39,26 @@ public class Init : MonoBehaviour
 
     private void OnBeatmapLoaded(AllBeatmapData beatmapData)
     {
-        LogBeatmapData(beatmapData.BeatmapData);
         _beatmapData = beatmapData;
-        
+
+        Locator.NoteTracker = new BeatmapObjectTracker<ColorNote>(_beatmapData.BeatmapData.colorNotes);
+        Locator.EventTracker = new BeatmapEventTracker(_beatmapData.LightshowData.Events);
+        Locator.PrefabSpawner = new PrefabSpawner(transform);
+        Locator.NoteControllerCollection = new NoteControllerCollection();
+
+        Locator.Callbacks.NoteSpawnedSignal.AddListener(OnColorNotePassed);
+        Locator.Callbacks.GameplayInitSignal.Dispatch();
+
         audioController.PlayAudio();
-
-        _spawner = new PrefabSpawner(transform);
-        _notes = new NoteControllerCollection();
-        _tracker = new BeatTracker(_beatmapData.BeatmapData.colorNotes);
-        _tracker.OnColorNotePassed += OnColorNotePassed;
-
+        
         _initialized = true;
-        Locator.GameplayInitSignal.Dispatch();
     }
 
     private void OnColorNotePassed(ColorNote note)
     {
-        Debug.Log($"NOTE PASSED: {note.beat}, X: {note.x}, Y: {note.y}, Duration: {note.d}");
-        var noteController = _spawner.SpawnNote(notePrefab, note);
-        _notes.Add(noteController);
+        Debug.Log($"NOTE SPAWNED: {note.beat}, X: {note.x}, Y: {note.y}, Duration: {note.d}");
+        var noteController = Locator.PrefabSpawner.SpawnNote(notePrefab, note);
+        Locator.NoteControllerCollection.Add(noteController);
     }
 
     private void Update()
@@ -73,8 +71,8 @@ public class Init : MonoBehaviour
         var newBeat = AudioUtils.SamplesToBeats(audioController.Samples, audioController.SampleRate, _beatmapData.AudioInfo.bpm);
         Locator.BeatModel.UpdateBeat(newBeat);
         
-        _tracker.Update(newBeat + Locator.Settings.PreSpawnBeats);
-        _notes.UpdatePosition(newBeat);
+        Locator.NoteTracker.Update(newBeat + Locator.Settings.PreSpawnBeats);
+        Locator.NoteControllerCollection.UpdateNotes(newBeat);
 
         // temporary fast iteration shit
         Locator.Settings = new Settings(noteSpeed, placementMultiplier, preSpawnBeats);

@@ -1,4 +1,5 @@
 using Beatmap;
+using Beatmap.Lightshow;
 
 namespace Core
 {
@@ -9,6 +10,7 @@ namespace Core
     {
         public AudioInfo AudioInfo { get; set; }
         public BeatmapData BeatmapData { get; set; }
+        public LightshowData LightshowData { get; set; }
     }
     
     public class BeatmapDataLoader
@@ -16,38 +18,45 @@ namespace Core
         private Action<AllBeatmapData> onComplete;
         private AudioInfo audioInfo;
         private BeatmapData beatmapData;
+        private LightshowData lightshowData;
         private int filesLoaded = 0;
+        private int filesToLoad = 0;
         
         public void LoadBeatmapData(Action<AllBeatmapData> onComplete)
         {
             this.onComplete = onComplete;
-            JsonLoader.LoadJson("Info").Completed += handle => OnDataLoaded(handle, r => audioInfo = JsonParser.ParseBeatmapInfo(r));
-            JsonLoader.LoadJson("beatmapData").Completed += handle => OnDataLoaded(handle, r => beatmapData = JsonParser.ParseBeatmapData(r));
+            LoadJson("Info", r => audioInfo = BeatmapdataParser.ParseBeatmapInfo(r));
+            LoadJson("beatmapData", r => beatmapData = BeatmapdataParser.ParseBeatmapData(r));
+            LoadJson("lightshow", r => lightshowData = LightshowJsonParser.ParseLightshowData(r));
         }
 
-        private void OnDataLoaded(AsyncOperationHandle<string> handle, Action<string> parseAction)
-        {
-            if (handle.Status != AsyncOperationStatus.Succeeded)
-            {
-                Debug.LogError("Failed to load JSON: " + handle.OperationException);
-                return;
-            }
-            parseAction(handle.Result);
-            CheckAllFilesLoaded();
-        }
-        
         private void CheckAllFilesLoaded()
         {
-            filesLoaded++;
-            if (filesLoaded == 2) // Adjust this if more files are added
+            if (audioInfo != null && beatmapData != null && lightshowData != null)
             {
                 var combinedData = new AllBeatmapData
                 {
                     AudioInfo = audioInfo,
-                    BeatmapData = beatmapData
+                    BeatmapData = beatmapData,
+                    LightshowData = lightshowData
                 };
                 onComplete?.Invoke(combinedData);
             }
+        }
+        
+        private void LoadJson(string fileName, Action<string> onJsonReady)
+        {
+            JsonLoader.LoadJson(fileName).Completed += handle =>
+            {
+                if (handle.Status != AsyncOperationStatus.Succeeded)
+                {
+                    Debug.LogError("Failed to load JSON: " + handle.OperationException);
+                    return;
+                }
+
+                onJsonReady(handle.Result);
+                CheckAllFilesLoaded();
+            };
         }
     }
 }

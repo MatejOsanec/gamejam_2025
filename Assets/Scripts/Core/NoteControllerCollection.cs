@@ -1,3 +1,5 @@
+using strange.extensions.signal.impl;
+
 namespace Core
 {
     using System.Collections.Generic;
@@ -5,6 +7,7 @@ namespace Core
     
     public class NoteControllerCollection
     {
+        public Signal<NoteController> NoteMissSignal = new();
         private List<NoteController> noteControllers = new List<NoteController>();
         
         public void Add(NoteController noteController)
@@ -27,11 +30,16 @@ namespace Core
             noteControllers.Remove(noteController);
         }
         
-        public void UpdatePosition(float currentBeat)
+        public void UpdateNotes(float currentBeat)
         {
             foreach (var noteController in noteControllers)
             {
                 noteController.UpdatePosition(currentBeat);
+                if (noteController.ZPosition <= 0)
+                {
+                    NoteMissSignal.Dispatch(noteController);    
+                }
+                
             }
         }
     }

@@ -9,6 +9,8 @@ namespace Core
         private ColorNote noteData;
         private float speed;
 
+        public float ZPosition => transform.position.z;
+
         public void Setup(ColorNote noteData, float speed)
         {
             this.noteData = noteData;

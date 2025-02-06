@@ -12,11 +12,16 @@ public class StartPassThrough : MonoBehaviour {
         if (_enablePassthrough) {
             _mainCamera.backgroundColor = new Color(0,0,0,0);
         }
-        // Hacky way to make it work with domain reload disabled
-        OVRManager.instance.isInsightPassthroughEnabled = false;
-        if (_enablePassthrough) {
-            yield return null;
-            OVRManager.instance.isInsightPassthroughEnabled = true;
+
+        if (OVRManager.instance)
+        {
+            // Hacky way to make it work with domain reload disabled
+            OVRManager.instance.isInsightPassthroughEnabled = false;
+            if (_enablePassthrough)
+            {
+                yield return null;
+                OVRManager.instance.isInsightPassthroughEnabled = true;
+            }
         }
     }
 }

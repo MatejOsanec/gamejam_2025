@@ -54,16 +54,12 @@ namespace Core
                 _onBeatSignals[division] = new Signal<int>();
             }
         }
-        public void AddBeatListener(BeatDivision division, Action<int> callback)
-        {
-            AddBeatListener((int)division, callback);
-        }
-        
         public void AddBeatListener(int division, Action<int> callback)
         {
             InitializeDivision(division);
-            _onBeatSignals[division].AddListener(callback);    
+            _onBeatSignals[division].AddListener(callback);
         }
+        
         public void UpdateBeat(float beat)
         {
             CurrentBeat = beat;
