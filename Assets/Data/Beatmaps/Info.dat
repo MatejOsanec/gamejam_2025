@@ -1,23 +1,23 @@
 {
     "version": "4.0.1",
     "song": {
-        "title": "Immortal",
-        "subTitle": "(GameJam2025)",
-        "author": "Slippy"
+        "title": "GameJam2025_Shorter",
+        "subTitle": "",
+        "author": ""
     },
     "audio": {
-        "songFilename": "Immortal.wav",
+        "songFilename": "GameJam2025_V1_Short.wav",
         "songDuration": 0.0,
         "audioDataFilename": "AudioData.dat",
-        "bpm": 150.0,
+        "bpm": 120.0,
         "lufs": 0.0,
-        "previewStartTime": 78.5,
+        "previewStartTime": 0.0,
         "previewDuration": 10.0
     },
-    "songPreviewFilename": "Immortal.wav",
+    "songPreviewFilename": "GameJam2025_V1_Short.wav",
     "coverImageFilename": "",
     "environmentNames": [
-        "MetallicaEnvironment"
+        "ColliderEnvironment"
     ],
     "colorSchemes": [],
     "difficultyBeatmaps": [

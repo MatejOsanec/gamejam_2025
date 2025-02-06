@@ -17,23 +17,23 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 7812cc0158238134894e3ae978c99fb5
   m_SerializeEntries:
-  - m_GUID: f6638c5ebc125eb429f4f761ad62e5ff
-    m_Address: beatmapData
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0d79203bbe90aad458fb3a319bf6427f
     m_Address: Info
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 2b5372b8a3f12db408c41297a698d0be
+  - m_GUID: 9fffee6cfeb5abf4ab419679c340a28a
+    m_Address: AudioData
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1f247168cf36ef748b1589a305cc6a79
     m_Address: lightshow
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9fffee6cfeb5abf4ab419679c340a28a
-    m_Address: AudioData
+  - m_GUID: 51eddb8654f9dc742838bbd431ea11e4
+    m_Address: beatmapData
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

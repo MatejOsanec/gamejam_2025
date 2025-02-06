@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Beatmap;
 using Core;
 using UnityEngine;
@@ -10,7 +11,6 @@ public class Init : MonoBehaviour
     public float placementMultiplier = 5;
     public float preSpawnBeats = 4;
 
-    private float _currentBeat = 0;
     private AllBeatmapData _beatmapData;
     private BeatTracker _tracker;
     private NoteControllerCollection _notes;
@@ -19,11 +19,19 @@ public class Init : MonoBehaviour
     void Start()
     {
         Locator.Settings = new Settings(noteSpeed, placementMultiplier, preSpawnBeats);
+        Locator.BeatModel = new BeatModel(new List<int> { 1, 2, 4, 8, 16 });
+        
+        Locator.BeatModel.AddBeatListener(4,BeatListener);
 
         Debug.Log("sdfsdf");
         
         var loader = new BeatmapDataLoader();
         loader.LoadBeatmapData(OnBeatmapLoaded);
+    }
+
+    private void BeatListener(int beat)
+    {
+        Debug.Log($"BEAT: {beat}");    
     }
 
     private void OnBeatmapLoaded(AllBeatmapData beatmapData)
@@ -49,10 +57,10 @@ public class Init : MonoBehaviour
     private void Update()
     {
         var newBeat = AudioUtils.SamplesToBeats(audioController.Samples, audioController.SampleRate, _beatmapData.AudioInfo.bpm);
+        Locator.BeatModel.UpdateBeat(newBeat);
+        
         _tracker.Update(newBeat + Locator.Settings.PreSpawnBeats);
         _notes.UpdatePosition(newBeat);
-        
-        _currentBeat = newBeat;
 
         // temporary fast iteration shit
         Locator.Settings = new Settings(noteSpeed, placementMultiplier, preSpawnBeats);
