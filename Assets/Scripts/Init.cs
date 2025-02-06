@@ -67,8 +67,6 @@ public class Init : MonoBehaviour
     private void OnColorNoteMiss(ColorNote note)
     {
         Debug.Log($"NOTE MISS: {note.beat}, X: {note.x}, Y: {note.y}, Direction: {note.d}");
-        var noteController = Locator.PrefabSpawner.SpawnNote(notePrefab, note);
-        Locator.NoteControllerCollection.Add(noteController);
     }
 
     private void Update()

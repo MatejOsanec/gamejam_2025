@@ -9,7 +9,7 @@ namespace Core
     public class NoteControllerCollection
     {
         public Signal<ColorNote> NoteMissSignal = new();
-        private List<NoteController> noteControllers = new List<NoteController>();
+        private List<NoteController> noteControllers = new();
         
         public void Add(NoteController noteController)
         {
@@ -43,7 +43,7 @@ namespace Core
                     NoteMissSignal.Dispatch(noteController.noteData);
                     var toRemove = noteController.gameObject;
                     noteControllers.RemoveAt(i);
-                    Object.Destroy(toRemove);
+                    Object.DestroyImmediate(toRemove);
                 }
             }
         }
