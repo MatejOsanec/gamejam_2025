@@ -9,7 +9,7 @@ namespace Gameplay
 
         void Start()
         {
-            if (Locator.Model.Initialized)
+            if (Locator.Model != null && Locator.Model.Initialized)
             {
                 _initialized = true;
                 OnGameInit();    
