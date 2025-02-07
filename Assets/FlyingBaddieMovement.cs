@@ -6,7 +6,7 @@ public class FlyingBaddieMovement : BeatmapCallbackListener
 {
     [Header("Aim Controls")]
     public Transform targetTransform;
-    public float smoothSpeed = 1;
+    public float smoothSpeed = 0.5f;
 
     [Header("Movement Controls")]
     public float offset = 0;

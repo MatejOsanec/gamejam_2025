@@ -5,6 +5,7 @@ using UnityEngine;
 public class Init : MonoBehaviour
 {
     public AudioController audioController;
+    public Material[] starfishMaterials ;
 
     // ======== SETTINGS ========
     [Header("DEBUG STUFF")]

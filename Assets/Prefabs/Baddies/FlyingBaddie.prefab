@@ -288,8 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad90c306c0d432aa2eab1f4ea3fef11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {x: 0, y: 0, z: 0}
-  smoothSpeed: 2
+  progress: 20
   fireRateEventId: 19
   projectile: {fileID: 4124924747826312945}
 --- !u!114 &6389389333920745160
@@ -304,6 +303,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a5ec3dc2c3198a4794b7da9cf4eaa07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTransform: {fileID: 0}
+  smoothSpeed: 1
+  offset: 0.5
+  syncMultiplier: {x: 2, y: 16, z: 4}
   curveMovementX:
     serializedVersion: 2
     m_Curve:
@@ -530,8 +533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad90c306c0d432aa2eab1f4ea3fef11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {x: 0, y: 0, z: 0}
-  smoothSpeed: 2
+  progress: 20
   fireRateEventId: 20
   projectile: {fileID: 1158051164815879022}
 --- !u!4 &8988118783805749064 stripped
