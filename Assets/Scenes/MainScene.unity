@@ -2979,7 +2979,7 @@ PrefabInstance:
     - target: {fileID: 6389389333920745160, guid: 17d9618779c4ce1428af46943662a60c, type: 3}
       propertyPath: targetTransform
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2078217576}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4806,7 +4806,7 @@ PrefabInstance:
     - target: {fileID: 6389389333920745160, guid: 17d9618779c4ce1428af46943662a60c, type: 3}
       propertyPath: targetTransform
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2078217576}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
