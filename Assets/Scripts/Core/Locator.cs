@@ -40,6 +40,9 @@ namespace Core
         
         public void AddBeatListener(BeatDivision division, Action<int> callback) => Locator.BeatModel.AddBeatListener((int)division, callback);
         public void AddBeatListener(int division, Action<int> callback) => Locator.BeatModel.AddBeatListener(division, callback);
+
+        public void RemoveBeatListener(BeatDivision division, Action<int> callback) => Locator.BeatModel.RemoveBeatListener((int)division, callback);
+        public void RemoveBeatListener(int division, Action<int> callback) => Locator.BeatModel.RemoveBeatListener(division, callback);
         
         public void AddEventListener(int eventId, Action<float> callback) => Locator.EventTracker.AddEventListener(eventId, callback);
 

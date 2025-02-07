@@ -7,29 +7,30 @@ namespace Gameplay
 
     public class ShootController : BeatmapCallbackListener
     {
+        public float progress = 20;
         public int fireRateEventId = 20;
 
         public GameObject projectile;
         
         private float _lastTriggerTime;
         private float _shootingInterval = Mathf.Infinity; 
-        private float _lastShotTime = -Mathf.Infinity;
-        private float _defaultShotDuration = 0.2f;
-        private float _shotDuration = 0.2f;
+        private float[] _frequencySet;
 
         protected override void OnGameInit()
         {
-            Locator.Callbacks.AddEventListener(fireRateEventId, EventTriggeredHandler);    
+            Locator.Callbacks.AddEventListener(fireRateEventId, EventTriggeredHandler);
+            _frequencySet = new[] { 0f, 1, 2, 3, 4, 6, 8, 12, 16, 24, 32};
         }
 
         private void EventTriggeredHandler(float value)
         {
-            Debug.Log($"EVENT ID 20 value: {value}");
-            // Calculate the shooting interval based on the event value
-            // 0 = not shooting, 0.1 = 1 shot per second, 1 = 30 shots per second
-            _shootingInterval = value > 0 ? 1f / (value * 30f) : Mathf.Infinity;
-            _shotDuration = Mathf.Min(_shootingInterval / 2, _defaultShotDuration);
+            value = Mathf.Clamp01(value);
+            int index = Mathf.FloorToInt(value * (_frequencySet.Length - 1));
+            float selectedFrequency = _frequencySet[index];
+            _shootingInterval = selectedFrequency == 0 ? Mathf.Infinity : 1f / selectedFrequency;
+            Debug.Log($"_shootingInterval = {_shootingInterval} value: {value}");
         }
+
         private void Update()
         {
             if (projectile == null)
@@ -37,19 +38,9 @@ namespace Gameplay
                 Debug.LogWarning("Target object is not assigned.");
                 return;
             }
-            
-            float currentTime = Time.time;
-            
-            if (currentTime >= _lastShotTime + _shootingInterval)
-            {
-                projectile.SetActive(true);
-                _lastShotTime = currentTime;
-            }
-            
-            if (currentTime >= _lastShotTime + _shotDuration)
-            {
-                projectile.SetActive(false);
-            }
+
+            progress = Locator.BeatModel.GetShapedBeatProgress(Waveform.Square, _shootingInterval);
+            projectile.SetActive(progress > 0.5);
         }
     }
 }

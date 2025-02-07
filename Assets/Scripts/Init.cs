@@ -1,17 +1,18 @@
-using System;
 using Beatmap;
-using Beatmap.Lightshow;
 using Core;
 using UnityEngine;
 
 public class Init : MonoBehaviour
 {
     public AudioController audioController;
-    public GameObject notePrefab;
 
     // ======== SETTINGS ========
-
+    [Header("DEBUG STUFF")]
+    public float START_BEAT = 0;
     public float CURRENT_BEAT = 0;
+
+    [Header("SETINGS")]
+    public GameObject notePrefab;
     public float noteSpeed = 1;
     public float placementMultiplier = 5;
     public float preSpawnBeats = 4;
@@ -50,7 +51,9 @@ public class Init : MonoBehaviour
         Locator.Callbacks.NoteMissSignal.AddListener(OnColorNoteMiss);
         Locator.Callbacks.GameplayInitSignal.Dispatch();
 
+
         audioController.PlayAudio();
+        audioController.audioSource.timeSamples = Locator.Model.BpmData.GetRegionAtBeat(START_BEAT).BeatToSample(START_BEAT);
 
         _initialized = true;
     }

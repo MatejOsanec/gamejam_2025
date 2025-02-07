@@ -59,7 +59,7 @@ namespace Core
                 case Waveform.Sinusoidal:
                     return (Mathf.Sin(linearProgress * Mathf.PI * 2) + 1) / 2f;
                 case Waveform.Square:
-                    return Mathf.Floor(linearProgress) < 0.5 ? 1f : 0f;
+                    return linearProgress > 0.5 ? 1f : 0f;
             }
 
             return linearProgress;
@@ -84,6 +84,12 @@ namespace Core
         {
             InitializeDivision(division);
             _onBeatSignals[division].AddListener(callback);
+        }
+
+        public void RemoveBeatListener(int division, Action<int> callback)
+        {
+            InitializeDivision(division);
+            _onBeatSignals[division].RemoveListener(callback);
         }
         
         public void RemoveAllListeners()

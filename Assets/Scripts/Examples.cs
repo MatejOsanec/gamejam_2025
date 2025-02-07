@@ -1,6 +1,8 @@
 using Beatmap;
 using Beatmap.Lightshow;
 using Core;
+using Gameplay;
+using UnityEngine;
 
 public class Examples
 {
@@ -14,8 +16,10 @@ public class Examples
         Locator.Callbacks.EventTriggeredSignal.AddListener(EventTriggeredHandler); // triggers when any event is passes, passes whole BeatmapEventData as param
         Locator.Callbacks.AddEventListener(19, SpecificEventHandler); // triggers when event with specific id passes, passes the 0-1 float value of event directly
 
-        var beatMultiplier = 3;
-        Locator.BeatModel.GetBeatProgress(beatMultiplier); // returns 0 - float of any beat multiple / division based on multiplier you provide, very easy to turn into sinus or other eased movement, or use animation curve
+        var beatMultiplier = 4;
+        Locator.BeatModel.GetBeatProgress(beatMultiplier); // returns 0 - float of any beat multiple / division based on multiplier you provide
+        Locator.BeatModel.GetShapedBeatProgress(Waveform.Square, beatMultiplier); // returns 0 - float shaped as basic wavefroms - sinus / quare
+        Locator.BeatModel.GetCurvedBeatProgress(new AnimationCurve(), beatMultiplier); // returns whatever as it syncs any animation curve to beat
     }
 
     private void SpecificEventHandler(float v)

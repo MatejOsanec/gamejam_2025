@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class FlyingBaddieMovement : BeatmapCallbackListener
 {
-    // Aim Controls
+    [Header("Aim Controls")]
     public Transform targetTransform;
     public float smoothSpeed = 1;
 
-    // Movement Controls
+    [Header("Movement Controls")]
     public float offset = 0;
     public Vector3 syncMultiplier = new Vector3(4,1,8);
     public AnimationCurve curveMovementX;
