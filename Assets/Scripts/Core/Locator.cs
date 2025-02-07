@@ -15,6 +15,7 @@ namespace Core
         public static NoteControllerCollection NoteControllerCollection;
         public static PrefabSpawner PrefabSpawner;
         public static BeatmapDataModel Model;
+        public static GameStateManager GameStateManager;
     }
 
     public class Settings

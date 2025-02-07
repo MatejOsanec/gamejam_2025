@@ -31,7 +31,7 @@ namespace Core
             // Update the position of the note
             var noteTransform = transform;
             var position = noteTransform.position;
-            position = new Vector3(position.x, position.x, newZ);
+            position = new Vector3(position.x, position.y, newZ);
             noteTransform.position = position;
         }
     }

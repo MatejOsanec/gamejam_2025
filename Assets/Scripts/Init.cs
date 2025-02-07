@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Init : MonoBehaviour
 {
+    public bool spawnTestMode = false;
+    public Transform gameplayTransform;
     public AudioController audioController;
     public Material[] starfishMaterials;
     public Transform[] initSceneGameobjects;
@@ -19,7 +21,7 @@ public class Init : MonoBehaviour
     public GameObject floorBaddiePrefab;
     public GameObject midBaddiePrefab;
     public float noteSpeed = 1;
-    public float placementMultiplier = 5;
+    public float placementMultiplier = 1;
     public float preSpawnBeats = 4;
 
     // ======== SETTINGS ========
@@ -28,8 +30,11 @@ public class Init : MonoBehaviour
 
     void Start()
     {
+        Locator.GameStateManager = new GameStateManager(initSceneGameobjects, gameSceneGameobjects, audioController, START_BEAT);
         Locator.Settings = new Settings(noteSpeed, placementMultiplier, preSpawnBeats);
         Locator.BeatModel = new BeatModel();
+        Locator.PrefabSpawner = new PrefabSpawner(gameplayTransform);
+        Locator.NoteControllerCollection = new NoteControllerCollection();
 
         Locator.Callbacks.AddBeatListener(BeatDivision.Quarter, BeatListener);
 
@@ -41,24 +46,34 @@ public class Init : MonoBehaviour
 
     private void BeatListener(int beat)
     {
-        Debug.Log($"BEAT: {beat}");
+        if (!spawnTestMode || beat % 4 != 0)
+        {
+            return;
+        }
+        
+        for (int x = 0; x < 3; x++)
+        {
+            for (int y = 0; y < 3; y++)
+            {
+                OnColorNotePassed(new ColorNote { x = x, y = y, beat = Locator.BeatModel.CurrentBeat + 8 });
+            }    
+        }
     }
 
     private void OnBeatmapLoaded(BeatmapDataModel model)
     {
+        
         Locator.Model = model;
         Locator.NoteTracker = new BeatmapObjectTracker<ColorNote>(model.BeatmapData.colorNotes, Locator.Settings.PreSpawnBeats);
         Locator.EventTracker = new BeatmapEventTracker(model.LightshowData.Events);
-        Locator.PrefabSpawner = new PrefabSpawner(transform);
-        Locator.NoteControllerCollection = new NoteControllerCollection();
-
+        
         Locator.Callbacks.NoteSpawnedSignal.AddListener(OnColorNotePassed);
         Locator.Callbacks.NoteMissSignal.AddListener(OnColorNoteMiss);
         Locator.Callbacks.GameplayInitSignal.Dispatch();
 
         _initialized = true;
 
-        SetState(GameState.Init);
+        Locator.GameStateManager.SetState(GameState.Init);
         StartCoroutine(ChangeStateWithDelay(5, GameState.Game));
     }
     
@@ -66,39 +81,13 @@ public class Init : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         // Set the next state
-        SetState(state);
-    }
-    
-    public enum GameState
-    {
-        Init,
-        Game,
-        Result
-    }
-
-    public void SetState(GameState gameState)
-    {
-        foreach (var go in initSceneGameobjects)
-        {
-            go.gameObject.SetActive(gameState == GameState.Init);    
-        }
-        
-        foreach (var go in gameSceneGameobjects)
-        {
-            go.gameObject.SetActive(gameState == GameState.Game);    
-        }
-
-        if (gameState == GameState.Game)
-        {
-            audioController.PlayAudio();
-            audioController.audioSource.timeSamples = Locator.Model.BpmData.GetRegionAtBeat(START_BEAT).BeatToSample(START_BEAT);    
-        }
+        Locator.GameStateManager.SetState(state);
     }
 
     private void OnColorNotePassed(ColorNote note)
     {
         Debug.Log($"NOTE SPAWNED: {note.beat}, X: {note.x}, Y: {note.y}, Direction: {note.d}");
-        var noteController = Locator.PrefabSpawner.SpawnNote(note.x == 0 ? floorBaddiePrefab : midBaddiePrefab, note);
+        var noteController = Locator.PrefabSpawner.SpawnNote(note.y == 0 ? floorBaddiePrefab : midBaddiePrefab, note);
         Locator.NoteControllerCollection.Add(noteController);
     }
 
@@ -117,7 +106,11 @@ public class Init : MonoBehaviour
         var newBeat = Locator.Model.BpmData.SampleToBeat(audioController.Samples);
         Locator.BeatModel.UpdateBeat(newBeat);
 
-        Locator.NoteTracker.Update(newBeat);
+        if (!spawnTestMode)
+        {
+            Locator.NoteTracker.Update(newBeat);
+        }
+
         Locator.NoteControllerCollection.UpdateNotes(newBeat);
         Locator.EventTracker.Update(newBeat);
 
@@ -129,32 +122,5 @@ public class Init : MonoBehaviour
     private void OnDestroy()
     {
         Locator.Callbacks.RemoveAllListeners();
-    }
-
-    private void LogAudioInfo(AudioInfo audioInfo)
-    {
-        Debug.Log("AUDIO INFO LOADED: " + audioInfo.bpm);
-        Debug.Log("AUDIO INFO LOADED: " + audioInfo.audioDataFilename);
-    }
-
-    private void LogBeatmapData(BeatmapData beatmapData)
-    {
-        Debug.Log("======================================= Color Notes =======================================");
-        foreach (var note in beatmapData.colorNotes)
-        {
-            Debug.Log($"Beat: {note.beat}, X: {note.x}, Y: {note.y}, Duration: {note.d}");
-        }
-
-        Debug.Log("======================================= Bomb Notes =======================================");
-        foreach (var note in beatmapData.bombNotes)
-        {
-            Debug.Log($"Beat: {note.b}, X: {note.x}, Y: {note.y}");
-        }
-
-        Debug.Log("======================================= Obstacles =======================================");
-        foreach (var obstacle in beatmapData.obstacles)
-        {
-            Debug.Log($"Beat: {obstacle.b}, X: {obstacle.x}, Y: {obstacle.y}, Depth: {obstacle.d}, Width: {obstacle.w}, Height: {obstacle.h}");
-        }
     }
 }
