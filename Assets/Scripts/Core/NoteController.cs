@@ -4,6 +4,12 @@ namespace Core
 {
     using UnityEngine;
 
+    public enum NoteControllerState{
+        Alive,
+        Slapped,
+        Despawning
+    }
+    
     public class NoteController : MonoBehaviour
     {
         public ColorNote noteData;

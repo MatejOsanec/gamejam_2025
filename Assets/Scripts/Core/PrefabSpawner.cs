@@ -7,6 +7,7 @@ namespace Core
     public class PrefabSpawner
     {
         private readonly Transform _parentTransform;
+        private float[] spawnHeights = { 0f, 1.1f, 1.6f };
 
         public PrefabSpawner(Transform parentTransform)
         {
@@ -17,7 +18,7 @@ namespace Core
         {
             Debug.Log($"Spawning note at position: ({noteData.x - 1}, {noteData.y})");
             // Use noteData.x and noteData.y independently for the position
-            var go = InstantiatePrefab(prefab, _parentTransform, new Vector3((noteData.x - 1) * 0.5f, noteData.y * 1.5f, 0));
+            var go = InstantiatePrefab(prefab, _parentTransform, new Vector3((noteData.x - 1) * 0.5f, spawnHeights[noteData.y], 0));
             var noteController = go.AddComponent<NoteController>();
             noteController.Setup(noteData, Locator.Settings.NoteSpeed);
             return noteController;
