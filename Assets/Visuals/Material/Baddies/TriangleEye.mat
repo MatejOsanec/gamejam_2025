@@ -66,7 +66,6 @@ Material:
   - _RIM_WHITEBOOSTTYPE_NONE
   - _SECONDARY_MASK_BLEND_MULTIPLY
   - _SMOOTHNESS_TEXTURE_NONE
-  - _SPECTROGRAM_NONE
   - _VERTEXDISPLACEMENTMASKMODE_MULTIPLY
   - _VERTEXDISPLACEMENT_MASK_SOURCE_TEXTURE
   - _VERTEX_WHITEBOOSTTYPE_NONE
@@ -252,7 +251,7 @@ Material:
     - _Diffuse_Texture_Source: 0
     - _DisplacementBidirectional: 1
     - _DisplacementSpatial: 1
-    - _DisplacementStrength: 0.01
+    - _DisplacementStrength: 0.02
     - _DissolveAlpha: 0
     - _DissolveColorIntensity: 1
     - _DissolveEndValue: 10
