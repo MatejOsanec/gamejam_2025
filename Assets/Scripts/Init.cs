@@ -1,3 +1,4 @@
+using System.Collections;
 using Beatmap;
 using Core;
 using UnityEngine;
@@ -57,7 +58,15 @@ public class Init : MonoBehaviour
 
         _initialized = true;
 
-        SetState(GameState.Game);
+        SetState(GameState.Init);
+        StartCoroutine(ChangeStateWithDelay(5, GameState.Game));
+    }
+    
+    private IEnumerator ChangeStateWithDelay(float delay, GameState state)
+    {
+        yield return new WaitForSeconds(delay);
+        // Set the next state
+        SetState(state);
     }
     
     public enum GameState
@@ -89,7 +98,7 @@ public class Init : MonoBehaviour
     private void OnColorNotePassed(ColorNote note)
     {
         Debug.Log($"NOTE SPAWNED: {note.beat}, X: {note.x}, Y: {note.y}, Direction: {note.d}");
-        var noteController = Locator.PrefabSpawner.SpawnNote(note.y == 0 ? floorBaddiePrefab : midBaddiePrefab, note);
+        var noteController = Locator.PrefabSpawner.SpawnNote(note.x == 0 ? floorBaddiePrefab : midBaddiePrefab, note);
         Locator.NoteControllerCollection.Add(noteController);
     }
 
