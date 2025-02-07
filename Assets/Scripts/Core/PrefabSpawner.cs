@@ -15,7 +15,7 @@ namespace Core
 
         public NoteController SpawnNote(GameObject prefab, ColorNote noteData)
         {
-            var go = InstantiatePrefab(prefab, _parentTransform, new Vector3(noteData.x - 1, 0, noteData.y - 1) * Locator.Settings.PlacementMultiplier);
+            var go = InstantiatePrefab(prefab, _parentTransform, new Vector3(noteData.x - 1, 0, noteData.y) * Locator.Settings.PlacementMultiplier);
             var noteController = go.AddComponent<NoteController>();
             noteController.Setup(noteData, Locator.Settings.NoteSpeed);
             return noteController;
