@@ -13,6 +13,7 @@ namespace Core
         public BeatmapData BeatmapData { get; set; }
         public LightshowData LightshowData { get; set; }
         public BpmData BpmData { get; set; }
+        public bool Initialized { get; set; }
     }
     
     public class BeatmapDataLoader

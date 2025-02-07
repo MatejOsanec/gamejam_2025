@@ -43,9 +43,13 @@ namespace Core
         {
             foreach (var go in gameobjects)
             {
-                if (!go.gameObject.activeSelf)
+                bool enable = targetState == currentState;
+                if (!go.gameObject.activeSelf && enable)
                 {
-                    go.gameObject.SetActive(targetState == currentState);
+                    go.gameObject.SetActive(true);
+                }else if (!enable)
+                {
+                    go.gameObject.SetActive(false);    
                 }
             }
         }

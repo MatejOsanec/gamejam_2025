@@ -9,7 +9,15 @@ namespace Gameplay
 
         void Start()
         {
-            Locator.Callbacks.GameplayInitSignal.AddListener(OnInit);
+            if (Locator.Model.Initialized)
+            {
+                _initialized = true;
+                OnGameInit();    
+            }
+            else
+            {
+                Locator.Callbacks.GameplayInitSignal.AddListener(OnInit);
+            }
         }
 
         private void OnInit()
