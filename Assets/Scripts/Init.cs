@@ -33,7 +33,7 @@ public class Init : MonoBehaviour
         Locator.GameStateManager = new GameStateManager(initSceneGameobjects, gameSceneGameobjects, audioController, START_BEAT);
         Locator.Settings = new Settings(noteSpeed, placementMultiplier, preSpawnBeats);
         Locator.BeatModel = new BeatModel();
-        Locator.PrefabSpawner = new PrefabSpawner(gameplayTransform);
+        Locator.PrefabSpawner = new PrefabSpawner(gameplayTransform, starfishMaterials);
         Locator.NoteControllerCollection = new NoteControllerCollection();
 
         Locator.Callbacks.AddBeatListener(BeatDivision.Quarter, BeatListener);

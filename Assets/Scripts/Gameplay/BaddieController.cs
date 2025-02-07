@@ -8,7 +8,7 @@ public class BaddieController : MonoBehaviour
 
 
     // Update is called once per frame
-    void SetMaterial(Material material)
+    public void SetMaterial(Material material)
     {
         if (_renderer != null)
         {

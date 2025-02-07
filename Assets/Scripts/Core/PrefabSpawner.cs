@@ -7,11 +7,13 @@ namespace Core
     public class PrefabSpawner
     {
         private readonly Transform _parentTransform;
-        private float[] spawnHeights = { 0f, 1.1f, 1.6f };
+        private readonly Material[] _starfishMaterials;
+        private readonly float[] spawnHeights = { 0f, 1.1f, 1.6f };
 
-        public PrefabSpawner(Transform parentTransform)
+        public PrefabSpawner(Transform parentTransform, Material[] starfishMaterials)
         {
             _parentTransform = parentTransform;
+            _starfishMaterials = starfishMaterials;
         }
 
         public NoteController SpawnNote(GameObject prefab, ColorNote noteData)
@@ -21,6 +23,12 @@ namespace Core
             var go = InstantiatePrefab(prefab, _parentTransform, new Vector3((noteData.x - 1) * 0.5f, spawnHeights[noteData.y], 0));
             var noteController = go.AddComponent<NoteController>();
             noteController.Setup(noteData, Locator.Settings.NoteSpeed);
+
+            var ctrl = go.GetComponent<BaddieController>();
+            if (ctrl != null)
+            {
+                ctrl.SetMaterial(GetRandomMaterial());
+            }
             return noteController;
         }
         
@@ -36,6 +44,12 @@ namespace Core
             instance.transform.localPosition = position;
 
             return instance;
+        }
+        
+        Material GetRandomMaterial()
+        {
+            int randomIndex = Random.Range(0, _starfishMaterials.Length);
+            return _starfishMaterials[randomIndex];
         }
     }
 }
