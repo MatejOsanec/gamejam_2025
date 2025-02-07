@@ -39,10 +39,8 @@ Material:
   - _VERTEXMODE_DISPLACEMENT
   m_InvalidKeywords:
   - CUTOUT_TYPE_NONE
-  - DISTORTION_NONE
   - NOTE_PLANE_CUT_NONE
   - _ACES_APPROACH_AFTER_EMISSIVE
-  - _CURVE_VERTICES_NONE
   - _CUSTOM_TIME_STANDARD
   - _DIFFUSE_TEXTURE_SOURCE_TEXTURE
   - _DISSOLVEALPHA_CLIP
@@ -63,13 +61,10 @@ Material:
   - _PARALLAX_PROJECTION_PLANAR
   - _PROBE_CALCULATION_FAST
   - _RIMLIGHT_NONE
-  - _RIM_WHITEBOOSTTYPE_NONE
   - _SECONDARY_MASK_BLEND_MULTIPLY
   - _SMOOTHNESS_TEXTURE_NONE
-  - _SPECTROGRAM_NONE
   - _VERTEXDISPLACEMENTMASKMODE_MULTIPLY
   - _VERTEXDISPLACEMENT_MASK_SOURCE_TEXTURE
-  - _VERTEX_WHITEBOOSTTYPE_NONE
   - _ZWRITE_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -252,7 +247,7 @@ Material:
     - _Diffuse_Texture_Source: 0
     - _DisplacementBidirectional: 1
     - _DisplacementSpatial: 1
-    - _DisplacementStrength: 0.02
+    - _DisplacementStrength: 0.05
     - _DissolveAlpha: 0
     - _DissolveColorIntensity: 1
     - _DissolveEndValue: 10
