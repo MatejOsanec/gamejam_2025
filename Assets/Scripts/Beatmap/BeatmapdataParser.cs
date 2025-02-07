@@ -1,8 +1,31 @@
 using System.Collections.Generic;
+using System.Linq;
+using BeatmapEditor3D.DataModels;
 using UnityEngine;
 
 namespace Beatmap
 {
+    [System.Serializable]
+    public class BpmDataEntry
+    {
+        public int si; // Start sample index
+        public int ei; // End sample index
+        public float sb; // Start beat
+        public float eb; // End beat
+    }
+
+    [System.Serializable]
+    public class AudioData
+    {
+        public string version;
+        public string songChecksum;
+        public int songSampleCount;
+        public int songFrequency;
+        public List<BpmDataEntry> bpmData;
+        public List<float> lufsData; // Assuming it's a list of floats
+    }
+
+
     // ============================ INFO ====================================
         
     [System.Serializable]
@@ -10,6 +33,7 @@ namespace Beatmap
     {
         public AudioInfo audio;
     }
+
     [System.Serializable]
     public class AudioInfo
     {
@@ -129,13 +153,16 @@ namespace Beatmap
     {
         public static AudioInfo ParseBeatmapInfo(string jsonString)
         {
-            // Parse the JSON string
             SongInfo songInfo = JsonUtility.FromJson<SongInfo>(jsonString);
-            // Access the desired fields
             string audioDataFilename = songInfo.audio.audioDataFilename;
             float bpm = songInfo.audio.bpm;
             
             return songInfo.audio;
+        }
+
+        public static BpmData ParseAudioData(string jsonString)
+        {
+            return LoadBpmData(JsonUtility.FromJson<AudioData>(jsonString));
         }
         
         public static BeatmapData ParseBeatmapData(string jsonString)
@@ -205,6 +232,22 @@ namespace Beatmap
             }
 
             return beatmapData;
+        }
+
+        private static BpmData LoadBpmData(AudioData audioData)
+        {
+            var offsetInSamples = 0; //TODO: offset AudioTimeHelper.SecondsToSamples(songTimeOffset, audioData.songFrequency);
+            return new BpmData(
+                audioData.songFrequency,
+                offsetInSamples,
+                audioData.bpmData.Select(region => new BpmRegion(
+                    region.si,
+                    region.ei,
+                    region.sb,
+                    region.eb,
+                    audioData.songFrequency
+                )).ToList()
+            );
         }
     }
 }

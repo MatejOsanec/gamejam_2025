@@ -18,7 +18,6 @@ public class Init : MonoBehaviour
 
     // ======== SETTINGS ========
 
-    private AllBeatmapData _beatmapData;
     public bool _initialized;
 
     void Start()
@@ -39,12 +38,11 @@ public class Init : MonoBehaviour
         Debug.Log($"BEAT: {beat}");
     }
 
-    private void OnBeatmapLoaded(AllBeatmapData beatmapData)
+    private void OnBeatmapLoaded(BeatmapDataModel model)
     {
-        _beatmapData = beatmapData;
-
-        Locator.NoteTracker = new BeatmapObjectTracker<ColorNote>(_beatmapData.BeatmapData.colorNotes, Locator.Settings.PreSpawnBeats);
-        Locator.EventTracker = new BeatmapEventTracker(_beatmapData.LightshowData.Events);
+        Locator.Model = model;
+        Locator.NoteTracker = new BeatmapObjectTracker<ColorNote>(model.BeatmapData.colorNotes, Locator.Settings.PreSpawnBeats);
+        Locator.EventTracker = new BeatmapEventTracker(model.LightshowData.Events);
         Locator.PrefabSpawner = new PrefabSpawner(transform);
         Locator.NoteControllerCollection = new NoteControllerCollection();
 
@@ -76,12 +74,11 @@ public class Init : MonoBehaviour
             return;
         }
 
-        var newBeat = AudioUtils.SamplesToBeats(audioController.Samples, audioController.SampleRate, _beatmapData.AudioInfo.bpm);
+        var newBeat = Locator.Model.BpmData.SampleToBeat(audioController.Samples);
         Locator.BeatModel.UpdateBeat(newBeat);
 
         Locator.NoteTracker.Update(newBeat);
         Locator.NoteControllerCollection.UpdateNotes(newBeat);
-
         Locator.EventTracker.Update(newBeat);
 
         // temporary fast iteration shit

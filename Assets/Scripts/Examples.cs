@@ -13,6 +13,9 @@ public class Examples
         
         Locator.Callbacks.EventTriggeredSignal.AddListener(EventTriggeredHandler); // triggers when any event is passes, passes whole BeatmapEventData as param
         Locator.Callbacks.AddEventListener(19, SpecificEventHandler); // triggers when event with specific id passes, passes the 0-1 float value of event directly
+
+        var beatMultiplier = 3;
+        Locator.BeatModel.GetBeatProgress(beatMultiplier); // returns 0 - float of any beat multiple / division based on multiplier you provide, very easy to turn into sinus or other eased movement, or use animation curve
     }
 
     private void SpecificEventHandler(float v)

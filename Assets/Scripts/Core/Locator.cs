@@ -14,6 +14,7 @@ namespace Core
         public static BeatmapEventTracker EventTracker;
         public static NoteControllerCollection NoteControllerCollection;
         public static PrefabSpawner PrefabSpawner;
+        public static BeatmapDataModel Model;
     }
 
     public class Settings

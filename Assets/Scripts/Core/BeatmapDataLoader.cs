@@ -1,44 +1,49 @@
 using Beatmap;
 using Beatmap.Lightshow;
+using BeatmapEditor3D.DataModels;
 
 namespace Core
 {
     using System;
     using UnityEngine;
     using UnityEngine.ResourceManagement.AsyncOperations;
-    public class AllBeatmapData
+    public class BeatmapDataModel
     {
         public AudioInfo AudioInfo { get; set; }
         public BeatmapData BeatmapData { get; set; }
         public LightshowData LightshowData { get; set; }
+        public BpmData BpmData { get; set; }
     }
     
     public class BeatmapDataLoader
     {
-        private Action<AllBeatmapData> onComplete;
+        private Action<BeatmapDataModel> onComplete;
         private AudioInfo audioInfo;
         private BeatmapData beatmapData;
+        private BpmData bpmData;
         private LightshowData lightshowData;
         private int filesLoaded = 0;
         private int filesToLoad = 0;
         
-        public void LoadBeatmapData(Action<AllBeatmapData> onComplete)
+        public void LoadBeatmapData(Action<BeatmapDataModel> onComplete)
         {
             this.onComplete = onComplete;
             LoadJson("Info", r => audioInfo = BeatmapdataParser.ParseBeatmapInfo(r));
             LoadJson("beatmapData", r => beatmapData = BeatmapdataParser.ParseBeatmapData(r));
+            LoadJson("AudioData", r => bpmData = BeatmapdataParser.ParseAudioData(r));
             LoadJson("lightshow", r => lightshowData = LightshowJsonParser.ParseLightshowData(r));
         }
 
         private void CheckAllFilesLoaded()
         {
-            if (audioInfo != null && beatmapData != null && lightshowData != null)
+            if (audioInfo != null && beatmapData != null && lightshowData != null && bpmData != null)
             {
-                var combinedData = new AllBeatmapData
+                var combinedData = new BeatmapDataModel
                 {
                     AudioInfo = audioInfo,
                     BeatmapData = beatmapData,
-                    LightshowData = lightshowData
+                    LightshowData = lightshowData,
+                    BpmData = bpmData
                 };
                 onComplete?.Invoke(combinedData);
             }
