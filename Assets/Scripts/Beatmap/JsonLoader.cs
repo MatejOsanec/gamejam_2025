@@ -10,10 +10,10 @@ public static class JsonLoader
     public static AsyncOperationHandle<string> LoadJson(string filePath)
     {
         // Start loading the DefaultAsset via Addressables.
-        AsyncOperationHandle<DefaultAsset> assetOp = Addressables.LoadAssetAsync<DefaultAsset>(filePath);
+        AsyncOperationHandle<TextAsset> assetOp = Addressables.LoadAssetAsync<TextAsset>(filePath);
 
         // Declare the chain operation delegate explicitly.
-        Func<AsyncOperationHandle<DefaultAsset>, AsyncOperationHandle<string>> chainFunc = op =>
+        Func<AsyncOperationHandle<TextAsset>, AsyncOperationHandle<string>> chainFunc = op =>
         {
             if (op.Status != AsyncOperationStatus.Succeeded)
             {
@@ -22,7 +22,7 @@ public static class JsonLoader
                 return Addressables.ResourceManager.CreateCompletedOperation<string>(null, "Failed to load beatmap.");
             }
 
-            DefaultAsset asset = op.Result;
+            TextAsset asset = op.Result;
             string path = AssetDatabase.GetAssetPath(asset);
 
             if (File.Exists(path))
