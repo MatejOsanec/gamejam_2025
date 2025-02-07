@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Gameplay;
 using strange.extensions.signal.impl;
 using UnityEngine;
 
@@ -46,7 +47,30 @@ namespace Core
         private readonly Dictionary<int, Signal<int>> _onBeatSignals = new();
         private readonly Dictionary<int, int> _lastProcessedBeats = new();
         
-        public float GetBeatProgress(float beatMultiplier) => (CurrentBeat % beatMultiplier - 1) / beatMultiplier;
+        public float GetBeatProgress(float beatMultiplier = 1, float beatOffset = 0) => (CurrentBeat + beatOffset) % beatMultiplier / beatMultiplier;
+
+        public float GetShapedBeatProgress(Waveform waveform, float beatMultiplier = 1, float beatOffset = 0)
+        {
+            var linearProgress = Locator.BeatModel.GetBeatProgress(beatMultiplier, beatOffset);
+            switch (waveform)
+            {
+                case Waveform.Linear:
+                    return  Mathf.Abs(linearProgress);
+                case Waveform.Sinusoidal:
+                    return (Mathf.Sin(linearProgress * Mathf.PI * 2) + 1) / 2f;
+                case Waveform.Square:
+                    return Mathf.Floor(linearProgress) < 0.5 ? 1f : 0f;
+            }
+
+            return linearProgress;
+        }
+
+        public float GetCurvedBeatProgress(AnimationCurve animationCurve, float beatMultiplier = 1, float beatOffset = 0)
+        {
+            var linearProgress = Locator.BeatModel.GetBeatProgress(beatMultiplier, beatOffset);
+            return animationCurve.Evaluate(Mathf.Clamp01(linearProgress));
+        }
+
 
         private void InitializeDivision(int division)
         {

@@ -5,7 +5,7 @@ namespace Gameplay
 {
     public abstract class BeatmapCallbackListener : MonoBehaviour
     {
-        private bool _initialized = false;
+        protected bool _initialized = false;
 
         void Start()
         {

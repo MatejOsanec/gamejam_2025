@@ -7,8 +7,6 @@ namespace Gameplay
 
     public class ShootController : BeatmapCallbackListener
     {
-        public Vector3 targetPosition; // The position you want the object to look at
-        public float smoothSpeed = 2.0f;
         public int fireRateEventId = 20;
 
         public GameObject projectile;
@@ -34,11 +32,6 @@ namespace Gameplay
         }
         private void Update()
         {
-            //aim at player
-            Vector3 direction = targetPosition - transform.position;
-            Quaternion targetRotation = Quaternion.LookRotation(direction);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, smoothSpeed * Time.deltaTime);
-
             if (projectile == null)
             {
                 Debug.LogWarning("Target object is not assigned.");
