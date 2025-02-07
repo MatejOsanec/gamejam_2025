@@ -7,6 +7,7 @@ public class Init : MonoBehaviour
     public AudioController audioController;
     public Material[] starfishMaterials;
     public Transform[] initSceneGameobjects;
+    public Transform[] gameSceneGameobjects;
 
     // ======== SETTINGS ========
     [Header("DEBUG STUFF")]
@@ -68,9 +69,14 @@ public class Init : MonoBehaviour
 
     public void SetState(GameState gameState)
     {
-        foreach (var initSceneGameObject in initSceneGameobjects)
+        foreach (var go in initSceneGameobjects)
         {
-            initSceneGameObject.gameObject.SetActive(gameState == GameState.Init);    
+            go.gameObject.SetActive(gameState == GameState.Init);    
+        }
+        
+        foreach (var go in gameSceneGameobjects)
+        {
+            go.gameObject.SetActive(gameState == GameState.Game);    
         }
 
         if (gameState == GameState.Game)
