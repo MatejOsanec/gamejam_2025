@@ -5,7 +5,8 @@ using UnityEngine;
 public class Init : MonoBehaviour
 {
     public AudioController audioController;
-    public Material[] starfishMaterials ;
+    public Material[] starfishMaterials;
+    public Transform[] initSceneGameobjects;
 
     // ======== SETTINGS ========
     [Header("DEBUG STUFF")]
@@ -13,7 +14,8 @@ public class Init : MonoBehaviour
     public float CURRENT_BEAT = 0;
 
     [Header("SETINGS")]
-    public GameObject notePrefab;
+    public GameObject floorBaddiePrefab;
+    public GameObject midBaddiePrefab;
     public float noteSpeed = 1;
     public float placementMultiplier = 5;
     public float preSpawnBeats = 4;
@@ -52,17 +54,36 @@ public class Init : MonoBehaviour
         Locator.Callbacks.NoteMissSignal.AddListener(OnColorNoteMiss);
         Locator.Callbacks.GameplayInitSignal.Dispatch();
 
-
-        audioController.PlayAudio();
-        audioController.audioSource.timeSamples = Locator.Model.BpmData.GetRegionAtBeat(START_BEAT).BeatToSample(START_BEAT);
-
         _initialized = true;
+
+        SetState(GameState.Game);
+    }
+    
+    public enum GameState
+    {
+        Init,
+        Game,
+        Result
+    }
+
+    public void SetState(GameState gameState)
+    {
+        foreach (var initSceneGameObject in initSceneGameobjects)
+        {
+            initSceneGameObject.gameObject.SetActive(gameState == GameState.Init);    
+        }
+
+        if (gameState == GameState.Game)
+        {
+            audioController.PlayAudio();
+            audioController.audioSource.timeSamples = Locator.Model.BpmData.GetRegionAtBeat(START_BEAT).BeatToSample(START_BEAT);    
+        }
     }
 
     private void OnColorNotePassed(ColorNote note)
     {
         Debug.Log($"NOTE SPAWNED: {note.beat}, X: {note.x}, Y: {note.y}, Direction: {note.d}");
-        var noteController = Locator.PrefabSpawner.SpawnNote(notePrefab, note);
+        var noteController = Locator.PrefabSpawner.SpawnNote(note.y == 0 ? floorBaddiePrefab : midBaddiePrefab, note);
         Locator.NoteControllerCollection.Add(noteController);
     }
 

@@ -188,6 +188,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioController: {fileID: 3585222352161316415}
+  starfishMaterials: []
+  START_BEAT: 0
+  CURRENT_BEAT: 0
+  floorBaddiePrefab: {fileID: 856397691454430845, guid: 078728aeb71554646991bf6e77795d7c, type: 3}
+  midBaddiePrefab: {fileID: 5165368328117635617, guid: 35533267ba93ed64f85d03705f70308a, type: 3}
   starfishMaterials:
   - {fileID: 2100000, guid: 54b92b70e3f163d46822cb23b5c535c3, type: 2}
   - {fileID: 2100000, guid: 1e6635dff0aa96d4a863f4b22b4a47fa, type: 2}
@@ -200,8 +205,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 738964af3d80f0a47ac7b945851700b0, type: 2}
   START_BEAT: 0
   CURRENT_BEAT: 0
-  notePrefab: {fileID: 3772373519343174249, guid: 44d026a356f94fb4b9417d6f43611176, type: 3}
+  floorBaddiePrefab: {fileID: 856397691454430845, guid: 078728aeb71554646991bf6e77795d7c, type: 3}
+  midBaddiePrefab: {fileID: 5165368328117635617, guid: 35533267ba93ed64f85d03705f70308a, type: 3}
   noteSpeed: 1
   placementMultiplier: 5
   preSpawnBeats: 4
-  _initialized: 0
