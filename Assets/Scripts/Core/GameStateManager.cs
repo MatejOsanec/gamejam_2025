@@ -21,15 +21,8 @@ namespace Core
 
         public void SetState(GameState gameState)
         {
-            foreach (var go in initSceneGameobjects)
-            {
-                go.gameObject.SetActive(gameState == GameState.Init);
-            }
-
-            foreach (var go in gameSceneGameobjects)
-            {
-                go.gameObject.SetActive(gameState == GameState.Game);
-            }
+            SetActiveByState(gameState, GameState.Init, initSceneGameobjects);
+            SetActiveByState(gameState, GameState.Game, gameSceneGameobjects);
 
             if (gameState == GameState.Game)
             {
@@ -42,6 +35,17 @@ namespace Core
                     {
                         OnColorNotePassed(new ColorNote() { x = x, y = y, beat = 8 });
                     }
+                }
+            }
+        }
+
+        public void SetActiveByState(GameState targetState, GameState currentState, Transform[] gameobjects)
+        {
+            foreach (var go in gameobjects)
+            {
+                if (!go.gameObject.activeSelf)
+                {
+                    go.gameObject.SetActive(targetState == currentState);
                 }
             }
         }
