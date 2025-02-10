@@ -14,6 +14,7 @@ Material:
   m_ValidKeywords:
   - DIFFUSE_TEXTURE
   - DISPLACEMENT_BIDIRECTIONAL
+  - DISPLACEMENT_SPATIAL
   - FOG
   - MULTIPLY_REFLECTIONS
   - NOISE_DITHERING
@@ -207,8 +208,8 @@ Material:
     - _DetailNormalMapScale: 1
     - _Diffuse_Texture_Source: 0
     - _DisplacementBidirectional: 1
-    - _DisplacementSpatial: 0
-    - _DisplacementStrength: 0.1
+    - _DisplacementSpatial: 1
+    - _DisplacementStrength: 0.2
     - _DissolveAlpha: 0
     - _DissolveColorIntensity: 1
     - _DissolveEndValue: 10
