@@ -252,7 +252,7 @@ Material:
     - _Diffuse_Texture_Source: 0
     - _DisplacementBidirectional: 1
     - _DisplacementSpatial: 1
-    - _DisplacementStrength: 0.075
+    - _DisplacementStrength: 0.07
     - _DissolveAlpha: 0
     - _DissolveColorIntensity: 1
     - _DissolveEndValue: 10
@@ -456,8 +456,8 @@ Material:
     - _UseSphericalNormalOffset: 0
     - _UvSegmentsIgnoreRim: 0
     - _VertexDisplacementMaskMode: 0
-    - _VertexDisplacementMaskMultiplier: 1
-    - _VertexDisplacementMaskOffset: -0.41
+    - _VertexDisplacementMaskMultiplier: 0.76
+    - _VertexDisplacementMaskOffset: -0.3
     - _VertexDisplacement_Mask_Source: 0
     - _VertexMode: 5
     - _Vertex_WhiteBoostType: 0
