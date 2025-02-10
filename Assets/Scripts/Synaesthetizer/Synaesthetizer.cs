@@ -1,5 +1,4 @@
 using UnityEngine;
-using Core;
 using Gameplay;
 
 public class Synaesthetizer : BeatmapCallbackListener
@@ -31,6 +30,11 @@ public class Synaesthetizer : BeatmapCallbackListener
     // Update is called once per frame
     void Update()
     {
+        if (!_initialized)
+        {
+            return;
+        }
+        
         _texProcessor.amplitudeA = modA.GetProgress();
         _texProcessor.amplitudeB = modB.GetProgress();
         _texProcessor.amplitudeC = modC.GetProgress();
