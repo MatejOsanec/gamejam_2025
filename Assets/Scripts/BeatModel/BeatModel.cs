@@ -71,6 +71,11 @@ namespace Core
             return animationCurve.Evaluate(Mathf.Clamp01(linearProgress));
         }
 
+        public float GetCurvedBeatProgress(ModulationDefSo modDef) =>
+            GetCurvedBeatProgress(modDef.MovementCurve, modDef.SyncMultiplier, modDef.Offset);
+        
+        public float GetCurvedBeatProgressWithOffset(ModulationDefSo modDef, float customOffset) =>
+            GetCurvedBeatProgress(modDef.MovementCurve, modDef.SyncMultiplier, customOffset);
 
         private void InitializeDivision(int division)
         {
