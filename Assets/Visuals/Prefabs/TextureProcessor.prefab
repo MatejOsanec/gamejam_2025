@@ -119,7 +119,7 @@ MonoBehaviour:
   _phaseC: 0
   _param2C: 0
   _param1C: 0
-  _speedC: 10
+  _speedC: -10
   _spatialScaleC: 2
   _generatedTextureDebugMaterials:
   - {fileID: 2100000, guid: 6221cd36ba5a34f42b075dabfc3a6e92, type: 2}
