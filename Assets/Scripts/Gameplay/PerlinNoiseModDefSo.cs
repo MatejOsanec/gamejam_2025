@@ -23,7 +23,7 @@ namespace Gameplay
 
         public override float GetProgressWithCustomOffset(float overrideOffset)
         {
-            return Mathf.PerlinNoise(Locator.BeatModel.GetShapedBeatProgress(Waveform.Sinusoidal, 8f, overrideOffset), 1) * 2 - 1;
+            return Mathf.PerlinNoise(Locator.BeatModel.GetShapedBeatProgress(Waveform.Sinusoidal, 8f, overrideOffset), paramY) * 2 - 1;
         }
     }
 }

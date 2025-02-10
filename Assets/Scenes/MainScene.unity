@@ -4976,14 +4976,14 @@ PrefabInstance:
     - target: {fileID: 6389389333920745160, guid: 17d9618779c4ce1428af46943662a60c, type: 3}
       propertyPath: modY
       value: 
-      objectReference: {fileID: 11400000, guid: 1f8524404a21b8b4b9dc5037180741d6, type: 2}
+      objectReference: {fileID: 11400000, guid: 4ff63b64f336d78468891913984f60cd, type: 2}
     - target: {fileID: 6389389333920745160, guid: 17d9618779c4ce1428af46943662a60c, type: 3}
       propertyPath: modZ
       value: 
-      objectReference: {fileID: 11400000, guid: 1f8524404a21b8b4b9dc5037180741d6, type: 2}
+      objectReference: {fileID: 11400000, guid: 98eb1ec68ecf66d4184c786abebb4e6b, type: 2}
     - target: {fileID: 6389389333920745160, guid: 17d9618779c4ce1428af46943662a60c, type: 3}
       propertyPath: movementScale
-      value: 15
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6389389333920745160, guid: 17d9618779c4ce1428af46943662a60c, type: 3}
       propertyPath: targetTransform
