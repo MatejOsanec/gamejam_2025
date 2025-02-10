@@ -7,6 +7,7 @@ namespace Core
 {
     public static class Locator
     {
+        public static bool Initialized { get; set; }
         public static Settings Settings;
         public static BeatModel BeatModel;
         public static Callbacks Callbacks = new();

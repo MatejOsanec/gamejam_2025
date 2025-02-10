@@ -1,20 +1,15 @@
-using Beatmap;
-using Beatmap.Lightshow;
 using UnityEngine;
 using Core;
+using Gameplay;
 
-public class Synaesthetizer : MonoBehaviour
+public class Synaesthetizer : BeatmapCallbackListener
 {
     [SerializeField]
-    private AnimationCurve[] _envelopes;
+    private ModulationDefSo modA;
     [SerializeField]
-    private int _envelopeIndexA;
+    private ModulationDefSo modB;
     [SerializeField]
-    private int _envelopeIndexB;
-    [SerializeField]
-    private int _envelopeIndexC;
-    [SerializeField]
-    private float _envelopeSpeed;
+    private ModulationDefSo modC;
     [SerializeField]
     private float _initialAmplitudeA;
     [SerializeField]
@@ -23,54 +18,21 @@ public class Synaesthetizer : MonoBehaviour
     private float _initialAmplitudeC;
 
     [SerializeField] private TextureProcessor _texProcessor;
-    [SerializeField] private Init _initor;
-    private float _timerA, _timerB, _timerC;
-    private float _envelopeValueA, _envelopeValueB, _envelopeValueC;
-    private bool _initialized = false;
-    void Start()
+
+
+    protected override void OnGameInit()
     {
-        _timerA = 0.0f;
-        _timerB = 0.0f;
-        _timerC = 0.0f;
+        
         _texProcessor.amplitudeA = _initialAmplitudeA;
         _texProcessor.amplitudeB = _initialAmplitudeB;
         _texProcessor.amplitudeC = _initialAmplitudeC;
     }
-
+    
     // Update is called once per frame
     void Update()
     {
-        if (_initor._initialized)
-        {
-            if (!_initialized)
-            {
-                Locator.Callbacks.AddBeatListener(BeatDivision.Whole, BeatListener);
-                Locator.Callbacks.AddBeatListener(BeatDivision.Half, BeatHalfListener);
-                _initialized = true;
-            }
-            _timerA += _envelopeSpeed*Time.deltaTime;
-            _timerB += _envelopeSpeed*Time.deltaTime;
-            _timerB += _envelopeSpeed*Time.deltaTime;
-            _envelopeValueA = _envelopes[_envelopeIndexA].Evaluate(_timerA);
-            _envelopeValueB = _envelopes[_envelopeIndexB].Evaluate(_timerB);
-            _envelopeValueC = _envelopes[_envelopeIndexC].Evaluate(_timerC);
-            _texProcessor.amplitudeA = _envelopeValueA;
-            _texProcessor.amplitudeB = _envelopeValueB;
-        }
+        _texProcessor.amplitudeA = modA.GetProgress();
+        _texProcessor.amplitudeB = modB.GetProgress();
+        _texProcessor.amplitudeC = modC.GetProgress();
     }
-
-    private void BeatListener(int beat)
-    {
-        _timerB = 0.0f;
-    }
-    private void BeatHalfListener(int beat)
-    {
-        _timerA = 0.0f;
-    }
-
-    private void NoteMissHandler(ColorNote n)
-    {
-        //_timerA = 0.0f;
-    }
-
 }

@@ -47,7 +47,7 @@ namespace Core
         private readonly Dictionary<int, Signal<int>> _onBeatSignals = new();
         private readonly Dictionary<int, int> _lastProcessedBeats = new();
         
-        public float GetBeatProgress(float beatMultiplier = 1, float beatOffset = 0) => (CurrentBeat + beatOffset) % beatMultiplier / beatMultiplier;
+        public float GetBeatProgress(float beatMultiplier = 1, float beatOffset = 0) => (CurrentBeat + beatOffset * beatMultiplier) % beatMultiplier / beatMultiplier;
 
         public float GetShapedBeatProgress(Waveform waveform, float beatMultiplier = 1, float beatOffset = 0)
         {

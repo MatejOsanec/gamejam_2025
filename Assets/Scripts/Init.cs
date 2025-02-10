@@ -69,7 +69,7 @@ public class Init : MonoBehaviour
         
         Locator.Callbacks.NoteSpawnedSignal.AddListener(OnColorNotePassed);
         Locator.Callbacks.NoteMissSignal.AddListener(OnColorNoteMiss);
-        Locator.Model.Initialized = true;
+        Locator.Initialized = true;
         Locator.Callbacks.GameplayInitSignal.Dispatch();
 
         _initialized = true;
