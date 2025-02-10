@@ -15,6 +15,12 @@ public class Synaesthetizer : MonoBehaviour
     private int _envelopeIndexC;
     [SerializeField]
     private float _envelopeSpeed;
+    [SerializeField]
+    private float _initialAmplitudeA;
+    [SerializeField]
+    private float _initialAmplitudeB;
+    [SerializeField]
+    private float _initialAmplitudeC;
 
     [SerializeField] private TextureProcessor _texProcessor;
     [SerializeField] private Init _initor;
@@ -26,6 +32,9 @@ public class Synaesthetizer : MonoBehaviour
         _timerA = 0.0f;
         _timerB = 0.0f;
         _timerC = 0.0f;
+        _texProcessor.amplitudeA = _initialAmplitudeA;
+        _texProcessor.amplitudeB = _initialAmplitudeB;
+        _texProcessor.amplitudeC = _initialAmplitudeC;
     }
 
     // Update is called once per frame

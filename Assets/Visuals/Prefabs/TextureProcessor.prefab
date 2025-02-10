@@ -99,7 +99,7 @@ MonoBehaviour:
   _columnSize: 32
   _computeKernelA: 4
   _inputTextureIndexA: 0
-  _amplitudeA: 0.87
+  _amplitudeA: 1
   _phaseA: 0
   _param2A: 0
   _param1A: 0

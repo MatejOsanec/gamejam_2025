@@ -145,5 +145,8 @@ MonoBehaviour:
   _envelopeIndexB: 1
   _envelopeIndexC: 2
   _envelopeSpeed: 6
+  _initialAmplitudeA: 1
+  _initialAmplitudeB: 1
+  _initialAmplitudeC: 1
   _texProcessor: {fileID: 0}
   _initor: {fileID: 0}
