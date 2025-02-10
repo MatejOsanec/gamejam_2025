@@ -6,6 +6,8 @@ namespace Core
 
     public class GameStateManager
     {
+        public GameState GameState { get; private set; }
+
         private float _startBeat;
         private Transform[] initSceneGameobjects;
         private Transform[] gameSceneGameobjects;
@@ -37,6 +39,8 @@ namespace Core
                     }
                 }
             }
+
+            GameState = gameState;
         }
 
         public void SetActiveByState(GameState targetState, GameState currentState, Transform[] gameobjects)

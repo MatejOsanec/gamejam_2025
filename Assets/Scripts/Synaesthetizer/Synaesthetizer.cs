@@ -1,3 +1,4 @@
+using Core;
 using UnityEngine;
 using Gameplay;
 
@@ -27,16 +28,14 @@ public class Synaesthetizer : BeatmapCallbackListener
         _texProcessor.amplitudeC = _initialAmplitudeC;
     }
     
-    // Update is called once per frame
     void Update()
     {
-        if (!_initialized)
+        if (!_initialized || Locator.GameStateManager.GameState != GameState.Game)
         {
-            return;
+
+            _texProcessor.amplitudeA = modA.GetProgress();
+            _texProcessor.amplitudeB = modB.GetProgress();
+            _texProcessor.amplitudeC = modC.GetProgress();
         }
-        
-        _texProcessor.amplitudeA = modA.GetProgress();
-        _texProcessor.amplitudeB = modB.GetProgress();
-        _texProcessor.amplitudeC = modC.GetProgress();
     }
 }
