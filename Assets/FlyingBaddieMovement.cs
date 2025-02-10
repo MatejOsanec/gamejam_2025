@@ -10,6 +10,7 @@ public class FlyingBaddieMovement : BeatmapCallbackListener
     [Header("Movement Controls")]
     [Range(0,1)]
     public float customOffset = 0;
+    public float movementScale = 1;
     [SerializeField]
     private ModulationDefSo modX;
     [SerializeField]
@@ -31,7 +32,7 @@ public class FlyingBaddieMovement : BeatmapCallbackListener
             return;
         }
 
-        transform.position = _basePosition + new Vector3(modX.GetProgressWithCustomOffset(customOffset), modY.GetProgressWithCustomOffset(customOffset), modZ.GetProgressWithCustomOffset(customOffset));
+        transform.position = _basePosition + new Vector3(modX.GetProgressWithCustomOffset(customOffset) * movementScale, modY.GetProgressWithCustomOffset(customOffset) * movementScale, modZ.GetProgressWithCustomOffset(customOffset) * movementScale);
 
 
         //aim at player

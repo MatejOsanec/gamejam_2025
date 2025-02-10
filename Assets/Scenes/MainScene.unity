@@ -3138,6 +3138,10 @@ PrefabInstance:
       value: 0.533
       objectReference: {fileID: 0}
     - target: {fileID: 6389389333920745160, guid: 17d9618779c4ce1428af46943662a60c, type: 3}
+      propertyPath: movementScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389389333920745160, guid: 17d9618779c4ce1428af46943662a60c, type: 3}
       propertyPath: targetTransform
       value: 
       objectReference: {fileID: 2078217576}
@@ -4968,7 +4972,19 @@ PrefabInstance:
     - target: {fileID: 6389389333920745160, guid: 17d9618779c4ce1428af46943662a60c, type: 3}
       propertyPath: modX
       value: 
-      objectReference: {fileID: 11400000, guid: b0df64603d3629a409079ca910945509, type: 2}
+      objectReference: {fileID: 11400000, guid: f163c0e5451a50143b6564412f66b6fe, type: 2}
+    - target: {fileID: 6389389333920745160, guid: 17d9618779c4ce1428af46943662a60c, type: 3}
+      propertyPath: modY
+      value: 
+      objectReference: {fileID: 11400000, guid: 1f8524404a21b8b4b9dc5037180741d6, type: 2}
+    - target: {fileID: 6389389333920745160, guid: 17d9618779c4ce1428af46943662a60c, type: 3}
+      propertyPath: modZ
+      value: 
+      objectReference: {fileID: 11400000, guid: 1f8524404a21b8b4b9dc5037180741d6, type: 2}
+    - target: {fileID: 6389389333920745160, guid: 17d9618779c4ce1428af46943662a60c, type: 3}
+      propertyPath: movementScale
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 6389389333920745160, guid: 17d9618779c4ce1428af46943662a60c, type: 3}
       propertyPath: targetTransform
       value: 
