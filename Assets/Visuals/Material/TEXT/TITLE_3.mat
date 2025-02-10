@@ -51,7 +51,6 @@ Material:
   - _SECONDARY_MASK_BLEND_MULTIPLY
   - _SECONDARY_UVS_NONE
   - _SMOOTHNESS_TEXTURE_NONE
-  - _SPECTROGRAM_NONE
   - _VERTEXDISPLACEMENTMASKMODE_MULTIPLY
   - _VERTEXDISPLACEMENT_MASK_SOURCE_TEXTURE
   - _VERTEX_WHITEBOOSTTYPE_NONE
@@ -450,6 +449,6 @@ Material:
     - _SecondaryEmissionMaskSpeed: {r: 0, g: 1, b: 0, a: 0}
     - _SphericalNormalOffsetCenter: {r: 0, g: 0, b: 0, a: 1}
     - _UVScale: {r: 1, g: 1, b: 1, a: 1}
-    - _VertexDisplacementMaskMixer: {r: 1, g: 0, b: 0, a: 1}
+    - _VertexDisplacementMaskMixer: {r: 0, g: 0, b: 1, a: 1}
     - _VertexDisplacementMaskSpeed: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
