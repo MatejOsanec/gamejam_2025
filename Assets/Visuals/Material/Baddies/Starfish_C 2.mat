@@ -63,13 +63,10 @@ Material:
   - _PARALLAX_PROJECTION_PLANAR
   - _PROBE_CALCULATION_FAST
   - _RIMLIGHT_NONE
-  - _RIM_WHITEBOOSTTYPE_NONE
   - _SECONDARY_MASK_BLEND_MULTIPLY
   - _SMOOTHNESS_TEXTURE_NONE
-  - _SPECTROGRAM_NONE
   - _VERTEXDISPLACEMENTMASKMODE_MULTIPLY
   - _VERTEXDISPLACEMENT_MASK_SOURCE_TEXTURE
-  - _VERTEX_WHITEBOOSTTYPE_NONE
   - _ZWRITE_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -220,7 +217,7 @@ Material:
     - _BlendModePreserveSpecular: 1
     - _BlendSrcAlphaPreset: 0
     - _BlendSrcFactor: 1
-    - _BlendSrcFactorA: 0
+    - _BlendSrcFactorA: 1
     - _BlendingPreset: 0
     - _BloomPreset: 0
     - _BodyFadeGamma: 2
@@ -456,7 +453,7 @@ Material:
     - _UseSphericalNormalOffset: 0
     - _UvSegmentsIgnoreRim: 0
     - _VertexDisplacementMaskMode: 0
-    - _VertexDisplacementMaskMultiplier: 1.3
+    - _VertexDisplacementMaskMultiplier: 0.5
     - _VertexDisplacementMaskOffset: -0.6
     - _VertexDisplacement_Mask_Source: 0
     - _VertexMode: 5
