@@ -19,7 +19,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   syncMultiplier: 1
-  offset: 0
+  offset: 1
   modItems:
   - startBeat: 0
     ModulationDef: {fileID: 11400000, guid: 7317fc6627502d0408fda6fcd4542a42, type: 2}
@@ -27,4 +27,4 @@ MonoBehaviour:
     ModulationDef: {fileID: 11400000, guid: 8e253c76e7b86a94ca15663fa2d2c07a, type: 2}
   - startBeat: 162
     ModulationDef: {fileID: 11400000, guid: 7317fc6627502d0408fda6fcd4542a42, type: 2}
-  sorted: 0
+  sorted: 1

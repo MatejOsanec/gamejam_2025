@@ -30,7 +30,7 @@ public class Synaesthetizer : BeatmapCallbackListener
     
     void Update()
     {
-        if (_initialized || Locator.GameStateManager.GameState != GameState.Game)
+        if (_initialized && Locator.GameStateManager.GameState == GameState.Game)
         {
 
             _texProcessor.amplitudeA = modA.GetProgress();
