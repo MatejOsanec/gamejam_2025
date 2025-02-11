@@ -1,5 +1,73 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8924714156823162416
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8237e68dea307e4e84688e58b0dbb68, type: 3}
+  m_Name: TextureProcessorAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  _template:
+    computeKernelA: 3
+    computeKernelB: 3
+    computeKernelC: 4
+    inputTextureIndexA: 0
+    inputTextureIndexB: 0
+    inputTextureIndexC: 0
+    phaseA: 0
+    phaseB: 0
+    phaseC: 0
+    param2A: 0
+    param2B: 0
+    param2C: 0
+    param1A: 0
+    param1B: 0
+    param1C: 0
+    speedA: -50
+    speedB: 10
+    speedC: -10
+    spatialScaleA: 1
+    spatialScaleB: 4
+    spatialScaleC: 1.5
+--- !u!114 &-8632578625573083447
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8237e68dea307e4e84688e58b0dbb68, type: 3}
+  m_Name: TextureProcessorAsset(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  _template:
+    computeKernelA: 2.67
+    computeKernelB: 2
+    computeKernelC: 4
+    inputTextureIndexA: 0
+    inputTextureIndexB: 0
+    inputTextureIndexC: 0
+    phaseA: 0
+    phaseB: 0
+    phaseC: 0
+    param2A: 0
+    param2B: 0
+    param2C: 0
+    param1A: 0
+    param1B: 0
+    param1C: 0
+    speedA: -10
+    speedB: 10
+    speedC: -10
+    spatialScaleA: 1
+    spatialScaleB: 4
+    spatialScaleC: 1.5
 --- !u!114 &-8028233965105018191
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -47,7 +115,7 @@ MonoBehaviour:
   m_Name: TextureProcessorAsset(Clone)(Clone)
   m_EditorClassIdentifier: 
   _template:
-    computeKernelA: 4
+    computeKernelA: 3
     computeKernelB: 3
     computeKernelC: 4
     inputTextureIndexA: 0
@@ -62,13 +130,13 @@ MonoBehaviour:
     param1A: 0
     param1B: 0
     param1C: 0
-    speedA: -10
+    speedA: -50
     speedB: 10
     speedC: -10
     spatialScaleA: 1
     spatialScaleB: 4
     spatialScaleC: 1.5
---- !u!114 &-6656638169317954673
+--- !u!114 &-6792500522851716641
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -78,12 +146,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8237e68dea307e4e84688e58b0dbb68, type: 3}
-  m_Name: TextureProcessorAsset
+  m_Name: TextureProcessorAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   _template:
-    computeKernelA: 0
-    computeKernelB: 0
-    computeKernelC: 0
+    computeKernelA: 1
+    computeKernelB: 1
+    computeKernelC: 1
     inputTextureIndexA: 0
     inputTextureIndexB: 0
     inputTextureIndexC: 0
@@ -96,12 +164,114 @@ MonoBehaviour:
     param1A: 0
     param1B: 0
     param1C: 0
-    speedA: 0
-    speedB: 0
-    speedC: 0
-    spatialScaleA: 0
-    spatialScaleB: 0
-    spatialScaleC: 0
+    speedA: 13.6
+    speedB: 10
+    speedC: -10
+    spatialScaleA: 1
+    spatialScaleB: 4
+    spatialScaleC: 1.5
+--- !u!114 &-6047025600821996454
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8237e68dea307e4e84688e58b0dbb68, type: 3}
+  m_Name: TextureProcessorAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  _template:
+    computeKernelA: 3
+    computeKernelB: 3
+    computeKernelC: 4
+    inputTextureIndexA: 0
+    inputTextureIndexB: 0
+    inputTextureIndexC: 0
+    phaseA: 0
+    phaseB: 0
+    phaseC: 0
+    param2A: 0
+    param2B: 0
+    param2C: 0
+    param1A: 0
+    param1B: 0
+    param1C: 0
+    speedA: -50
+    speedB: 10
+    speedC: -10
+    spatialScaleA: 1
+    spatialScaleB: 4
+    spatialScaleC: 1.5
+--- !u!114 &-5617307501677830549
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8237e68dea307e4e84688e58b0dbb68, type: 3}
+  m_Name: TextureProcessorAsset(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  _template:
+    computeKernelA: 3
+    computeKernelB: 3
+    computeKernelC: 4
+    inputTextureIndexA: 0
+    inputTextureIndexB: 0
+    inputTextureIndexC: 0
+    phaseA: 0
+    phaseB: 0
+    phaseC: 0
+    param2A: 0
+    param2B: 0
+    param2C: 0
+    param1A: 0
+    param1B: 0
+    param1C: 0
+    speedA: -50
+    speedB: 10
+    speedC: -10
+    spatialScaleA: 1
+    spatialScaleB: 4
+    spatialScaleC: 1.5
+--- !u!114 &-4832525365757916968
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8237e68dea307e4e84688e58b0dbb68, type: 3}
+  m_Name: TextureProcessorAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  _template:
+    computeKernelA: 3
+    computeKernelB: 3
+    computeKernelC: 3
+    inputTextureIndexA: 0
+    inputTextureIndexB: 0
+    inputTextureIndexC: 0
+    phaseA: 0
+    phaseB: 0
+    phaseC: 0
+    param2A: 0
+    param2B: 0
+    param2C: 0
+    param1A: 0
+    param1B: 0
+    param1C: 0
+    speedA: 13.6
+    speedB: 10
+    speedC: -10
+    spatialScaleA: 1
+    spatialScaleB: 4
+    spatialScaleC: 1.5
 --- !u!114 &-3080502949189975697
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -119,6 +289,176 @@ MonoBehaviour:
   m_bufferingTime: 0.1
   m_ClipProperties:
     volume: 1
+--- !u!114 &-1954499526857807963
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8237e68dea307e4e84688e58b0dbb68, type: 3}
+  m_Name: TextureProcessorAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  _template:
+    computeKernelA: 3
+    computeKernelB: 3
+    computeKernelC: 3
+    inputTextureIndexA: 0
+    inputTextureIndexB: 0
+    inputTextureIndexC: 0
+    phaseA: 0
+    phaseB: 0
+    phaseC: 0
+    param2A: 0
+    param2B: 0
+    param2C: 0
+    param1A: 0
+    param1B: 0
+    param1C: 0
+    speedA: 13.6
+    speedB: 10
+    speedC: -10
+    spatialScaleA: 1
+    spatialScaleB: 4
+    spatialScaleC: 1.5
+--- !u!114 &-1921513839410620796
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8237e68dea307e4e84688e58b0dbb68, type: 3}
+  m_Name: TextureProcessorAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  _template:
+    computeKernelA: 3
+    computeKernelB: 3
+    computeKernelC: 3
+    inputTextureIndexA: 0
+    inputTextureIndexB: 0
+    inputTextureIndexC: 0
+    phaseA: 0
+    phaseB: 0
+    phaseC: 0
+    param2A: 0
+    param2B: 0
+    param2C: 0
+    param1A: 0
+    param1B: 0
+    param1C: 0
+    speedA: 13.6
+    speedB: 10
+    speedC: -10
+    spatialScaleA: 1
+    spatialScaleB: 4
+    spatialScaleC: 1.5
+--- !u!114 &-1479601857377479032
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8237e68dea307e4e84688e58b0dbb68, type: 3}
+  m_Name: TextureProcessorAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  _template:
+    computeKernelA: 3
+    computeKernelB: 3
+    computeKernelC: 3
+    inputTextureIndexA: 0
+    inputTextureIndexB: 0
+    inputTextureIndexC: 0
+    phaseA: 0
+    phaseB: 0
+    phaseC: 0
+    param2A: 0
+    param2B: 0
+    param2C: 0
+    param1A: 0
+    param1B: 0
+    param1C: 0
+    speedA: 13.6
+    speedB: 10
+    speedC: -10
+    spatialScaleA: 1
+    spatialScaleB: 4
+    spatialScaleC: 1.5
+--- !u!114 &-1296417899662466709
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8237e68dea307e4e84688e58b0dbb68, type: 3}
+  m_Name: TextureProcessorAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  _template:
+    computeKernelA: 3
+    computeKernelB: 3
+    computeKernelC: 3
+    inputTextureIndexA: 0
+    inputTextureIndexB: 0
+    inputTextureIndexC: 0
+    phaseA: 0
+    phaseB: 0
+    phaseC: 0
+    param2A: 0
+    param2B: 0
+    param2C: 0
+    param1A: 0
+    param1B: 0
+    param1C: 0
+    speedA: 13.6
+    speedB: 10
+    speedC: -10
+    spatialScaleA: 1
+    spatialScaleB: 4
+    spatialScaleC: 1.5
+--- !u!114 &-775693805836816544
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8237e68dea307e4e84688e58b0dbb68, type: 3}
+  m_Name: TextureProcessorAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  _template:
+    computeKernelA: 2
+    computeKernelB: 2
+    computeKernelC: 3
+    inputTextureIndexA: 0
+    inputTextureIndexB: 0
+    inputTextureIndexC: 0
+    phaseA: 0
+    phaseB: 0
+    phaseC: 0
+    param2A: 0
+    param2B: 0
+    param2C: 0
+    param1A: 0
+    param1B: 0
+    param1C: 0
+    speedA: -50
+    speedB: 83.9
+    speedC: -5.61
+    spatialScaleA: 1
+    spatialScaleB: 4
+    spatialScaleC: 1.5
 --- !u!114 &-512137114158120750
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -153,6 +493,40 @@ MonoBehaviour:
     spatialScaleA: 1
     spatialScaleB: 4
     spatialScaleC: 1.5
+--- !u!114 &-243790109629113775
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8237e68dea307e4e84688e58b0dbb68, type: 3}
+  m_Name: TextureProcessorAsset(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  _template:
+    computeKernelA: 3
+    computeKernelB: 3
+    computeKernelC: 3
+    inputTextureIndexA: 0
+    inputTextureIndexB: 0
+    inputTextureIndexC: 0
+    phaseA: 0
+    phaseB: 0
+    phaseC: 0
+    param2A: 0
+    param2B: 0
+    param2C: 0
+    param1A: 0
+    param1B: 0
+    param1C: 0
+    speedA: 13.6
+    speedB: 10
+    speedC: -10
+    spatialScaleA: 1
+    spatialScaleB: 4
+    spatialScaleC: 1.5
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,6 +549,40 @@ MonoBehaviour:
     m_ScenePreview: 1
   m_DurationMode: 0
   m_MarkerTrack: {fileID: 0}
+--- !u!114 &216816935558216527
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8237e68dea307e4e84688e58b0dbb68, type: 3}
+  m_Name: TextureProcessorAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  _template:
+    computeKernelA: 3
+    computeKernelB: 3
+    computeKernelC: 3
+    inputTextureIndexA: 0
+    inputTextureIndexB: 0
+    inputTextureIndexC: 0
+    phaseA: 0
+    phaseB: 0
+    phaseC: 0
+    param2A: 0
+    param2B: 0
+    param2C: 0
+    param1A: 0
+    param1B: 0
+    param1C: 0
+    speedA: 13.6
+    speedB: 10
+    speedC: -10
+    spatialScaleA: 1
+    spatialScaleB: 4
+    spatialScaleC: 1.5
 --- !u!114 &949828171858930106
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -189,7 +597,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _template:
     computeKernelA: 4
-    computeKernelB: 0
+    computeKernelB: 2
     computeKernelC: 4
     inputTextureIndexA: 0
     inputTextureIndexB: 0
@@ -203,7 +611,143 @@ MonoBehaviour:
     param1A: 0
     param1B: 0
     param1C: 0
-    speedA: -10
+    speedA: 2
+    speedB: 10
+    speedC: -10
+    spatialScaleA: 1
+    spatialScaleB: 4
+    spatialScaleC: 1.5
+--- !u!114 &2720344111716040920
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8237e68dea307e4e84688e58b0dbb68, type: 3}
+  m_Name: TextureProcessorAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  _template:
+    computeKernelA: 3
+    computeKernelB: 3
+    computeKernelC: 4
+    inputTextureIndexA: 0
+    inputTextureIndexB: 0
+    inputTextureIndexC: 0
+    phaseA: 0
+    phaseB: 0
+    phaseC: 0
+    param2A: 0
+    param2B: 0
+    param2C: 0
+    param1A: 0
+    param1B: 0
+    param1C: 0
+    speedA: -50
+    speedB: 10
+    speedC: -10
+    spatialScaleA: 1
+    spatialScaleB: 4
+    spatialScaleC: 1.5
+--- !u!114 &3109080544602656802
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8237e68dea307e4e84688e58b0dbb68, type: 3}
+  m_Name: TextureProcessorAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  _template:
+    computeKernelA: 3
+    computeKernelB: 3
+    computeKernelC: 4
+    inputTextureIndexA: 0
+    inputTextureIndexB: 0
+    inputTextureIndexC: 0
+    phaseA: 0
+    phaseB: 0
+    phaseC: 0
+    param2A: 0
+    param2B: 0
+    param2C: 0
+    param1A: 0
+    param1B: 0
+    param1C: 0
+    speedA: -50
+    speedB: 10
+    speedC: -10
+    spatialScaleA: 1
+    spatialScaleB: 4
+    spatialScaleC: 1.5
+--- !u!114 &3299939414910893650
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8237e68dea307e4e84688e58b0dbb68, type: 3}
+  m_Name: TextureProcessorAsset(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  _template:
+    computeKernelA: 4.14
+    computeKernelB: 4.51
+    computeKernelC: 4
+    inputTextureIndexA: 0
+    inputTextureIndexB: 0
+    inputTextureIndexC: 0
+    phaseA: 0
+    phaseB: 0
+    phaseC: 0
+    param2A: 0
+    param2B: 0
+    param2C: 0
+    param1A: 0
+    param1B: 0
+    param1C: 0
+    speedA: -50
+    speedB: -10
+    speedC: -10
+    spatialScaleA: 1
+    spatialScaleB: 4
+    spatialScaleC: 1.5
+--- !u!114 &4113011831869862926
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8237e68dea307e4e84688e58b0dbb68, type: 3}
+  m_Name: TextureProcessorAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  _template:
+    computeKernelA: 3
+    computeKernelB: 3
+    computeKernelC: 4
+    inputTextureIndexA: 0
+    inputTextureIndexB: 0
+    inputTextureIndexC: 0
+    phaseA: 0
+    phaseB: 0
+    phaseC: 0
+    param2A: 0
+    param2B: 0
+    param2C: 0
+    param1A: 0
+    param1B: 0
+    param1C: 0
+    speedA: -50
     speedB: 10
     speedC: -10
     spatialScaleA: 1
@@ -300,75 +844,6 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: TextureProcessorAsset
   - m_Version: 1
-    m_Start: 399929.4111111111
-    m_ClipIn: 0
-    m_Asset: {fileID: -6656638169317954673}
-    m_Duration: 5
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 4256689535564034021}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: -1
-    m_BlendOutDuration: -1
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: Infinity
-    m_PreExtrapolationTime: 399545.9985941043
-    m_DisplayName: TextureProcessorAsset
-  - m_Version: 1
     m_Start: 56.18888888888889
     m_ClipIn: 0
     m_Asset: {fileID: -512137114158120750}
@@ -423,8 +898,143 @@ MonoBehaviour:
     m_Start: 66.65328037692234
     m_ClipIn: 0
     m_Asset: {fileID: 949828171858930106}
-    m_Duration: 42.68101441930048
-    m_TimeScale: 0.11714810596767271
+    m_Duration: 34.446719623077655
+    m_TimeScale: 0.1451517025339684
+    m_ParentTrack: {fileID: 4256689535564034021}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: TextureProcessorAsset
+  - m_Version: 1
+    m_Start: 101.1
+    m_ClipIn: 0
+    m_Asset: {fileID: -6827958382450570186}
+    m_Duration: 77.97777777777779
+    m_TimeScale: 0.015925601181582625
+    m_ParentTrack: {fileID: 4256689535564034021}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: TextureProcessorAsset
+  - m_Version: 1
+    m_Start: 343.55555555555554
+    m_ClipIn: 0
+    m_Asset: {fileID: -8632578625573083447}
+    m_Duration: 39.85696145124717
+    m_TimeScale: 0.12544859964089233
+    m_ParentTrack: {fileID: 4256689535564034021}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 399550.9985941043
+    m_PreExtrapolationTime: 7.122222222222206
+    m_DisplayName: TextureProcessorAsset
+  - m_Version: 1
+    m_Start: 245.87407762442922
+    m_ClipIn: 0
+    m_Asset: {fileID: -243790109629113775}
+    m_Duration: 2.370366820015221
+    m_TimeScale: 0.5239032960759175
     m_ParentTrack: {fileID: 4256689535564034021}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
@@ -453,11 +1063,11 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: TextureProcessorAsset
   - m_Version: 1
-    m_Start: 109.33429479622282
+    m_Start: 244.51111111111112
     m_ClipIn: 0
-    m_Asset: {fileID: -6827958382450570186}
-    m_Duration: 274.07822221057836
-    m_TimeScale: 0.004530980170182366
+    m_Asset: {fileID: -6792500522851716641}
+    m_Duration: 1.3629665133180993
+    m_TimeScale: 0.9111324289925045
     m_ParentTrack: {fileID: 4256689535564034021}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
@@ -482,11 +1092,657 @@ MonoBehaviour:
     m_Recordable: 0
     m_PostExtrapolationMode: 0
     m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 399545.9985941043
+    m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
+    m_DisplayName: TextureProcessorAsset
+  - m_Version: 1
+    m_Start: 242.56666666666666
+    m_ClipIn: 0
+    m_Asset: {fileID: -1921513839410620796}
+    m_Duration: 0.24444444444444002
+    m_TimeScale: 5.080266776924952
+    m_ParentTrack: {fileID: 4256689535564034021}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0.24444444444444002
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: TextureProcessorAsset
+  - m_Version: 1
+    m_Start: 242.85555555555555
+    m_ClipIn: 0
+    m_Asset: {fileID: -4832525365757916968}
+    m_Duration: 0.2333333333333485
+    m_TimeScale: 5.322184242492365
+    m_ParentTrack: {fileID: 4256689535564034021}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: TextureProcessorAsset
+  - m_Version: 1
+    m_Start: 243.13333333333333
+    m_ClipIn: 0
+    m_Asset: {fileID: 7921818044875458917}
+    m_Duration: 0.2333333333333485
+    m_TimeScale: 5.322184242492365
+    m_ParentTrack: {fileID: 4256689535564034021}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0.2333333333333485
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: TextureProcessorAsset
+  - m_Version: 1
+    m_Start: 243.4111111111111
+    m_ClipIn: 0
+    m_Asset: {fileID: 216816935558216527}
+    m_Duration: 0.2333333333333485
+    m_TimeScale: 5.322184242492365
+    m_ParentTrack: {fileID: 4256689535564034021}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: TextureProcessorAsset
+  - m_Version: 1
+    m_Start: 243.6888888888889
+    m_ClipIn: 0
+    m_Asset: {fileID: 7976141616263809807}
+    m_Duration: 0.2333333333333485
+    m_TimeScale: 5.322184242492365
+    m_ParentTrack: {fileID: 4256689535564034021}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: TextureProcessorAsset
+  - m_Version: 1
+    m_Start: 243.96666666666667
+    m_ClipIn: 0
+    m_Asset: {fileID: -1954499526857807963}
+    m_Duration: 0.27777777777777146
+    m_TimeScale: 4.470634763693979
+    m_ParentTrack: {fileID: 4256689535564034021}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: 0.04444444444442297
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: TextureProcessorAsset
+  - m_Version: 1
+    m_Start: 244.24444444444444
+    m_ClipIn: 0
+    m_Asset: {fileID: -1479601857377479032}
+    m_Duration: 0.2333333333333485
+    m_TimeScale: 5.322184242492365
+    m_ParentTrack: {fileID: 4256689535564034021}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: TextureProcessorAsset
+  - m_Version: 1
+    m_Start: 244.4777777777778
+    m_ClipIn: 0
+    m_Asset: {fileID: -5617307501677830549}
+    m_Duration: 0.03333333333333144
+    m_TimeScale: 37.255289697451076
+    m_ParentTrack: {fileID: 4256689535564034021}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: TextureProcessorAsset
+  - m_Version: 1
+    m_Start: 243.36666666666667
+    m_ClipIn: 0
+    m_Asset: {fileID: 4113011831869862926}
+    m_Duration: 0.04444444444442297
+    m_TimeScale: 27.94146727310022
+    m_ParentTrack: {fileID: 4256689535564034021}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: TextureProcessorAsset
+  - m_Version: 1
+    m_Start: 243.64444444444445
+    m_ClipIn: 0
+    m_Asset: {fileID: -8924714156823162416}
+    m_Duration: 0.04444444444445139
+    m_TimeScale: 27.941467273082353
+    m_ParentTrack: {fileID: 4256689535564034021}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: TextureProcessorAsset
+  - m_Version: 1
+    m_Start: 243.92222222222225
+    m_ClipIn: 0
+    m_Asset: {fileID: -6047025600821996454}
+    m_Duration: 0.04444444444442297
+    m_TimeScale: 27.94146727310022
+    m_ParentTrack: {fileID: 4256689535564034021}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: TextureProcessorAsset
+  - m_Version: 1
+    m_Start: 244.20000000000002
+    m_ClipIn: 0
+    m_Asset: {fileID: 5691214480273402321}
+    m_Duration: 0.04444444444442297
+    m_TimeScale: 27.94146727310022
+    m_ParentTrack: {fileID: 4256689535564034021}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0.04444444444442297
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: TextureProcessorAsset
+  - m_Version: 1
+    m_Start: 243.0888888888889
+    m_ClipIn: 0
+    m_Asset: {fileID: 2720344111716040920}
+    m_Duration: 0.27777777777777146
+    m_TimeScale: 4.470634763693977
+    m_ParentTrack: {fileID: 4256689535564034021}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: 0.2333333333333485
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: TextureProcessorAsset
+  - m_Version: 1
+    m_Start: 242.81111111111113
+    m_ClipIn: 0
+    m_Asset: {fileID: 3109080544602656802}
+    m_Duration: 0.04444444444442297
+    m_TimeScale: 27.94146727310022
+    m_ParentTrack: {fileID: 4256689535564034021}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: TextureProcessorAsset
+  - m_Version: 1
+    m_Start: 241.77777777777777
+    m_ClipIn: 0
+    m_Asset: {fileID: 4652092361196469105}
+    m_Duration: 1.0333333333333314
+    m_TimeScale: 0.9111324289925045
+    m_ParentTrack: {fileID: 4256689535564034021}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: 0.24444444444444002
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: TextureProcessorAsset
+  - m_Version: 1
+    m_Start: 179.07777777777778
+    m_ClipIn: 0
+    m_Asset: {fileID: 3299939414910893650}
+    m_Duration: 62.69999999999999
+    m_TimeScale: 0.019806108292104725
+    m_ParentTrack: {fileID: 4256689535564034021}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: TextureProcessorAsset
+  - m_Version: 1
+    m_Start: 248.24444444444444
+    m_ClipIn: 0
+    m_Asset: {fileID: -775693805836816544}
+    m_Duration: 88.1888888888889
+    m_TimeScale: 0.007216567258963213
+    m_ParentTrack: {fileID: 4256689535564034021}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 7.122222222222206
+    m_PreExtrapolationTime: 0
+    m_DisplayName: TextureProcessorAsset
+  - m_Version: 1
+    m_Start: 399934.4111111111
+    m_ClipIn: 0
+    m_Asset: {fileID: -1296417899662466709}
+    m_Duration: 0.016666666666666666
+    m_TimeScale: 74.5105793948979
+    m_ParentTrack: {fileID: 4256689535564034021}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: Infinity
+    m_PreExtrapolationTime: 399550.9985941043
     m_DisplayName: TextureProcessorAsset
   m_Markers:
     m_Objects: []
+--- !u!114 &4652092361196469105
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8237e68dea307e4e84688e58b0dbb68, type: 3}
+  m_Name: TextureProcessorAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  _template:
+    computeKernelA: 1
+    computeKernelB: 1
+    computeKernelC: 1
+    inputTextureIndexA: 0
+    inputTextureIndexB: 0
+    inputTextureIndexC: 0
+    phaseA: 0
+    phaseB: 0
+    phaseC: 0
+    param2A: 0
+    param2B: 0
+    param2C: 0
+    param1A: 0
+    param1B: 0
+    param1C: 0
+    speedA: 13.6
+    speedB: 10
+    speedC: -10
+    spatialScaleA: 1
+    spatialScaleB: 4
+    spatialScaleC: 1.5
 --- !u!114 &5549912495249283553
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -583,3 +1839,105 @@ MonoBehaviour:
     volume: 1
     stereoPan: 0
     spatialBlend: 0
+--- !u!114 &5691214480273402321
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8237e68dea307e4e84688e58b0dbb68, type: 3}
+  m_Name: TextureProcessorAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  _template:
+    computeKernelA: 3
+    computeKernelB: 3
+    computeKernelC: 4
+    inputTextureIndexA: 0
+    inputTextureIndexB: 0
+    inputTextureIndexC: 0
+    phaseA: 0
+    phaseB: 0
+    phaseC: 0
+    param2A: 0
+    param2B: 0
+    param2C: 0
+    param1A: 0
+    param1B: 0
+    param1C: 0
+    speedA: -50
+    speedB: 10
+    speedC: -10
+    spatialScaleA: 1
+    spatialScaleB: 4
+    spatialScaleC: 1.5
+--- !u!114 &7921818044875458917
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8237e68dea307e4e84688e58b0dbb68, type: 3}
+  m_Name: TextureProcessorAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  _template:
+    computeKernelA: 3
+    computeKernelB: 3
+    computeKernelC: 3
+    inputTextureIndexA: 0
+    inputTextureIndexB: 0
+    inputTextureIndexC: 0
+    phaseA: 0
+    phaseB: 0
+    phaseC: 0
+    param2A: 0
+    param2B: 0
+    param2C: 0
+    param1A: 0
+    param1B: 0
+    param1C: 0
+    speedA: 13.6
+    speedB: 10
+    speedC: -10
+    spatialScaleA: 1
+    spatialScaleB: 4
+    spatialScaleC: 1.5
+--- !u!114 &7976141616263809807
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8237e68dea307e4e84688e58b0dbb68, type: 3}
+  m_Name: TextureProcessorAsset(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  _template:
+    computeKernelA: 3
+    computeKernelB: 3
+    computeKernelC: 3
+    inputTextureIndexA: 0
+    inputTextureIndexB: 0
+    inputTextureIndexC: 0
+    phaseA: 0
+    phaseB: 0
+    phaseC: 0
+    param2A: 0
+    param2B: 0
+    param2C: 0
+    param1A: 0
+    param1B: 0
+    param1C: 0
+    speedA: 13.6
+    speedB: 10
+    speedC: -10
+    spatialScaleA: 1
+    spatialScaleB: 4
+    spatialScaleC: 1.5
