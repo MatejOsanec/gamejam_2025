@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7050508629142888022}
   - component: {fileID: 7551831674904500302}
+  - component: {fileID: 1863377163901690603}
   m_Layer: 0
   m_Name: Timeline
   m_TagString: Untagged
@@ -54,6 +55,19 @@ PlayableDirector:
     value: {fileID: 6342380275875550163}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &1863377163901690603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3881264891336834487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0ea0bc062397244b81ecab51429c8d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playableDirector: {fileID: 7551831674904500302}
 --- !u!1 &9037932520538575488
 GameObject:
   m_ObjectHideFlags: 0

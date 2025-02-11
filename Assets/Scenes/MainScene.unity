@@ -11132,6 +11132,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Timeline
       objectReference: {fileID: 0}
+    - target: {fileID: 6342380275875550163, guid: c3d7a1363f0ba2443aa46b2949314d6f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7050508629142888022, guid: c3d7a1363f0ba2443aa46b2949314d6f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

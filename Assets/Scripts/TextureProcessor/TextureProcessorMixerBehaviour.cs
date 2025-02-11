@@ -34,8 +34,8 @@ public class TextureProcessorMixerBehaviour : PlayableBehaviour
         float blendedSpatialScaleA = 0f;
         float blendedSpatialScaleB = 0f;
         float blendedSpatialScaleC = 0f;
-        float blendedRowSize = 0f;
-        float blendedColumnSize = 0f;
+        //float blendedRowSize = 0f;
+        //float blendedColumnSize = 0f;
 
         if (!_trackBinding) {
             return;
@@ -77,8 +77,8 @@ public class TextureProcessorMixerBehaviour : PlayableBehaviour
                 blendedInputTextureIndexA = input.inputTextureIndexA;
                 blendedInputTextureIndexB = input.inputTextureIndexB;
                 blendedInputTextureIndexC = input.inputTextureIndexC;
-                blendedRowSize = input.rowSize;
-                blendedColumnSize = input.columnSize;
+                //blendedRowSize = input.rowSize;
+                //blendedColumnSize = input.columnSize;
                 blendedComputeKernelA = input.computeKernelA;
                 blendedComputeKernelB = input.computeKernelB;
                 blendedComputeKernelC = input.computeKernelC;
@@ -115,7 +115,7 @@ public class TextureProcessorMixerBehaviour : PlayableBehaviour
         _trackBinding.spatialScaleA = blendedSpatialScaleA;
         _trackBinding.spatialScaleB = blendedSpatialScaleB;
         _trackBinding.spatialScaleC = blendedSpatialScaleC;
-        _trackBinding.rowSize = (int)blendedRowSize;
-        _trackBinding.columnSize = (int)blendedColumnSize;
+        //_trackBinding.rowSize = (int)blendedRowSize;
+        //_trackBinding.columnSize = (int)blendedColumnSize;
     }
 }

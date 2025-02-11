@@ -30,8 +30,8 @@ public class TextureProcessorBehaviour : PlayableBehaviour {
     public float spatialScaleA;
     public float spatialScaleB;
     public float spatialScaleC;
-    public float rowSize;
-    public float columnSize;
+    //public float rowSize;
+    //public float columnSize;
 
     private bool _initialized;
     private float _originalComputeKernelA;
@@ -58,8 +58,8 @@ public class TextureProcessorBehaviour : PlayableBehaviour {
     private float _originalSpatialScaleA;
     private float _originalSpatialScaleB;
     private float _originalSpatialScaleC;
-    private float _originalRowSize;
-    private float _originalColumnSize;
+    //private float _originalRowSize;
+    //private float _originalColumnSize;
 
     private TextureProcessor _textureProcessor;
 
@@ -104,8 +104,8 @@ public class TextureProcessorBehaviour : PlayableBehaviour {
             _originalSpatialScaleA = _textureProcessor.spatialScaleA;
             _originalSpatialScaleB = _textureProcessor.spatialScaleB;
             _originalSpatialScaleC = _textureProcessor.spatialScaleC;
-            _originalRowSize = _textureProcessor.rowSize;
-            _originalColumnSize = _textureProcessor.columnSize;
+            //_originalRowSize = _textureProcessor.rowSize;
+            //_originalColumnSize = _textureProcessor.columnSize;
             _initialized = true;
         }
     }
@@ -139,7 +139,7 @@ public class TextureProcessorBehaviour : PlayableBehaviour {
         _textureProcessor.spatialScaleA = _originalSpatialScaleA;
         _textureProcessor.spatialScaleB = _originalSpatialScaleB;
         _textureProcessor.spatialScaleC = _originalSpatialScaleC;
-        _textureProcessor.rowSize = (int)_originalRowSize;
-        _textureProcessor.columnSize = (int)_originalColumnSize;
+        //_textureProcessor.rowSize = (int)_originalRowSize;
+        //_textureProcessor.columnSize = (int)_originalColumnSize;
     }
 }
