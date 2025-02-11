@@ -16,9 +16,9 @@ public class TextureProcessorMixerBehaviour : PlayableBehaviour
         float blendedInputTextureIndexA = 0f;
         float blendedInputTextureIndexB = 0f;
         float blendedInputTextureIndexC = 0f;
-        float blendedAmplitudeA = 0f;
-        float blendedAmplitudeB = 0f;
-        float blendedAmplitudeC = 0f;
+        //float blendedAmplitudeA = 0f;
+        //float blendedAmplitudeB = 0f;
+        //float blendedAmplitudeC = 0f;
         float blendedPhaseA = 0f;
         float blendedPhaseB = 0f;
         float blendedPhaseC = 0f;
@@ -57,9 +57,9 @@ public class TextureProcessorMixerBehaviour : PlayableBehaviour
                 maxInputWeight = inputWeight;
             }
 
-            blendedAmplitudeA += input.amplitudeA * inputWeight;
-            blendedAmplitudeB += input.amplitudeB * inputWeight;
-            blendedAmplitudeC += input.amplitudeC * inputWeight;
+            //blendedAmplitudeA += input.amplitudeA * inputWeight;
+            //blendedAmplitudeB += input.amplitudeB * inputWeight;
+            //blendedAmplitudeC += input.amplitudeC * inputWeight;
             blendedPhaseA += input.phaseA * inputWeight;
             blendedPhaseB += input.phaseB * inputWeight;
             blendedPhaseC += input.phaseC * inputWeight;
@@ -97,9 +97,9 @@ public class TextureProcessorMixerBehaviour : PlayableBehaviour
         _trackBinding.inputTextureIndexA = (int)blendedInputTextureIndexA;
         _trackBinding.inputTextureIndexB = (int)blendedInputTextureIndexB;
         _trackBinding.inputTextureIndexC = (int)blendedInputTextureIndexC;
-        _trackBinding.amplitudeA = blendedAmplitudeA;
-        _trackBinding.amplitudeB = blendedAmplitudeB;
-        _trackBinding.amplitudeC = blendedAmplitudeC;
+        //_trackBinding.amplitudeA = blendedAmplitudeA;
+        //_trackBinding.amplitudeB = blendedAmplitudeB;
+        //_trackBinding.amplitudeC = blendedAmplitudeC;
         _trackBinding.phaseA = blendedPhaseA;
         _trackBinding.phaseB = blendedPhaseB;
         _trackBinding.phaseC = blendedPhaseC;
