@@ -2706,7 +2706,7 @@ PrefabInstance:
     - target: {fileID: 446321674053752020, guid: d5c399807d6334c418c2bd1e4ac0c866, type: 3}
       propertyPath: modB
       value: 
-      objectReference: {fileID: 11400000, guid: 5dbb2d42141380e4d96c4ff09255ce8c, type: 2}
+      objectReference: {fileID: 11400000, guid: aa5fe96a44880ee4ba69c9c1ec9b7262, type: 2}
     - target: {fileID: 446321674053752020, guid: d5c399807d6334c418c2bd1e4ac0c866, type: 3}
       propertyPath: modC
       value: 
@@ -2725,7 +2725,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 446321674053752020, guid: d5c399807d6334c418c2bd1e4ac0c866, type: 3}
       propertyPath: _initialAmplitudeB
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 446321674053752020, guid: d5c399807d6334c418c2bd1e4ac0c866, type: 3}
       propertyPath: _initialAmplitudeC
@@ -10941,6 +10941,10 @@ PrefabInstance:
     - target: {fileID: 4110263890583798120, guid: 203373f9f3c977b4ca2849bdfdfd6dd5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5620692574834371863, guid: 203373f9f3c977b4ca2849bdfdfd6dd5, type: 3}
+      propertyPath: _spatialScaleC
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7936293928276788161, guid: 203373f9f3c977b4ca2849bdfdfd6dd5, type: 3}
       propertyPath: m_Name
