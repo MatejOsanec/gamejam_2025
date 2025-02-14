@@ -950,6 +950,38 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 359993881}
     - target: {fileID: 4975841626371755213, guid: 1503655d493c8574399f391795ca4694, type: 3}
+      propertyPath: midBaddiePrefabs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4975841626371755213, guid: 1503655d493c8574399f391795ca4694, type: 3}
+      propertyPath: floorBaddiePrefabs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4975841626371755213, guid: 1503655d493c8574399f391795ca4694, type: 3}
+      propertyPath: midBaddiePrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 5165368328117635617, guid: 35533267ba93ed64f85d03705f70308a, type: 3}
+    - target: {fileID: 4975841626371755213, guid: 1503655d493c8574399f391795ca4694, type: 3}
+      propertyPath: midBaddiePrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 7406299622648761149, guid: 051f65b1c5c2a724bb1c8305f1e1dc79, type: 3}
+    - target: {fileID: 4975841626371755213, guid: 1503655d493c8574399f391795ca4694, type: 3}
+      propertyPath: midBaddiePrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 2948613861902217627, guid: 1930d4c4e73487d4f8155e6c08495252, type: 3}
+    - target: {fileID: 4975841626371755213, guid: 1503655d493c8574399f391795ca4694, type: 3}
+      propertyPath: floorBaddiePrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 856397691454430845, guid: 078728aeb71554646991bf6e77795d7c, type: 3}
+    - target: {fileID: 4975841626371755213, guid: 1503655d493c8574399f391795ca4694, type: 3}
+      propertyPath: floorBaddiePrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 7406299622648761149, guid: e864c17e6ee54a842b5dd937465d4fd3, type: 3}
+    - target: {fileID: 4975841626371755213, guid: 1503655d493c8574399f391795ca4694, type: 3}
+      propertyPath: floorBaddiePrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 1114240892190184269, guid: 9982b4c2b75729d47bb09a0176d3350f, type: 3}
+    - target: {fileID: 4975841626371755213, guid: 1503655d493c8574399f391795ca4694, type: 3}
       propertyPath: gameSceneGameobjects.Array.data[0]
       value: 
       objectReference: {fileID: 359993881}

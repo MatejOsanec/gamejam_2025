@@ -18,8 +18,8 @@ public class Init : MonoBehaviour
     public float CURRENT_BEAT = 0;
 
     [Header("SETINGS")]
-    public GameObject floorBaddiePrefab;
-    public GameObject midBaddiePrefab;
+    public GameObject[] floorBaddiePrefabs;
+    public GameObject[] midBaddiePrefabs;
     public float noteSpeed = 1;
     public float placementMultiplier = 1;
     public float preSpawnBeats = 4;
@@ -32,6 +32,7 @@ public class Init : MonoBehaviour
     {
         Locator.GameStateManager = new GameStateManager(initSceneGameobjects, gameSceneGameobjects, audioController, START_BEAT);
         Locator.Settings = new Settings(noteSpeed, placementMultiplier, preSpawnBeats);
+        Locator.WaveModel = new WaveModel();
         Locator.BeatModel = new BeatModel();
         Locator.PrefabSpawner = new PrefabSpawner(gameplayTransform, starfishMaterials);
         Locator.NoteControllerCollection = new NoteControllerCollection();
@@ -88,7 +89,11 @@ public class Init : MonoBehaviour
     private void OnColorNotePassed(ColorNote note)
     {
         Debug.Log($"NOTE SPAWNED: {note.beat}, X: {note.x}, Y: {note.y}, Direction: {note.d}");
-        var noteController = Locator.PrefabSpawner.SpawnNote(note.y == 0 ? floorBaddiePrefab : midBaddiePrefab, note);
+
+        var isFloor = note.y == 0;
+
+
+        var noteController = Locator.PrefabSpawner.SpawnBaddie(isFloor ? floorBaddiePrefabs[Locator.WaveModel.CurrentWaveId] : midBaddiePrefabs[Locator.WaveModel.CurrentWaveId], note);
         Locator.NoteControllerCollection.Add(noteController);
     }
 
@@ -112,6 +117,7 @@ public class Init : MonoBehaviour
             Locator.NoteTracker.Update(newBeat);
         }
 
+        Locator.WaveModel.Update();
         Locator.NoteControllerCollection.UpdateNotes(newBeat);
         Locator.EventTracker.Update(newBeat);
 

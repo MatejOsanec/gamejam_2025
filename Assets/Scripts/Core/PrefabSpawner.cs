@@ -16,10 +16,10 @@ namespace Core
             _starfishMaterials = starfishMaterials;
         }
 
-        public NoteController SpawnNote(GameObject prefab, ColorNote noteData)
+        public NoteController SpawnBaddie(GameObject prefab, ColorNote noteData)
         {
-            Debug.Log($"Spawning note at position: ({noteData.x - 1}, {noteData.y})");
-            // Use noteData.x and noteData.y independently for the position
+            Debug.Log($"Spawning baddie at position: ({noteData.x - 1}, {noteData.y})");
+
             var go = InstantiatePrefab(prefab, _parentTransform, new Vector3((noteData.x - 1) * 0.5f, spawnHeights[noteData.y], 0));
             var noteController = go.AddComponent<NoteController>();
             noteController.Setup(noteData, Locator.Settings.NoteSpeed);
