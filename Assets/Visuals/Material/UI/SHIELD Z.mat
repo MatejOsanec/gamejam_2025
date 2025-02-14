@@ -36,7 +36,6 @@ Material:
   - _DISTORTION_TARGET_MPM
   - _EMISSIONCOLORTYPE_FLAT
   - _EMISSION_ALPHA_SOURCE_EMISSION_G
-  - _EMISSION_STEP_NONE
   - _EMISSION_TEXTURE_SOURCE_TEXTURE
   - _HOLOGRAM_NONE
   - _MASKBLEND_MULTIPLY
@@ -46,12 +45,9 @@ Material:
   - _PARALLAX_NONE
   - _PARALLAX_PROJECTION_PLANAR
   - _PROBE_CALCULATION_FAST
-  - _RIMLIGHT_NONE
   - _RIM_WHITEBOOSTTYPE_NONE
   - _SECONDARY_MASK_BLEND_MULTIPLY
-  - _SECONDARY_UVS_NONE
   - _SMOOTHNESS_TEXTURE_NONE
-  - _SPECTROGRAM_NONE
   - _VERTEXDISPLACEMENTMASKMODE_MULTIPLY
   - _VERTEXDISPLACEMENT_MASK_SOURCE_TEXTURE
   - _VERTEX_WHITEBOOSTTYPE_NONE
@@ -114,7 +110,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionTex:
-        m_Texture: {fileID: 2800000, guid: 675279986023fb94daf857fd64cfcf81, type: 3}
+        m_Texture: {fileID: 2800000, guid: a412acfe628aa5a4a9c6b2ee91688fc6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EnvironmentReflectionCube:
@@ -209,7 +205,7 @@ Material:
     - _Diffuse_Texture_Source: 0
     - _DisplacementBidirectional: 1
     - _DisplacementSpatial: 1
-    - _DisplacementStrength: 0.075
+    - _DisplacementStrength: 0.025
     - _DissolveAlpha: 0
     - _DissolveColorIntensity: 1
     - _DissolveEndValue: 10
